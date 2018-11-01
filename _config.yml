@@ -10,7 +10,7 @@ syntax-highlighting:
 kramdown:
   hard_wrap: false
   input: GFM
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
 plugins:
   - jekyll-redirect-from
 sass:

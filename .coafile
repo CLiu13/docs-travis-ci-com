@@ -1,8 +1,16 @@
-[Default]
-bears  = MarkdownBear
-files  = **/*.md
-ignore = node_modules/**,_site/**
+[all]
+files = **/*.md
+ignore = node_modules/**,_site/**,vendor/**
 
-[Language]
+[all.syntax]
+bears = MarkdownBear
+
+[all.language]
 # Config in .alexrc
-bears  = AlexBear
+bears = AlexBear
+
+[yml]
+bears = YAMLLintBear
+files = **.yml
+max_line_length = 250
+ignore = _data/snippets.yml
