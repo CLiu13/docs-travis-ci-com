@@ -1,4 +1,4 @@
-#language: ruby
+# language: ruby
 sudo: false
 dist: trusty
 language: python
@@ -6,7 +6,7 @@ python:
   - "3.5.2"
 branches:
   only:
-  - re-add-markdownbear
+    - improved-coafile
 env:
   global:
     - PATH=$HOME/.local/user/bin:$PATH
@@ -25,9 +25,9 @@ deploy:
     secure: "hylw2GIHMvZKOKX3uPSaLEzVrUGEA9mzGEA0s4zK37W9HJCTnvAcmgRCwOkRuC4L7R4Zshdh/CGORNnBBgh1xx5JGYwkdnqtjHuUQmWEXCusrIURu/iEBNSsZZEPK7zBuwqMHj2yRm64JfbTDJsku3xdoA5Z8XJG5AMJGKLFgUQ="
   app: docs-travis-ci-com
   skip_cleanup: true
-  on:
+  'on':
     branch:
-    - master
+      - master
 notifications:
   slack:
     rooms:
