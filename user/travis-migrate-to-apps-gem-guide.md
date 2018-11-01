@@ -8,6 +8,7 @@ If your organization has more than **50 active repositories** to migrate to our 
 Here are the steps:
 
 ## 1. Install the gem
+
 ```
 gem install travis_migrate_to_apps
 ```
@@ -32,7 +33,7 @@ Take care of copying the newly generated token and save it for later usage.
 
 ## 3. Activate the Travis CI GitHub Apps integration with 1 repo
 
-Go to your profile page on Travis CI: https://travis-ci.com/profile
+Go to your profile page on Travis CI: <https://travis-ci.com/profile>
 
 Click the "Activate GitHub Apps Integration" button highlighted below:
 
@@ -52,7 +53,7 @@ You'll then be redirected to [your profile page on Travis CI](https://travis-ci.
 
 Here are the two ways you can get this token:
 
-1. On your profile page: https://travis-ci.com/profile
+1. On your profile page: <https://travis-ci.com/profile>
 
 ![Travis CI token on profile page](/images/travis-ci-token-profile-page.png)
 

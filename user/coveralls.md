@@ -1,7 +1,6 @@
 ---
 title: Coveralls
 layout: en
-
 ---
 
 [Coveralls](https://coveralls.io/) is a hosted analysis tool, providing statistics about your code coverage.
@@ -59,6 +58,7 @@ If you're using Coveralls with Travis CI for private repositories, edit `.covera
 ```yaml
 service_name: travis-pro
 ```
+
 {: data-file=".coveralls.yml"}
 
 ## Using Coveralls with other languages
@@ -86,6 +86,7 @@ Coveralls have documentation for many other [programming languages](https://cove
 ## Using Coveralls with Docker builds
 
 If you're using Docker in builds, ensure that the necessary environment variables are exposed to the container:
+
 ```sh
 docker exec -e TRAVIS_JOB_ID="$TRAVIS_JOB_ID" -e TRAVIS_BRANCH="$TRAVIS_BRANCH" ...
 ```

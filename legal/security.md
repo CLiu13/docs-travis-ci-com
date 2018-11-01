@@ -3,6 +3,7 @@ title: Security Statement
 layout: en
 no_toc: true
 ---
+
 of Travis CI GmbH (Travis) regarding the software Travis CI
 
 Security is our major concern when it comes to your source code. At Travis CI, we make sure our infrastructure is protected and secure so that your most valuable asset is safe and protected from unauthorized access.
@@ -22,6 +23,7 @@ All traffic to and inside of Travis CI is secured and encrypted with SSL/TLS.
 We reserve the right to change the underlying infrastructure of Travis CI at any time.
 
 ### Services Used and Data Stored in them
+
 We use the following services to run Travis CI:
 
 - Amazon Web Services EC2 (security policy) and Heroku (security policy) to run all of the components that form the Travis CI service and to store data like build logs, OAuth tokens and user data.
@@ -39,9 +41,11 @@ We reserve the right to change the services used to run Travis CI at any time.
 Our use of the above services is bound to their respective security precautions and their availability.
 
 ### Credit Card Data
-Travis does not store or receive any kind of credit card data other than a reference token that allows us to create payments with our payments provider Stripe, a PCI Level 1 certified payments provider. Please refer to their security policy for more details: https://stripe.com/help/security.
+
+Travis does not store or receive any kind of credit card data other than a reference token that allows us to create payments with our payments provider Stripe, a PCI Level 1 certified payments provider. Please refer to their security policy for more details: <https://stripe.com/help/security>.
 
 ### How does Travis access my GitHub account?
+
 When you sign up for Travis, we collect an OAuth token from GitHub, which allows us to request data from the GitHub API on your behalf. This OAuth token is stored securely in our database and is protected from unauthorized access.
 
 The token is bound to permissions set on GitHub, so please make sure you've read their documentation on access control and API access permissions.
@@ -61,11 +65,13 @@ However, to allow us to automatically specify SSH keys, service hook configurati
 We only manually access your code when explicitly requested by you and only in explicit consent with you, and only to debug and help solve build issues.
 
 ### How does Travis access my source code?
+
 Other than reading your .travis.yml to determine the best build strategy, the only time we access your repository directly is when checking out the source code on one of our build machines.
 
 Source code is only accessed via SSH, using SSH keys for authentication. Each project setup up on Travis gets its own SSH key, you'll receive an email notification when we add it to your project. This step happens when you set up the project on Travis CI for the first time.
 
 ### What data do we store from GitHub?
+
 When you push code to GitHub for a repository that is set up to run on Travis, we get a push notification. The same is true for pull requests that are sent to us.
 
 These notifications don't include any sensitive information other than commit references, names of files changed, and who authored and committed the changes.
@@ -73,6 +79,7 @@ These notifications don't include any sensitive information other than commit re
 We store these build notifications for debugging purposes, and for debugging purposes only.
 
 ### I have more questions about security and Travis
+
 Send us an email, and we'll get back to you right away!
 
 Version 1.2, Berlin, 7. June 2016: Remove Blue Box

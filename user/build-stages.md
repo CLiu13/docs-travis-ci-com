@@ -4,14 +4,12 @@ title: Build Stages
 layout: en
 ---
 
-
-
 ## What are Build Stages?
 
 Build stages is a way to group jobs, and run jobs in each stage in parallel,
 but run one stage after another sequentially.
 
-In the simplest and most common use case, you can now make one job run _only_
+In the simplest and most common use case, you can now make one job run *only*
 if several other, parallel jobs have completed successfully.
 
 Let’s say you want to test a library like a Ruby gem or an npm package against
@@ -62,6 +60,7 @@ jobs:
     - stage: deploy
       script: ./deploy
 ```
+
 {: data-file=".travis.yml"}
 
 This configuration creates the build from the screencast above. I.e. it creates
@@ -95,6 +94,7 @@ jobs:
       script: ./deploy target-1
     - script: ./deploy target-2
 ```
+
 {: data-file=".travis.yml"}
 
 ### Naming your Jobs within Build Stages
@@ -135,6 +135,7 @@ jobs:
         - FOO=foo
       script: ./deploy
 ```
+
 {: data-file=".travis.yml"}
 
 This will run two jobs on Ruby 2.3 and 2.4 respectively first, and assign these
@@ -142,9 +143,9 @@ to the default stage test. The third job on the deploy stage starts only after
 the test stage has completed successfully.
 
 > Each job included in `jobs.include` inherits the first value of the array
-that defines a matrix dimension.
+> that defines a matrix dimension.
 > In the example above, without explicitly setting `rvm: 2.4`, the `include`d job inherits
-`rvm: 2.3`.
+> `rvm: 2.3`.
 
 ## Specifying Stage Order and Conditions
 
@@ -172,7 +173,6 @@ stages:
 
 See [Conditional Builds, Stages, and Jobs](/user/conditional-builds-stages-jobs/) for more details on specifying conditions.
 
-
 ## Build Stages and Deployments
 
 You can combine build stages with [deployments](/user/deployment/):
@@ -188,6 +188,7 @@ jobs:
         provider: heroku
         # ...
 ```
+
 {: data-file=".travis.yml"}
 
 Travis CI does not set or overwrite any of your scripts, and most languages
@@ -212,11 +213,11 @@ See [the S3 example](#Sharing-files-between-jobs-via-S3) below.
 
 An example with 5 stages:
 
-* Two jobs running unit tests in parallel on stage 1.
-* One job deploying the application to Heroku staging.
-* One job testing the staging deployment on Heroku.
-* One job deploying the application to Heroku production.
-* One job testing the production deployment on Heroku.
+- Two jobs running unit tests in parallel on stage 1.
+- One job deploying the application to Heroku staging.
+- One job testing the staging deployment on Heroku.
+- One job deploying the application to Heroku production.
+- One job testing the production deployment on Heroku.
 
 You can find more [details here](/user/build-stages/deploy-heroku/).
 
@@ -224,8 +225,8 @@ You can find more [details here](/user/build-stages/deploy-heroku/).
 
 This example has two build stages:
 
-* Two jobs that run tests against Ruby 2.2 and 2.3 respectively
-* One job that publishes the gem to rubygems.org
+- Two jobs that run tests against Ruby 2.2 and 2.3 respectively
+- One job that publishes the gem to rubygems.org
 
 You can find more [details here](/user/build-stages/deploy-rubygems/).
 
@@ -233,8 +234,8 @@ You can find more [details here](/user/build-stages/deploy-rubygems/).
 
 This example has two build stages:
 
-* Four jobs that run tests against Node versions 4 to 7
-* One job that deploys (releases) the package to NPM
+- Four jobs that run tests against Node versions 4 to 7
+- One job that deploys (releases) the package to NPM
 
 You can find more [details here](/user/build-stages/deploy-npm/).
 
@@ -242,8 +243,8 @@ You can find more [details here](/user/build-stages/deploy-npm/).
 
 This example has two build stages:
 
-* Four jobs that run tests
-* One job that deploys to GitHub Releases
+- Four jobs that run tests
+- One job that deploys to GitHub Releases
 
 You can find more [details here](/user/build-stages/deploy-github-releases/).
 
@@ -251,8 +252,8 @@ You can find more [details here](/user/build-stages/deploy-github-releases/).
 
 This example has two build stages:
 
-* Four test jobs that have been expanded from `rvm` and `env` matrix keys.
-* One deploy job.
+- Four test jobs that have been expanded from `rvm` and `env` matrix keys.
+- One deploy job.
 
 You can find more [details here](/user/build-stages/matrix-expansion/).
 
@@ -260,8 +261,8 @@ You can find more [details here](/user/build-stages/matrix-expansion/).
 
 This uses two build stages in order to warm up a cache with expensive dependencies, and optimize test run times:
 
-* One job that installs dependencies and warms up the cache for the given branch.
-* Three jobs that run tests, using the cache.
+- One job that installs dependencies and warms up the cache for the given branch.
+- Three jobs that run tests, using the cache.
 
 You can find more [details here](/user/build-stages/warm-cache/).
 
@@ -269,8 +270,8 @@ You can find more [details here](/user/build-stages/warm-cache/).
 
 This example has 2 build stages:
 
-* One job builds and pushes a Docker image
-* Two jobs that pull and test the image
+- One job builds and pushes a Docker image
+- Two jobs that pull and test the image
 
 You can find more [details here](/user/build-stages/share-docker-image/).
 
@@ -278,8 +279,8 @@ You can find more [details here](/user/build-stages/share-docker-image/).
 
 This uses two build stages, sharing files from build stage 1 in stage 2:
 
-* Two jobs that set up files on S3.
-* One job that uses both files from stage 1.
+- Two jobs that set up files on S3.
+- One job that uses both files from stage 1.
 
 You can find more [details here](/user/build-stages/share-files-s3/).
 
@@ -287,8 +288,8 @@ You can find more [details here](/user/build-stages/share-files-s3/).
 
 This example has 2 build stages:
 
-* Two jobs that run different suites of tests against Ruby 2.3.1
-* One job that runs a custom deploy script that doesn't require running the default `install` or `script` steps
+- Two jobs that run different suites of tests against Ruby 2.3.1
+- One job that runs a custom deploy script that doesn't require running the default `install` or `script` steps
 
 You can find more [details here](/user/build-stages/define-steps/).
 
@@ -296,8 +297,8 @@ You can find more [details here](/user/build-stages/define-steps/).
 
 This example uses YAML aliases to define steps. It has 3 build stages:
 
-* Two jobs that run tests against Ruby 2.2 and 2.3
-* One job that deploys to staging
-* Three jobs that runs test against staging
+- Two jobs that run tests against Ruby 2.2 and 2.3
+- One job that deploys to staging
+- Three jobs that runs test against staging
 
 You can find more [details here](/user/build-stages/using-yaml-aliases/).

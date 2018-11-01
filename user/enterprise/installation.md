@@ -1,7 +1,6 @@
 ---
 title: Enterprise Installation
 layout: en_enterprise
-
 ---
 
 This guide covers installing the Travis CI Enterprise Platform and Travis CI
@@ -13,8 +12,6 @@ use your provider of choice.
 [expected system specs](/user/enterprise/prerequisites/#host-machine-specs),
 notes on setting up the required [OAuth app](/user/enterprise/prerequisites/#oauth-app),
 and information on obtaining a [license](/user/enterprise/prerequisites/#license).
-
-
 
 ## Setting up the Travis CI Enterprise Platform
 
@@ -31,7 +28,7 @@ a Security Group. From the EC2 management console, create an entry for
 each port in the table below:
 
 | Port | Service         | Description                                                                  |
-|:-----|:----------------|:-----------------------------------------------------------------------------|
+| :--- | :-------------- | :--------------------------------------------------------------------------- |
 | 8800 | Custom TCP Rule | This port is to access the admin dashboard for your Enterprise installation. |
 | 5672 | Custom TCP Rule | For RabbitMQ Non-SSL.                                                        |
 | 4567 | Custom TCP Rule | For RabbitMQ SSL.                                                            |
@@ -72,18 +69,18 @@ a Security Group. From the EC2 management console, create an entry for
 each port in the table below:
 
 | Port | Service | Description |
-|:-----|:--------|:------------|
+| :--- | :------ | :---------- |
 | 22   | SSH     | SSH access. |
 
 ## Install Travis CI Worker
 
 Travis CI Enterprise currently supports two different build environments, Trusty (Ubuntu 14.04) and Precise (Legacy, Ubuntu 12.04). Each version of Travis CI Enterprise expects a default version of `travis-worker`. Travis CI Enterprise will direct jobs to the default worker type, unless the behavior is overridden. However, different versions of Enterprise treat different worker versions as default:
 
-| Travis CI Enterprise Version | Default Worker Version | Alternative Worker Versions |
-| -- | -- | -- |
-| Enterprise 2.2+ | [Trusty (14.04)](/user/enterprise/trusty/) | [Precise (Legacy, 12.04)](/user/enterprise/precise/) |
-| Enterprise 2.1.9+ | [Precise (Legacy, 12.04)](/user/enterprise/precise/) | [Trusty (14.04)](/user/enterprise/trusty/) |
-| Enterprise 2.0+ | [Precise (Legacy, 12.04)](/user/enterprise/precise/) | -- |
+| Travis CI Enterprise Version | Default Worker Version                               | Alternative Worker Versions                          |
+| ---------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| Enterprise 2.2+              | [Trusty (14.04)](/user/enterprise/trusty/)           | [Precise (Legacy, 12.04)](/user/enterprise/precise/) |
+| Enterprise 2.1.9+            | [Precise (Legacy, 12.04)](/user/enterprise/precise/) | [Trusty (14.04)](/user/enterprise/trusty/)           |
+| Enterprise 2.0+              | [Precise (Legacy, 12.04)](/user/enterprise/precise/) | --                                                   |
 
 After setting up a new instance for the worker, please follow the [Trusty (14.04)](/user/enterprise/trusty/) or [Precise (Legacy, 12.04)](/user/enterprise/precise/) guides for your Travis CI Enterprise version. 
 

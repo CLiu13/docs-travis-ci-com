@@ -1,7 +1,6 @@
 ---
 title: Overview
 layout: en
-
 ---
 
 ### Travis CI Overview

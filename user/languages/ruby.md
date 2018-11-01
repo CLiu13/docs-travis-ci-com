@@ -1,7 +1,6 @@
 ---
 title: Building a Ruby Project
 layout: en
-
 ---
 
 ## What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | Ruby                                        | Default                                   |
-|:--------------------------------------------|:------------------------------------------|
+| :------------------------------------------ | :---------------------------------------- |
 | [Default `install`](#Dependency-Management) | `bundle install --jobs=3 --retry=3`       |
 | [Default `script`](#Default-Build-Script)   | `rake`                                    |
 | [Matrix keys](#Build-Matrix)                | `env`, `rvm`, `gemfile`, `jdk`            |
@@ -24,6 +23,7 @@ rvm:
   - jruby
   - 2.0.0-p247
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -48,6 +48,7 @@ rvm:
   - jruby
   - 2.0.0-p247
 ```
+
 {: data-file=".travis.yml"}
 
 > Note that the `rvm:` key is only available in Ruby Build Environments, not in
@@ -69,7 +70,7 @@ one is available.
 If you're using OS X or Trusty environments, you can also use
 [Rubinius](http://rubini.us). To test with Rubinius, add `rbx-X` or `rbx-X.Y.Z`
 to your `.travis.yml`, where X.Y.Z specifies a Rubinius release listed on
-[http://rubies.travis-ci.org/rubinius](http://rubies.travis-ci.org/rubinius) .
+<http://rubies.travis-ci.org/rubinius> .
 
 ```yaml
 language: ruby
@@ -77,6 +78,7 @@ dist: trusty
 rvm:
   - rbx-3
 ```
+
 {: data-file=".travis.yml"}
 
 ### JRuby: C extensions are not supported
@@ -119,6 +121,7 @@ dependencies, you can override the `install` command.
 ```yaml
 install: gem install rails
 ```
+
 {: data-file=".travis.yml"}
 
 By default, gems are installed into vendor/bundle in your project's root
@@ -164,6 +167,7 @@ Adjust your Bundler arguments to explicitly exclude this group:
 ```yaml
 bundler_args: --without production
 ```
+
 {: data-file=".travis.yml"}
 
 Enjoy a faster build, which is also less prone to compilation problems.
@@ -177,6 +181,7 @@ To specify a custom Gemfile name or location:
 ```yaml
 gemfile: gemfiles/Gemfile.ci
 ```
+
 {: data-file=".travis.yml"}
 
 If you specify the location of your Gemfile in this way, the build will fail if the file is not found.
@@ -187,6 +192,7 @@ You can pass [extra arguments](http://bundler.io/v1.3/man/bundle-install.1.html)
 ```yaml
 bundler_args: --binstubs
 ```
+
 {: data-file=".travis.yml"}
 
 ### Testing against multiple versions of dependencies
@@ -210,6 +216,7 @@ gemfile:
   - gemfiles/rails3.gemfile
   - gemfiles/rails3_1.gemfile
 ```
+
 {: data-file=".travis.yml"}
 
 An alternative to this is to use environment variables and make your test runner
@@ -223,6 +230,7 @@ env:
   - "tilt=1.3.3"
   - "tilt=master"
 ```
+
 {: data-file=".travis.yml"}
 
 ChefSpec is [tested against multiple Chef
@@ -234,6 +242,7 @@ env:
   - CHEF_VERSION=13.10.0
   - CHEF_VERSION=12.22.5
 ```
+
 {: data-file=".travis.yml"}
 
 The same technique is often applied to test against multiple databases, templating
@@ -263,6 +272,7 @@ jdk:
   - openjdk7
   - oraclejdk8
 ```
+
 {: data-file=".travis.yml"}
 
 Each JDK you test against will create permutations with all other
@@ -289,6 +299,7 @@ matrix:
     - rvm: 1.9.2
       jdk: oraclejdk7
 ```
+
 {: data-file=".travis.yml"}
 
 For example, see
@@ -313,6 +324,7 @@ before_install:
   - gem update --system
   - gem --version
 ```
+
 {: data-file=".travis.yml"}
 
 To downgrade to a specific version of RubyGems:
@@ -322,6 +334,7 @@ before_install:
   - gem update --system 2.1.11
   - gem --version
 ```
+
 {: data-file=".travis.yml"}
 
 Note that this will impact your overall test time, as additional network

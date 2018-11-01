@@ -15,17 +15,17 @@ You can inspect how your edits will be reflected by the documentation site.
 
 1. Make sure you have Ruby and RubyGems installed.
 
-1. Install [bundler](http://bundler.io/):
+2. Install [bundler](http://bundler.io/):
 
-    ```sh-session
-    $ gem install bundler
-    ```
+   ```sh-session
+   $ gem install bundler
+   ```
 
-1. Install application dependencies:
+3. Install application dependencies:
 
-    ```sh-session
-    $ bundle install --binstubs
-    ```
+   ```sh-session
+   $ bundle install --binstubs
+   ```
 
 ### Generate documentation
 
@@ -34,7 +34,6 @@ Run
 ```sh-session
 $ ./bin/jekyll build
 ```
-
 
 ### Run application server
 
@@ -45,11 +44,11 @@ For documentation edits, Jekyll is sufficient.
 
 1. Run Jekyll server:
 
-    ```sh-session
-    $ ./bin/jekyll serve
-    ```
+   ```sh-session
+   $ ./bin/jekyll serve
+   ```
 
-1. Open [localhost:4000](http://localhost:4000/) in your browser.
+2. Open [localhost:4000](http://localhost:4000/) in your browser.
 
 #### Starting and inspecting edits with Puma
 
@@ -58,11 +57,11 @@ via POST), Puma is necessary.
 
 1. Run Puma server:
 
-    ```sh-session
-    $ ./bin/puma
-    ```
+   ```sh-session
+   $ ./bin/puma
+   ```
 
-1. Open [localhost:9292](http://localhost:9292/) in your browser.
+2. Open [localhost:9292](http://localhost:9292/) in your browser.
 
 ### API V2 documentation
 

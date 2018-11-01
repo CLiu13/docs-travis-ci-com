@@ -1,13 +1,10 @@
 ---
 title: Building Pull Requests
 layout: en
-
 ---
 
 Pull request builds are an essential part of Travis CI.
 Whenever a pull request is opened on GitHub, Travis CI builds it and updates the status icon on the pull request page.
-
-
 
 ## How Pull Requests are Built
 
@@ -45,6 +42,7 @@ script:
    - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./travis/run_on_pull_requests; fi'
    - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./travis/run_on_non_pull_requests; fi'
 ```
+
 {: data-file=".travis.yml"}
 
 ## My Pull Request isn't being built
@@ -60,7 +58,6 @@ Travis CI also currently doesn't build pull requests when the upstream branch is
 
 If the pull request has already been merged you can't rerun the job. You'll get an error like:
 
-
 ```
 The command "eval git fetch origin +refs/pull/994/merge: " failed
 ```
@@ -75,5 +72,5 @@ If you see two build status icons on your GitHub pull request, it means there is
 
 ## See Also
 
-* [Building only the latest commit](/user/customizing-the-build/#building-only-the-latest-commit)
-* [Building specific branches](/user/customizing-the-build/#building-specific-branches)
+- [Building only the latest commit](/user/customizing-the-build/#building-only-the-latest-commit)
+- [Building specific branches](/user/customizing-the-build/#building-specific-branches)

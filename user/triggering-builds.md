@@ -4,7 +4,7 @@ title: Triggering builds with API V3
 layout: en
 ---
 
-> Note that if you're still using [travis-ci.org](http://www.travis-ci.org) you need to use `--org` instead of `--com` in all of the commands shown on this page, and make requests to https://api.travis-ci.org.
+> Note that if you're still using [travis-ci.org](http://www.travis-ci.org) you need to use `--org` instead of `--com` in all of the commands shown on this page, and make requests to <https://api.travis-ci.org>.
 
 Trigger Travis CI builds using the API V3 by sending a POST request to `/repo/{slug|id}/requests`:
 
@@ -38,8 +38,7 @@ Trigger Travis CI builds using the API V3 by sending a POST request to `/repo/{s
    ```
 
    > The %2F in the request URL is required so that the owner and repository
-     name in the repository slug are interpreted as a single URL segment.
-
+   >   name in the repository slug are interpreted as a single URL segment.
 
    The build uses the `.travis.yml` file in the master branch, but you can add to
    or override configuration, or change the commit message. Overriding any section
@@ -133,9 +132,9 @@ You can also customize the build configuration.
 
 Choose one of the following merge modes to determine how the original build configuration (in the `.travis.yml` file), and the configuration specified in your API request are combined:
 
-* `replace` replaces the full, original build configuration with the configuration in the API request body
-* `merge` (*default*) replaces sections in the original configuration with the configuration in the API request body
-* `deep_merge` merges the configuration in the API request body into the build configuration
+- `replace` replaces the full, original build configuration with the configuration in the API request body
+- `merge` (*default*) replaces sections in the original configuration with the configuration in the API request body
+- `deep_merge` merges the configuration in the API request body into the build configuration
 
 For example, given that the `.travis.yml` file contains the following configuration:
 
@@ -144,6 +143,7 @@ language: ruby
 env:
   FOO: foo_from_travis_yaml
 ```
+
 {: data-file=".travis.yml"}
 
 And given we send the following configuration as an API request:

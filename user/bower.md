@@ -1,5 +1,4 @@
 ---
 title: Bower
 layout: nodocs
-
 ---

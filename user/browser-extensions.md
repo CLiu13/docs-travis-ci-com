@@ -1,7 +1,6 @@
 ---
 title: Browser Extensions
 layout: en
-
 ---
 
 ### Google Chrome

@@ -1,7 +1,6 @@
 ---
 title: Custom Deployment
 layout: en
-
 ---
 
 You can deploy to your own server the way you would deploy from your local
@@ -25,6 +24,7 @@ after_success:
        --key /tmp/sftp_rsa
        sftp://${SFTP_USER}:${SFTP_PASSWORD}@example.com/directory/filename
 ```
+
 {: data-file=".travis.yml"}
 
 The env variables `SFTP_USER` and `SFTP_PASSWORD` can also be
@@ -45,6 +45,7 @@ after_success:
   - git remote add deploy DEPLOY_REPO_URI_GOES_HERE
   - git push deploy
 ```
+
 {: data-file=".travis.yml"}
 
 See ["How can I encrypt files that include sensitive data?"](/user/travis-ci-for-private/#how-can-i-encrypt-files-that-include-sensitive-data) if you don't want to commit the private key unencrypted to your repository.

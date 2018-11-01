@@ -13,4 +13,4 @@ bears = AlexBear
 bears = YAMLLintBear
 files = **.yml
 max_line_length = 250
-ignore = _data/snippets.yml
+ignore = _data/**,vendor/**

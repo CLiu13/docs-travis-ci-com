@@ -6,8 +6,8 @@ layout: en
 
 This example has 2 build stages:
 
-* Two jobs that run different suites of tests against Ruby 2.3.1
-* One job that runs a custom deploy script that doesn't require running the default `install` or `script` steps
+- Two jobs that run different suites of tests against Ruby 2.3.1
+- One job that runs a custom deploy script that doesn't require running the default `install` or `script` steps
 
 Here's what the `.travis.yml` config could look like:
 
@@ -25,6 +25,7 @@ jobs:
       install: skip # bundle install is not required
       script: ./deploy.sh
 ```
+
 {: data-file=".travis.yml"}
 
 This is how the build matrix might look:
@@ -33,6 +34,6 @@ This is how the build matrix might look:
 
 You can find the code for this example on our [demo repository](https://github.com/travis-ci/build-stages-demo):
 
-* [Branch define-steps](https://github.com/travis-ci/build-stages-demo/tree/define-steps/)
-* [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/define-steps/.travis.yml)
-* [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/231120401)
+- [Branch define-steps](https://github.com/travis-ci/build-stages-demo/tree/define-steps/)
+- [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/define-steps/.travis.yml)
+- [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/231120401)

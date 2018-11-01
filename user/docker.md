@@ -1,10 +1,7 @@
 ---
 title: Using Docker in Builds
 layout: en
-
 ---
-
-
 
 Travis CI builds can run and build Docker images, and can also push images to
 Docker repositories or other remote storage.
@@ -17,6 +14,7 @@ sudo: required
 services:
   - docker
 ```
+
 {: data-file=".travis.yml"}
 
 Then you can add `- docker` commands to your build as shown in the following
@@ -24,7 +22,7 @@ examples.
 
 > Travis CI automatically routes builds to run on our Trusty sudo-enabled infrastructure when `services: docker` is configured.
 > We do not currently support use of Docker on OS X.
-
+>
 > For information on how to use Docker on Travis CI Enterprise check out [Enabling Docker Builds](/user/enterprise/build-images/#enabling-docker-builds).
 
 ## Using a Docker Image from a Repository in a Build
@@ -67,6 +65,7 @@ before_install:
 script:
 - bundle exec rake test
 ```
+
 {: data-file=".travis.yml"}
 
 and produces the following [build
@@ -122,6 +121,7 @@ before_install:
 script:
   - bundle exec rake test
 ```
+
 {: data-file=".travis.yml"}
 
 ## Pushing a Docker Image to a Registry
@@ -158,6 +158,7 @@ deploy:
   on:
     branch: master
 ```
+
 {: data-file=".travis.yml"}
 
 Where `docker_push` is a script in your repository containing:
@@ -167,8 +168,8 @@ Where `docker_push` is a script in your repository containing:
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 docker push USER/REPO
 ```
-{: data-file="docker_push"}
 
+{: data-file="docker_push"}
 
 ### Private Registry Login
 
@@ -196,6 +197,7 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 ```
+
 {: data-file=".travis.yml"}
 
 ## Installing a newer Docker version
@@ -204,6 +206,7 @@ You can upgrade to the latest version and use any new Docker features by manuall
 updating it in the `before_install` step of your `.travis.yml`:
 
 **Updating from download.docker.com**
+
 ```yaml
 before_install:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -211,15 +214,18 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
 ```
+
 {: data-file=".travis.yml"}
 
 Alternatively, you can use `addons` instead of `before_install` to update via `apt` as well:
+
 ```yaml
 addons:
   apt:
     packages:
       - docker-ce
 ```
+
 {: data-file=".travis.yml"}
 
 > Check what version of Docker you're running with `docker --version`

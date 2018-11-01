@@ -1,7 +1,6 @@
 ---
 title: Using CCMenu with Travis CI
 layout: en
-
 ---
 
 ![Screenshot of CC menu](/images/Backstop_Menubar_20140305_155352_20140305_155425.jpg "Screenshot of CC menu")
@@ -41,7 +40,6 @@ must have the following form:
 
 - For open source projects use `https://api.travis-ci.org/repos/<owner>/<repository>/cc.xml?branch=<branch>`
 - For closed source projects use `https://api.travis-ci.com/repos/<owner>/<repository>/cc.xml?token=<token>&branch=<branch>`.
-
 
 ### Using the CC feed with accounts
 

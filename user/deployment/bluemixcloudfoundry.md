@@ -1,7 +1,6 @@
 ---
 title: Bluemix CloudFoundry Deployment
 layout: en
-
 ---
 
 You now have the ability to deploy directly to [IBM Bluemix](http://bluemix.net/) after a successful build on Travis CI.
@@ -32,6 +31,7 @@ You can also directly edit your `.travis.yml`. Insert the following to get up an
    region: eu-gb                        # (optional)  [ng, eu-gb , au-syd] Defaults to US South region (ng).
    api: https://api.ng.bluemix.net      # (optional)  Overrides region setting if specified for Bluemix local installations.
 ```
+
 {: data-file=".travis.yml"}
 
 ***Make sure that you encrypt your password before pushing your updated .travis.yml to GitHub.***

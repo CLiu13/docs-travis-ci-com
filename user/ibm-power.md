@@ -4,18 +4,16 @@ title: IBM POWER
 layout: en
 ---
 
-
-
 > Testing on [IBM POWER](https://en.wikipedia.org/wiki/IBM_POWER_Instruction_Set_Architecture) is currently in ALPHA.
-{: .alpha}
+> {: .alpha}
 
 ## What is IBM POWER?
 
-_TODO_
+*TODO*
 
 ## How do I test on IBM POWER?
 
-_TODO_
+*TODO*
 
 ## What features are available on IBM POWER?
 
@@ -23,12 +21,12 @@ _TODO_
 
 ### Golang
 
-_TODO_
+*TODO*
 
 ### Python
 
-_TODO_
+*TODO*
 
 ### Node.js
 
-_TODO_
+*TODO*

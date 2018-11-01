@@ -1,7 +1,6 @@
 ---
 title: Chef Supermarket deployment
 layout: en
-
 ---
 
 Travis CI can automatically deploy your cookbook to [Chef
@@ -19,4 +18,5 @@ deploy:
   # the encrypted client key file is decrypted in the before_install stage of the build when you add it using the instructions above
   cookbook_category: "Others"
 ```
+
 {: data-file=".travis.yml"}

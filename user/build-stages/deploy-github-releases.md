@@ -6,8 +6,8 @@ layout: en
 
 This example has 2 build stages:
 
-* Two jobs that run tests
-* One job that deploys (releases) a file to GitHub Releases
+- Two jobs that run tests
+- One job that deploys (releases) a file to GitHub Releases
 
 Here's what the `.travis.yml` config could look like:
 
@@ -25,6 +25,7 @@ jobs:
         on:
           tags: true
 ```
+
 {: data-file=".travis.yml"}
 
 This is how the build matrix might look:
@@ -33,6 +34,6 @@ This is how the build matrix might look:
 
 You can find the code for this example on our [demo repository](https://github.com/travis-ci/build-stages-demo):
 
-* [Branch master](https://github.com/travis-ci/build-stages-demo/tree/deploy-github-releases)
-* [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/deploy-github-releases/.travis.yml)
-* [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230744658)
+- [Branch master](https://github.com/travis-ci/build-stages-demo/tree/deploy-github-releases)
+- [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/deploy-github-releases/.travis.yml)
+- [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230744658)

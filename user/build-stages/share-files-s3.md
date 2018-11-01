@@ -5,8 +5,8 @@ layout: en
 
 This example has 2 build stages:
 
-* Two jobs that set up files on S3.
-* One job that uses both files from stage 1.
+- Two jobs that set up files on S3.
+- One job that uses both files from stage 1.
 
 Here's what the `.travis.yml` config could look like:
 
@@ -37,6 +37,7 @@ jobs:
 after_success:
   - aws s3 sync ~/$TRAVIS_BUILD_NUMBER s3://travis-build-stages-shared-storage-test/$TRAVIS_BUILD_NUMBER
 ```
+
 {: data-file=".travis.yml"}
 
 This is how the build matrix would look like:
@@ -45,6 +46,6 @@ This is how the build matrix would look like:
 
 You can find the code for this example on our [demo repository](https://github.com/travis-ci/build-stages-demo):
 
-* [Branch master](https://github.com/travis-ci/build-stages-demo/tree/shared-storage-with-s3)
-* [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/shared-storage-with-s3/.travis.yml)
-* [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230349354)
+- [Branch master](https://github.com/travis-ci/build-stages-demo/tree/shared-storage-with-s3)
+- [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/shared-storage-with-s3/.travis.yml)
+- [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230349354)

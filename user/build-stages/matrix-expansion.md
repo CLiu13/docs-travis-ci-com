@@ -6,8 +6,8 @@ layout: en
 
 This example has 2 build stages:
 
-* Four test jobs that have been expanded from `rvm` and `env` matrix keys.
-* One deploy job.
+- Four test jobs that have been expanded from `rvm` and `env` matrix keys.
+- One deploy job.
 
 Here's what the `.travis.yml` config could look like:
 
@@ -30,6 +30,7 @@ jobs:
       rvm: 2.3
       env: FOO=foo
 ```
+
 {: data-file=".travis.yml"}
 
 This is how the build matrix might look:
@@ -38,6 +39,6 @@ This is how the build matrix might look:
 
 You can find the code for this example on our [demo repository](https://github.com/travis-ci/build-stages-demo):
 
-* [Branch master](https://github.com/travis-ci/build-stages-demo/tree/matrix-expansion)
-* [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/matrix-expansion/.travis.yml)
-* [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230344299)
+- [Branch master](https://github.com/travis-ci/build-stages-demo/tree/matrix-expansion)
+- [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/matrix-expansion/.travis.yml)
+- [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230344299)

@@ -1,9 +1,9 @@
 ---
 title: Travis CI Enterprise Operations Manual
 layout: en_enterprise
-
 ---
-Welcome to the Travis CI Enterprise Operations Manual! This document provides guidelines and suggestions for troubleshooting your Travis CI Enterprise instance. If you have questions about a specific situation, please get in touch with us via [enterprise@travis-ci.com](mailto:enterprise@travis-ci.com).
+
+Welcome to the Travis CI Enterprise Operations Manual! This document provides guidelines and suggestions for troubleshooting your Travis CI Enterprise instance. If you have questions about a specific situation, please get in touch with us via <mailto:enterprise@travis-ci.com>.
 
 This document provides guidelines and suggestions for troubleshooting your Travis CI Enterprise instance. Each topic contains a common problem, and a suggested solution. If the solution does not work, please [contact support](#Contact-Enterprise-Support).
 
@@ -97,7 +97,7 @@ If none of the steps above lead to results for you, please follow the steps in t
 If you are running version 2.2+ on your Platform, Travis CI will try to route builds to the `builds.trusty` queue by default. To address this, either:
 
 1. Install a Trusty worker on a new virtual machine instance: [Trusty installation guide](/user/enterprise/trusty/)
-1. Override the default queuing behavior: Go to Admin Dashboard at `https://your-domain.tld:8800/settings#override_default_dist_enable`, and toggle the the "Override Default Build Environment" button
+2. Override the default queuing behavior: Go to Admin Dashboard at `https://your-domain.tld:8800/settings#override_default_dist_enable`, and toggle the the "Override Default Build Environment" button
 
 ## Enterprise container start fails with `Ready state command canceled: context deadline exceeded`
 
@@ -107,12 +107,11 @@ After a fresh installation or configuration change the Travis CI Enterprise cont
 
 #### GitHub OAuth app configuration
 
-The above mentioned error can be caused by a configuration mismatch in [the GitHub OAuth Application](/user/enterprise/prerequisites/#oauth-app). Please check that _both_ website and callback URL contain the Travis CI Enterprise's hostname. If you have discovered a mismatch here, please restart the Travis container from within the admin dashboard.
+The above mentioned error can be caused by a configuration mismatch in [the GitHub OAuth Application](/user/enterprise/prerequisites/#oauth-app). Please check that *both* website and callback URL contain the Travis CI Enterprise's hostname. If you have discovered a mismatch here, please restart the Travis container from within the admin dashboard.
 
 #### Hostname does not match license's hostname
 
 Your Travis CI Enterprise license has a hostname field which contains the hostname of your installation. When the license's hostname does not match the actual hostname, the container does not start. If this is the case or you suspect that this might be likely, please [get in touch with us](mailto:enterprise@travis-ci.com?subject=License%20Hostname%20Change) and we'll help you to get back on track.
-
 
 ## travis-worker on Ubuntu 16.04 does not start
 

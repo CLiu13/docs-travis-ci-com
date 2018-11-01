@@ -1,7 +1,6 @@
 ---
 title: Building a C++ Project
 layout: en
-
 ---
 
 ## What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | C++                                         | Default                                   |
-|:--------------------------------------------|:------------------------------------------|
+| :------------------------------------------ | :---------------------------------------- |
 | [Default `install`](#Dependency-Management) | N/A                                       |
 | [Default `script`](#Default-Build-Script)   | `./configure && make && make test`        |
 | [Matrix keys](#Build-Matrix)                | `env`, `compiler`                         |
@@ -52,6 +51,7 @@ If you need to install dependencies before your tests can run, override the
 ```yaml
 install: make get-deps
 ```
+
 {: data-file=".travis.yml"}
 
 See [build configuration guide](/user/customizing-the-build/) to learn more.
@@ -59,7 +59,6 @@ See [build configuration guide](/user/customizing-the-build/) to learn more.
 ## Default Build Script
 
 The default build command is:
-
 
 ```bash
 ./configure && make && make test
@@ -70,6 +69,7 @@ Projects that find this sufficient can use a very minimalistic `.travis.yml` fil
 ```yaml
 language: cpp
 ```
+
 {: data-file=".travis.yml"}
 
 You can change the build script as described in the [build
@@ -78,6 +78,7 @@ configuration](/user/customizing-the-build/) guide:
 ```yaml
 script: scons
 ```
+
 {: data-file=".travis.yml"}
 
 ## Choosing compilers to test against
@@ -89,6 +90,7 @@ example, to build with Clang:
 ```yaml
 compiler: clang
 ```
+
 {: data-file=".travis.yml"}
 
 or both GCC and Clang:
@@ -98,6 +100,7 @@ compiler:
   - clang
   - gcc
 ```
+
 {: data-file=".travis.yml"}
 
 Testing against two compilers will create (at least) 2 rows in your build
@@ -132,6 +135,7 @@ before_install:
   - test -n $CC  && unset CC
   - test -n $CXX && unset CXX
 ```
+
 {: data-file=".travis.yml"}
 
 {% include c11-cpp11-and-beyond-and-toolchains.md %}

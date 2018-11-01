@@ -22,17 +22,17 @@ In both `after_failure` and `after_success`, you can access the build result usi
 The complete job lifecycle, including three optional deployment phases and after checking out the git repository and changing to the repository directory, is:
 
 1. OPTIONAL Install [`apt addons`](/user/installing-dependencies/#installing-packages-with-the-apt-addon)
-1. OPTIONAL Install [`cache components`](/user/caching)
-1. `before_install`
-1. `install`
-1. `before_script`
-1. `script`
-1. OPTIONAL `before_cache` (for cleaning up cache)
-1. `after_success` or `after_failure`
-1. OPTIONAL `before_deploy`
-1. OPTIONAL `deploy`
-1. OPTIONAL `after_deploy`
-1. `after_script`
+2. OPTIONAL Install [`cache components`](/user/caching)
+3. `before_install`
+4. `install`
+5. `before_script`
+6. `script`
+7. OPTIONAL `before_cache` (for cleaning up cache)
+8. `after_success` or `after_failure`
+9. OPTIONAL `before_deploy`
+10. OPTIONAL `deploy`
+11. OPTIONAL `after_deploy`
+12. `after_script`
 
 A *build* can be composed of many jobs.
 
@@ -46,6 +46,7 @@ You can specify your own script to install your project dependencies:
 ```yaml
 install: ./install-dependencies.sh
 ```
+
 {: data-file=".travis.yml"}
 
 > When using custom scripts they should be executable (for example, using `chmod +x`) and contain a valid shebang line such as `/usr/bin/env sh`, `/usr/bin/env ruby`, or `/usr/bin/env python`.
@@ -57,6 +58,7 @@ install:
   - bundle install --path vendor/bundle
   - npm install
 ```
+
 {: data-file=".travis.yml"}
 
 When one of the steps in the install fails, the build stops immediately and is marked as [errored](#Breaking-the-Build).
@@ -70,6 +72,7 @@ Skip the installation step entirely by adding the following to your `.travis.yml
 ```yaml
 install: true
 ```
+
 {: data-file=".travis.yml"}
 
 ## Customizing the Build Phase
@@ -81,6 +84,7 @@ You can overwrite the default build step in `.travis.yml`:
 ```yaml
 script: bundle exec thor build
 ```
+
 {: data-file=".travis.yml"}
 
 You can specify multiple script commands as well:
@@ -90,6 +94,7 @@ script:
 - bundle exec rake build
 - bundle exec rake builddoc
 ```
+
 {: data-file=".travis.yml"}
 
 When one of the build commands returns a non-zero exit code, the Travis CI build runs the subsequent commands as well, and accumulates the build result.
@@ -103,6 +108,7 @@ You can change this behavior by using a little bit of shell magic to run all com
 ```yaml
 script: bundle exec rake build && bundle exec rake builddoc
 ```
+
 {: data-file=".travis.yml"}
 
 This example (note the `&&`) fails immediately when `bundle exec rake build` fails.
@@ -142,10 +148,10 @@ To run that script from your `.travis.yml`:
 2. Make it executable by running `chmod ugo+x scripts/run-tests.sh`.
 3. Commit it to your repository.
 4. Add it to your `.travis.yml`:
-    ```yaml
-    script: ./scripts/run-tests.sh
-    ```
-    {: data-file=".travis.yml"}
+   ```yaml
+   script: ./scripts/run-tests.sh
+   ```
+   {: data-file=".travis.yml"}
 
 #### How does this work? (Or, why you should not use `exit` in build steps)
 
@@ -156,7 +162,6 @@ Doing so will run the risk of terminating the build process without giving Travi
 perform subsequent tasks.
 
 Using `exit` inside a custom script which will be invoked from during a build is fine.
-
 
 ## Breaking the Build
 
@@ -183,6 +188,7 @@ working directory and deleting all changes made during the build ( `git stash
 deploy:
   skip_cleanup: true
 ```
+
 {: data-file=".travis.yml"}
 
 You can run commands before a deploy by using the `before_deploy` phase. A non-zero exit code in this phase will mark the build as **errored**.

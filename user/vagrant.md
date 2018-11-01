@@ -1,5 +1,4 @@
 ---
 title: Vagrant
 layout: nodocs
-
 ---

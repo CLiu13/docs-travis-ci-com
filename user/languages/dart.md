@@ -1,7 +1,6 @@
 ---
 title: Building a Dart Project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -37,6 +36,7 @@ dart:
 # Install a specific dev release, using a partial download URL - 1.16.0-dev.3.0
 - "dev/release/1.16.0-dev.3.0"
 ```
+
 {: data-file=".travis.yml"}
 
 This creates a separate Travis job for each Dart version. It can be used in
@@ -56,6 +56,7 @@ run by default. This typically only runs tests on the Dart VM, but you can
 [configure it][] to run on additional platforms by default.
 
 [test]: https://pub.dartlang.org/packages/test
+
 [configure it]: https://github.com/dart-lang/test/blob/master/pkgs/test/doc/configuration.md#platforms
 
 You can also customize the arguments Travis passes to the test runner using the
@@ -67,6 +68,7 @@ dart_task:
 - test: --platform vm
 - test: --platform chrome
 ```
+
 {: data-file=".travis.yml"}
 
 Each task creates a separate Travis job. It can be used in conjunction with
@@ -86,6 +88,7 @@ dart_task:
 - test: --platform dartium
   install_dartium: true
 ```
+
 {: data-file=".travis.yml"}
 
 ### XVFB
@@ -95,7 +98,7 @@ like Chrome that require a display. However, this may interfere with certain
 applications, so you can turn it off by setting `xvfb: false` either at the top
 level or for a particular task.
 
-[XVFB]: https://www.x.org/archive/X11R7.6/doc/man/man1/Xvfb.1.xhtml
+[xvfb]: https://www.x.org/archive/X11R7.6/doc/man/man1/Xvfb.1.xhtml
 
 ```yaml
 language: dart
@@ -104,6 +107,7 @@ dart_task:
 - test: --tags no-xvfb
   xvfb: false
 ```
+
 {: data-file=".travis.yml"}
 
 XVFB is never used on OS X, since it doesn't use the X windows system.
@@ -119,7 +123,7 @@ errors, add a task with `dartanalyzer: true`. By default it analyzes all Dart
 files in your repository, but you can configure it by providing arguments
 instead of `true`.
 
-[Dart analyzer]: https://github.com/dart-lang/sdk/tree/master/pkg/analyzer_cli#dartanalyzer
+[dart analyzer]: https://github.com/dart-lang/sdk/tree/master/pkg/analyzer_cli#dartanalyzer
 
 ```yaml
 language: dart
@@ -132,6 +136,7 @@ dart_task:
 # Warnings are fatal, but we only analyze the lib/ directory.
 - dartanalyzer: --fatal-warnings lib
 ```
+
 {: data-file=".travis.yml"}
 
 ### Formatter
@@ -141,7 +146,7 @@ formatted, add a task with `dartfmt: true`. If your package depends on the
 `dart_style` package, it'll use that package's formatter version; otherwise,
 it'll use the `dartfmt` that comes with your Dart SDK.
 
-[Dart formatter]: https://github.com/dart-lang/dart_style#readme
+[dart formatter]: https://github.com/dart-lang/dart_style#readme
 
 ```yaml
 language: dart
@@ -150,11 +155,12 @@ dart_task:
 - test: --platform chrome
 - dartfmt
 ```
+
 {: data-file=".travis.yml"}
 
 ## Environment Variables
 
-* The version of Dart a job is using is available as `TRAVIS_DART_VERSION`.
-* `TRAVIS_DART_TEST` will be `true` if the current task uses `test`.
-* `TRAVIS_DART_ANALYZE` will be `true` if the current task uses `dartanalyzer`.
-* `TRAVIS_DART_FORMAT` will be `true` if the current task uses `dartfmt`.
+- The version of Dart a job is using is available as `TRAVIS_DART_VERSION`.
+- `TRAVIS_DART_TEST` will be `true` if the current task uses `test`.
+- `TRAVIS_DART_ANALYZE` will be `true` if the current task uses `dartanalyzer`.
+- `TRAVIS_DART_FORMAT` will be `true` if the current task uses `dartfmt`.

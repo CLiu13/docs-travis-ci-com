@@ -1,7 +1,6 @@
 ---
 title: Building a JavaScript and Node.js project
 layout: en
-
 ---
 
 ## What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | JavaScript and Node.js                      | Default                                   |
-|:--------------------------------------------|:------------------------------------------|
+| :------------------------------------------ | :---------------------------------------- |
 | [Default `install`](#Dependency-Management) | `npm install`                             |
 | [Default `script`](#Default-Build-Script)   | `npm test`                                |
 | [Matrix keys](#Build-Matrix)                | `env`, `node_js`                          |
@@ -23,6 +22,7 @@ node_js:
   - "iojs"
   - "7"
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -41,9 +41,9 @@ releases in your `.travis.yml`:
 - `node` latest stable Node.js release
 - `iojs` latest stable io.js release
 - `lts/*` latest LTS Node.js release
-{% for vers in site.data.node_js_versions %}
+  {% for vers in site.data.node_js_versions %}
 - `{{vers}}` latest {{vers}}.x release
-{% endfor %}
+  {% endfor %}
 
 ```yaml
 language: node_js
@@ -51,13 +51,14 @@ node_js:
   - "iojs"
   - "7"
 ```
+
 {: data-file=".travis.yml"}
 
 More specific information on what versions of Node.js are available is in
 the Environment Reference pages:
 
-* [Precise](/user/reference/precise/#javascript-and-nodejs-images)
-* [Trusty](/user/reference/trusty/#javascript-and-nodejs-images)
+- [Precise](/user/reference/precise/#javascript-and-nodejs-images)
+- [Trusty](/user/reference/trusty/#javascript-and-nodejs-images)
 
 If you need more specific control of Node.js versions in your build, use any
 version installable by `nvm`. If your `.travis.yml` contains a version of
@@ -110,6 +111,7 @@ before_script:
   - npm install -g gulp-cli
 script: gulp
 ```
+
 {: data-file=".travis.yml"}
 
 ## Dependency Management
@@ -128,6 +130,7 @@ Add the following to the [`before_install` phase](/user/job-lifecycle/) of `.tra
 before_install:
   - npm i -g npm@version-number
 ```
+
 {: data-file=".travis.yml"}
 
 ### `npm ci` support
@@ -145,14 +148,15 @@ You can cache your dependencies with
 ```yaml
 cache: npm
 ```
+
 {: data-file=".travis.yml"}
 
 1. This caches `$HOME/.npm` precisely when `npm ci` is the default `script` command.
-(See above.)
+   (See above.)
 
-1. In all other cases, this will cache `node_modules`.
-Note that `npm install` will still run on every build and will update/install
-any new packages added to your `package.json` file.
+2. In all other cases, this will cache `node_modules`.
+   Note that `npm install` will still run on every build and will update/install
+   any new packages added to your `package.json` file.
 
 Even when `script` is overridden, this shortcut is effective.
 
@@ -161,7 +165,7 @@ Even when `script` is overridden, this shortcut is effective.
 Travis CI detects use of [yarn](https://yarnpkg.com/).
 
 If both `package.json` and `yarn.lock` are present in the current
-directory, we run the following command _instead of_
+directory, we run the following command *instead of*
 `npm install`:
 
 ```bash
@@ -172,7 +176,6 @@ Note that `yarn` requires Node.js version 4 or later.
 If the job does not meet this requirement, `npm install` is used
 instead.
 
-
 #### Using a specific `yarn` version
 
 Add the following to the [`before_install` phase](/user/job-lifecycle/) of `.travis.yml`:
@@ -182,6 +185,7 @@ before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
   - export PATH="$HOME/.yarn/bin:$PATH"
 ```
+
 {: data-file=".travis.yml"}
 
 #### Caching with `yarn`
@@ -191,6 +195,7 @@ You can cache `$HOME/.cache/yarn` with:
 ```yaml
 cache: yarn
 ```
+
 {: data-file=".travis.yml"}
 
 If your caching needs to include other directives, you can use:
@@ -199,6 +204,7 @@ If your caching needs to include other directives, you can use:
 cache:
   yarn: true
 ```
+
 {: data-file=".travis.yml"}
 
 For more information, refer to [Caching](/user/caching) documentation.
@@ -257,6 +263,7 @@ install:
 script:
     - ember test --server
 ```
+
 {: data-file=".travis.yml"}
 
 ## Meteor Apps
@@ -275,6 +282,7 @@ services:
 env:
   - LAIKA_OPTIONS="-t 5000"
 ```
+
 {: data-file=".travis.yml"}
 
 More info on [testing against laika](https://github.com/arunoda/travis-ci-laika).
@@ -294,6 +302,7 @@ before_install:
 before_script:
   - "export PATH=$HOME/.meteor:$PATH"
 ```
+
 {: data-file=".travis.yml"}
 
 Find the source code at [travis-ci-meteor-packages](https://github.com/arunoda/travis-ci-meteor-packages).
@@ -329,4 +338,5 @@ addons:
     packages:
       - g++-4.8
 ```
+
 {: data-file=".travis.yml"}

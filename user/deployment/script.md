@@ -1,7 +1,6 @@
 ---
 title: Script deployment
 layout: en
-
 ---
 
 If your deployment needs more customization than the `after_success` method allows,
@@ -16,6 +15,7 @@ deploy:
   on:
     branch: develop
 ```
+
 {: data-file=".travis.yml"}
 
 If you need to run multiple commands, write a executable wrapper script that runs them all.
@@ -40,6 +40,7 @@ deploy:
     on:
       branch: master
 ```
+
 {: data-file=".travis.yml"}
 
 The script has access to all the usual [environment variables](/user/environment-variables/#default-environment-variables).
@@ -52,6 +53,7 @@ deploy:
     tags: true
     all_branches: true
 ```
+
 {: data-file=".travis.yml"}
 
 ## Ruby version
@@ -59,7 +61,7 @@ deploy:
 To ensure that deployments run consistently, we use the version of Ruby that is
 pre-installed on all of our build images, which may change when images are updated.
 
-* The `travis_internal_ruby` function prints the exact pre-installed Ruby version
+- The `travis_internal_ruby` function prints the exact pre-installed Ruby version
 
 If you need to run a command that requires a different Ruby version than the
 pre-installed default, you need to set it explicitly:
@@ -69,4 +71,5 @@ deploy:
   provider: script
   script: rvm use $TRAVIS_RUBY_VERSION do script.rb
 ```
+
 {: data-file=".travis.yml"}

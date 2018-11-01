@@ -1,7 +1,6 @@
 ---
 title: Setting Custom Hostname
 layout: en
-
 ---
 
 This addon, available in build environment with `sudo` enabled,

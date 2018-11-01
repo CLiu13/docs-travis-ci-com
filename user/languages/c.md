@@ -1,7 +1,6 @@
 ---
 title: Building a C Project
 layout: en
-
 ---
 
 ## What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | C                                           | Default                                   |
-|:--------------------------------------------|:------------------------------------------|
+| :------------------------------------------ | :---------------------------------------- |
 | [Default `install`](#Dependency-Management) | N/A                                       |
 | [Default `script`](#Default-Build-Script)   | `./configure && make && make test`        |
 | [Matrix keys](#Build-Matrix)                | `env`, `compiler`                         |
@@ -20,6 +19,7 @@ Minimal example:
 ```yaml
 language: c
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -53,6 +53,7 @@ If you need to install dependencies before your tests can run, override the
 ```yaml
 install: make get-deps
 ```
+
 {: data-file=".travis.yml"}
 
 See the [build configuration guide](/user/customizing-the-build/) to learn more.
@@ -70,6 +71,7 @@ Projects that find this sufficient can use a very minimalistic `.travis.yml` fil
 ```yaml
 language: c
 ```
+
 {: data-file=".travis.yml"}
 
 You can change the build script as described in the [build
@@ -78,6 +80,7 @@ configuration](/user/customizing-the-build/) guide:
 ```yaml
 script: scons
 ```
+
 {: data-file=".travis.yml"}
 
 ## Choosing compilers to test against
@@ -89,6 +92,7 @@ build with Clang:
 ```yaml
 compiler: clang
 ```
+
 {: data-file=".travis.yml"}
 
 or both GCC and Clang:
@@ -98,6 +102,7 @@ compiler:
   - clang
   - gcc
 ```
+
 {: data-file=".travis.yml"}
 
 Testing against two compilers will create (at least) 2 rows in your build
@@ -126,6 +131,7 @@ In this case, we recommend unsetting it:
 before_install:
   - test -n $CC && unset CC
 ```
+
 {: data-file=".travis.yml"}
 
 {% include c11-cpp11-and-beyond-and-toolchains.md %}

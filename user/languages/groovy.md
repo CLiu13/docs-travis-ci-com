@@ -1,7 +1,6 @@
 ---
 title: Building a Groovy project
 layout: en
-
 ---
 
 ## What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | Groovy                       | Default                                                                                                           |
-|:-----------------------------|:------------------------------------------------------------------------------------------------------------------|
+| :--------------------------- | :---------------------------------------------------------------------------------------------------------------- |
 | Default `install`            | [Gradle](#Gradle-Dependency-Management), [Maven](#Maven-Dependency-Management), [Ant](#Ant-Dependency-Management) |
 | Default `script`             | [Gradle](#Gradle-Default-Test-Command), [Maven](#Maven-Default-Test-Command), [Ant](#Ant-Default-Test-Command)    |
 | [Matrix keys](#Build-Matrix) | `env`,`jdk`                                                                                                       |
@@ -20,6 +19,7 @@ Minimal example:
 ```yaml
 language: groovy
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -41,6 +41,7 @@ have to configure anything beyond:
 ```yaml
 language: groovy
 ```
+
 {: data-file=".travis.yml"}
 
 ## Projects Using Gradle
@@ -77,6 +78,7 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 ```
+
 {: data-file=".travis.yml"}
 
 ### Gradle daemon is disabled by default
@@ -126,6 +128,7 @@ Ant you need to specify a custom command using the `install:` key in your
 language: groovy
 install: ant deps
 ```
+
 {: data-file=".travis.yml"}
 
 ## Testing Against Multiple JDKs
@@ -139,6 +142,7 @@ jdk:
   - oraclejdk8
   - openjdk7
 ```
+
 {: data-file=".travis.yml"}
 
 ### Using Java 10 and Up

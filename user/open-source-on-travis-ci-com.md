@@ -1,12 +1,9 @@
 ---
 title: "Open Source on travis-ci.com"
 layout: en
-
 ---
 
 On <time datetime="2018-05-02">May 2nd, 2018</time> Travis CI announced that open source projects will be joining private projects on **travis-ci.com**!
-
-
 
 This means you can manage public and private repositories from one domain, allocate additional concurrency to either open source or private projects, and have a more consistent experience between types of projects.
 
@@ -19,10 +16,11 @@ This is a significant development for Travis CI, and will mean some changes to h
 ## Features of the GitHub Apps Integration
 
 GitHub-Apps based integration introduces a number of benefits as over our Legacy Webhooks integration:
- * We will no longer add deploy keys to repositories when they are activated on Travis CI
- * Projects will be cloned with a shorter-lived OAuth token
- * Our GitHub App requires far less permissions than our OAuth application
- * Ownership of organization repositories is always tied to the organization which owns the project
+
+- We will no longer add deploy keys to repositories when they are activated on Travis CI
+- Projects will be cloned with a shorter-lived OAuth token
+- Our GitHub App requires far less permissions than our OAuth application
+- Ownership of organization repositories is always tied to the organization which owns the project
 
 ## New User Accounts
 
@@ -47,8 +45,9 @@ Currently, open source repositories that were private in any time in their histo
 Repositories may also be migrated without their build history or build settings (including environment variables) immediately. 
 
 Please contact support [support@travis-ci.com](mailto:support@travis-ci.com?Subject=Open%20Source%20on%20travis-ci.com%20-%20Repository%20Migration). In your email, please include:
-* "Repository Migration" somewhere in the subject line, and
-* the repository’s name in your email
+
+- "Repository Migration" somewhere in the subject line, and
+- the repository’s name in your email
 
 ## Existing Private Repositories on `travis-ci.com`
 
@@ -57,6 +56,5 @@ There will be no changes to your private repositories. Private projects will con
 ## Contact Support
 
 If you have any questions, please email please contact [support@travis-ci.com](mailto:support@travis-ci.com?Subject=Open%20Source%20on%20travis-ci.com). We're looking forward to helping!
-
 
 [travis-ci.com]: https://www.travis-ci.com

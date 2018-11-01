@@ -13,18 +13,20 @@ Please refer to the [SonarQube documentation](http://redirect.sonarsource.com/do
 
 You are using one of the two following environments:
 
-* [CI Environment with JVM VM image](/user/reference/precise/) - for instance:
+- [CI Environment with JVM VM image](/user/reference/precise/) - for instance:
 
 ```yaml
 language: java
 ```
+
 {: data-file=".travis.yml"}
 
-* [Trusty CI Environment](/user/reference/trusty/):
+- [Trusty CI Environment](/user/reference/trusty/):
 
 ```yaml
 dist: trusty
 ```
+
 {: data-file=".travis.yml"}
 
 ## Inspecting code with the SonarQube Scanner
@@ -48,6 +50,7 @@ script:
   # other script steps might be done before running the actual analysis
   - sonar-scanner
 ```
+
 {: data-file=".travis.yml"}
 
 Please take a look at the [live example project](https://github.com/SonarSource/sq-com_example_standard-sqscanner-travis) to know more about this standard use case.
@@ -66,6 +69,7 @@ script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 ```
+
 {: data-file=".travis.yml"}
 
 Please take a look at the [live Maven-based example project](https://github.com/SonarSource/sq-com_example_java-maven-travis) to know more about this use case.
@@ -89,6 +93,7 @@ Future versions of this add-on will provide the following features:
 ## Deprecated features
 
 If you are a long-time SonarCloud user, you might have the following entries in your `.travis.yml` file:
+
 - "branches"
 - "github_token"
 
@@ -99,6 +104,3 @@ If this is the case, you will get warnings in the log, telling you that this beh
 If you are familiar with SonarQube, you can be tempted to deal with some properties relatives to [Branch Analysis](https://docs.sonarqube.org/display/SONAR/Branch+Analysis) (ex: `sonar.branch.name`) and/or [Pull Request Analysis](https://docs.sonarqube.org/display/SONAR/Pull+Request+Analysis) (ex: `sonar.pullrequest.key`).
 
 These properties are completely useless, the SonarCloud add-on manages them for you depending the analysis type.
-
-
-

@@ -1,7 +1,6 @@
 ---
 title: Hackage Deployment
 layout: en
-
 ---
 
 Travis CI supports uploading to [Hackage](https://hackage.haskell.org/).
@@ -14,6 +13,7 @@ deploy:
   username: "Hackage User Name"
   password: "Hackage Password"
 ```
+
 {: data-file=".travis.yml"}
 
 It is recommended to encrypt password.

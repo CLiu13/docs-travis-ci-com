@@ -1,7 +1,6 @@
 ---
 title: Atom Build Feeds
 layout: en
-
 ---
 
 One way to get updates on your builds is an Atom feed.

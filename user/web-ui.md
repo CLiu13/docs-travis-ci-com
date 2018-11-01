@@ -5,8 +5,6 @@ layout: en
 
 This page lists settings that are only available in the Travis CI .com and .org web user interface.
 
-
-
 ## Limit concurrent jobs
 
 {{ site.data.snippets.concurrent_jobs }}
@@ -50,4 +48,4 @@ More information on [caching](/user/caching).
 Custom builds exist only on Travis CI and will not appear in your Git history.
 
 > BETA Custom builds are a beta feature. Please provide feedback on [GitHub](https://github.com/travis-ci/beta-features/issues/27).
-{: .beta}
+> {: .beta}

@@ -22,20 +22,20 @@ stages, and jobs.
 
 The following known attributes are available, and can be used in conditions:
 
-* `type` (the current event type, known event types are: `push`, `pull_request`, `api`, `cron`)
-* `repo` (the current repository slug `owner_name/name`)
-* `branch` (the current branch name; for pull requests: the base branch name)
-* `tag` (the current tag name)
-* `commit_message` (the current commit message)
-* `sender` (the event sender's login name)
-* `fork` (`true` or `false` depending if the repository is a fork)
-* `head_repo` (for pull requests: the head repository slug `owner_name/name`)
-* `head_branch` (for pull requests: the head repository branch name)
-* `os` (the operating system)
-* `language` (the build language)
-* `sudo` (sudo access)
-* `dist` (the distribution)
-* `group` (the image group)
+- `type` (the current event type, known event types are: `push`, `pull_request`, `api`, `cron`)
+- `repo` (the current repository slug `owner_name/name`)
+- `branch` (the current branch name; for pull requests: the base branch name)
+- `tag` (the current tag name)
+- `commit_message` (the current commit message)
+- `sender` (the event sender's login name)
+- `fork` (`true` or `false` depending if the repository is a fork)
+- `head_repo` (for pull requests: the head repository slug `owner_name/name`)
+- `head_branch` (for pull requests: the head repository branch name)
+- `os` (the operating system)
+- `language` (the build language)
+- `sudo` (sudo access)
+- `dist` (the distribution)
+- `group` (the image group)
 
 Also, environment variables from your build configuration (`.travis.yml`) and
 repository settings are available, and can be matched using `env(FOO)`, see
@@ -134,9 +134,9 @@ names) are case-insensitive.
 
 The following boolean operators are supported:
 
-* `AND`
-* `OR`
-* `NOT`
+- `AND`
+- `OR`
+- `NOT`
 
 `AND` binds stronger than `OR`, and `NOT` binds stronger than `AND`. Therefore
 the following expressions are the same:
@@ -196,8 +196,8 @@ branch =~ /(master|foo)/
 
 There are two function available:
 
-* `env`
-* `concat`
+- `env`
+- `concat`
 
 The function `env` returns the value of given environment variable:
 
@@ -306,11 +306,11 @@ branch = true # this is the same
 
 The following aliases are in place:
 
-* `!` is an alias to `NOT`
-* `&&` is an alias to `AND`
-* `||` is an alias to `OR`
-* `==` is an alias to `=`
-* `~=` is an alias to `=~`
+- `!` is an alias to `NOT`
+- `&&` is an alias to `AND`
+- `||` is an alias to `OR`
+- `==` is an alias to `=`
+- `~=` is an alias to `=~`
 
 ### Line continuation (multiline conditions):
 

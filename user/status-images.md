@@ -1,7 +1,6 @@
 ---
 title: Embedding Status Images
 layout: en
-
 ---
 
 You can embed status images (also known as badges or icons) that show the

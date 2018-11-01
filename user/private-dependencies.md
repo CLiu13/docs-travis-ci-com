@@ -1,11 +1,10 @@
 ---
 title: Private Dependencies
 layout: en
-
 ---
 
-*Some of the features described here are currently **only available for private
-*repositories on [travis-ci.com](https://travis-ci.com)**.*
+*Some of the features described here are currently \*\*only available for private
+*repositories on [travis-ci.com](https://travis-ci.com)\**.*
 
 When testing a private repository, you might need to pull in other private
 repositories as dependencies via [git
@@ -22,7 +21,7 @@ disavantages, so read each method carefully and pick the one that applies best
 to your situation.
 
 | Authentication                | Protocol | Dependency URL format | Gives access to              | Notes                               |
-|:------------------------------|:---------|:----------------------|:-----------------------------|:------------------------------------|
+| :---------------------------- | :------- | :-------------------- | :--------------------------- | :---------------------------------- |
 | **[Deploy Key](#Deploy-Key)** | SSH      | `git@github.com/…`    | single repository            | used by default for main repository |
 | **[User Key](#User-Key)**     | SSH      | `git@github.com/…`    | all repos user has access to | **recommended** for dependencies    |
 | **[Password](#Password)**     | HTTPS    | `https://…`           | all repos user has access to | password can be encrypted           |
@@ -183,7 +182,6 @@ machine github.com
   password mypassword123
 ```
 
-
 You can also encrypt the password and then write it to the netrc in a `before_install` step in your `.travis.yml`:
 
 ```bash
@@ -217,7 +215,7 @@ gem 'lib2', github: "myorg/lib2"
 > update --init recursive` command runs before the `~/.netrc` credentials
 > are updated. If you are writing credentials to `~/.netrc`, disable the automatic loading of
 > submodules, update the credentials and add an explicit step to update the submodules:
-
+>
 > ```yaml
 > git:
 >   submodules:
@@ -259,6 +257,7 @@ You can then have Travis CI write to the `~/.netrc` on every build.
 before_install:
 - echo -e "machine github.com\n  login $CI_USER_TOKEN" > ~/.netrc
 ```
+
 {: data-file=".travis.yml"}
 
 It is also possible to inject the token into URLs, for instance, in a Gemfile, it would look like this:

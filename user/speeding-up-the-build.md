@@ -1,14 +1,11 @@
 ---
 title: Speeding up the build
 layout: en
-
 ---
 
 Travis CI implements a few optimizations which help to speed up your build,
 like in memory filesystem for DB's files, but there is a range of things
 that can be done to improve build times even more.
-
-
 
 ## Parallelizing your builds across virtual machines
 
@@ -28,6 +25,7 @@ env:
   - TEST_SUITE=units
   - TEST_SUITE=integration
 ```
+
 {: data-file=".travis.yml"}
 
 Then you change your script command to use the new environment variable to
@@ -36,6 +34,7 @@ determine the script to run.
 ```yaml
 script: "bundle exec rake test:$TEST_SUITE"
 ```
+
 {: data-file=".travis.yml"}
 
 Travis CI will determine the build matrix based on the environment variables and
@@ -56,6 +55,7 @@ env:
   - TESTFOLDER=integration/payments
   - TESTFOLDER=units
 ```
+
 {: data-file=".travis.yml"}
 
 Then you can adjust your script command to run rspec for every subfolder:
@@ -63,6 +63,7 @@ Then you can adjust your script command to run rspec for every subfolder:
 ```yaml
 script: "bundle exec rspec $TESTFOLDER"
 ```
+
 {: data-file=".travis.yml"}
 
 For instance, the Rails project uses the build matrix feature to create separate
@@ -98,6 +99,7 @@ env:
     - CI_NODE_INDEX=0
     - CI_NODE_INDEX=1
 ```
+
 {: data-file=".travis.yml"}
 
 Such configuration will generate matrix with 2 following ENV rows:
@@ -118,6 +120,7 @@ env:
     - CI_NODE_INDEX=0
     - CI_NODE_INDEX=1
 ```
+
 {: data-file=".travis.yml"}
 
 ### Minitest parallelization example
@@ -131,6 +134,7 @@ env:
     - CI_NODE_INDEX=0
     - CI_NODE_INDEX=1
 ```
+
 {: data-file=".travis.yml"}
 
 ### RSpec, Cucumber and Minitest parallelization example
@@ -143,6 +147,7 @@ script:
   - "bundle exec rake knapsack:cucumber"
   - "bundle exec rake knapsack:minitest"
 ```
+
 {: data-file=".travis.yml"}
 
 You can find more examples in [knapsack docs](https://github.com/ArturT/knapsack#info-for-travis-users).
@@ -187,6 +192,7 @@ before_script:
 script:
   - phpdbg -qrr phpunit
 ```
+
 {: data-file=".travis.yml"}
 
 ### Makefile optimization
@@ -207,4 +213,5 @@ env:
   global:
     - MAKEFLAGS="-j 2"
 ```
+
 {: data-file=".travis.yml"}

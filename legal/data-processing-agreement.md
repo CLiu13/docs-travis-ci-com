@@ -21,17 +21,20 @@ no_toc: true
 
 1. The Client is responsible for ensuring the data protection standards set by applicable national law (**“Applicable Law”** or **“Data Protection Legislation”**). Travis-CI will support the Client in fulfilling the necessary data protection standards.
 2. Travis-CI shall implement a compliance mechanism to prove compliance with the GDPR and BDSG on request of the Client. Furthermore, Travis-CI shall:
+
 - unless Applicable Law requires otherwise, only process Client’s Personal Data on and in accordance with the Client’s documented instructions as set out in this Agreement or otherwise in writing including electronic form (“Processing Instructions”);
 - unless prohibited by Applicable Law, notify the Client if Applicable Law requires it to process Client’s Personal Data other than in accordance with Processing Instructions (such notification to be given before such processing commences). Travis-CI will bind its personnel accordingly in writing;
 - notify the Client if, in its opinion, the processing of Client’s Personal Data in accordance with Processing Instructions infringes Data Protection Legislation;
 - maintain a record of all categories of processing carried out on behalf of the Agency and make it available on request to the Client and the competent data protection authority
 - co-operate and assist the Client with any privacy impact assessments and consultations with (or notifications to) relevant regulatory authorities that are reasonably relevant pursuant to Data Protection Legislation in relation to the Client’s Personal Data and the Services. Travis-CI may charge such request based on its reasonable efforts for any services, which are not necessary to fulfil by Travis-CI.
+
 3. After the business purposes for which Client’s Personal Data was processed have been fulfilled (or earlier upon the Client’s written request) Travis-CI shall, at the Client’s option, either delete or return all Client’s Personal Data and delete any existing copies of the same (unless storage of such copies is required by Applicable Law).
 4. Travis-CI shall ensure that its personnel are reliable and receive adequate training on compliance with this Agreement and Data Protection Legislation and are obligated to maintain the security and confidentiality of any Personal Data to which they have access even after their engagement ends.
 
 ### Client Warranties
 
 1. The Client warrants and represents that:
+
 - the processing of Client’s Personal Data by the Client will be carried out in accordance with the contractual obligations;
 - Travis-CI is entitled to process Client’s Personal Data pursuant to the TC for the purpose of providing the Services and such use will comply with Data Protection Legislation;
 - all Processing Instructions shall at all times be in accordance with Data Protection Legislation; and
@@ -40,6 +43,7 @@ no_toc: true
 ### Security and Delegation
 
 1. Travis-CI shall:
+
 - implement and maintain throughout the term of the TC appropriate technical and organisational measures, which are described in [Annex 4](#Annex-4), intended to protect Client’s Personal Data against accidental, unauthorised or unlawful access, disclosure, alteration, loss, damage or destruction; and
 - take reasonable steps to ensure that its personnel do not process Client’s Personal Data other than in accordance with processing instructions by Client (unless required to do so by Applicable Law) and are obligated to maintain the security and confidentiality of any Client’s Personal Data to which they have access. The personnel shall be bound in writing to fulfil these obligations.
 - Travis-CI undertakes to comply with the requirements of data secrecy pursuant to BDSG when processing the Client’s Personal Data, and may only assign those staff members with the processing and usage of the Client’s Personal Data who have undertaken in writing to comply with the requirements of data secrecy pursuant to section 53 BDSG.
@@ -48,20 +52,24 @@ no_toc: true
 ### Notifications
 
 1. Travis-CI shall, without undue delay, notify the Client if:
--  it becomes aware of a personal data breach; or
+
+- it becomes aware of a personal data breach; or
 - it receives a request from or on behalf of a data subject of Client’s Personal Data to exercise any of the rights given to data subjects by Data Protection Legislation; or
 - it receives a request from the Press, a Data Protection authority or another public authority.
+
 2. Travis-CI shall (at the Client’s expense) provide such further information and assistance as the Client reasonably requires in handling and responding to such notifications in accordance with its obligations under Data Protection Legislation.
 3. Travis-CI shall document any personal data breaches, comprising the facts relating to the personal data breach, its effects and the remedial action taken and will supply the list to Client on request.
 
 ### Inspections and Assistance with Regulators
 
 1. Subject to reasonable written advance notice from the Client Travis-CI shall:
+
 - permit the Client to conduct (and shall contribute to) audits and inspections of its systems and processes in relation to the processing of Client’s Personal Data subject to the Client ensuring:
   - that such audit or inspection is announced to Travis-CI at least 2 weeks in advance in writing as far as legally possible and undertaken during normal business hours (Mondays to Fridays at business days (Berlin), 9 a.m. to 6 p.m.) and with respect and minimal disruption to Travis-CI’s business and the business of other clients of Travis-CI; and
   - that all information obtained or generated by the Client or its auditor(s) in connection with such audits and inspections is kept strictly confidential (save for disclosure to a regulatory authority or as otherwise required by Applicable Law);
 - give the Client such information as is reasonably necessary to verify that Travis-CI is in compliance with its obligations under Data Protection Legislation; and
 - co-operate and assist the Client with data protection impact assessments and consultations with any regulatory authority that are relevant pursuant to Data Protection Legislation in relation to the Client’s Personal Data and the Client may not use without the support of Travis-CI.
+
 2. The cost of such audit, inspection, provision of information or data protection impact assessment shall be borne by the Client.
 3. Such audits may be (partly) fulfilled by relating to certification mechanisms, Codes of Conduct, special seals regarding GDPR or BDSG or certificates such as ISO27001, self-assessments or audits conducted by the Data Protection Officer.
 4. The Client may require Travis-CI to conduct an audit or inspection of the Sub-Processor’s systems and processes in relation to the processing of Client’s Personal Data. The cost of such an audit or inspection shall be borne by the Client.
@@ -122,9 +130,12 @@ The list shall state the extent, the nature and purpose of any contemplated coll
 #### Persons eligible to issue instructions:
 
 1. Persons eligible to issue instructions on behalf of the Client:
+
 - Contact at Client:
   - Person and contact details named within the Client’s account. An additional contact shall be named by Client via email to contact details below.
+
 2. Person eligible to receive instructions on behalf of Travis-CI
+
 - Contact at Travis-CI: data@travis-ci.com
 
 ### Annex 3
@@ -138,7 +149,9 @@ The list shall state the extent, the nature and purpose of any contemplated coll
 #### Data Safety Requirements
 
 1. Object and scope of Annex 4
+
 - The GDPR and BDSG requires individual requirements to data safety, which must be implemented by suitable technical and organizational measures. Only an overall view and evaluation of all measures taken will allow the conclusion that the reasonable level of data safety as required by the law can be guaranteed. If personal data are processed by a service provider, Travis-CI is obligated under section 32 GDPR and 64 BDSG to define the technical and organizational measures relating to data safety.
 
 2. Organizational provision on processing
+
 - Travis-CI maintains a system to examine, assess, and evaluate regularly the effectivity of the security of processing data. Travis-CI will, on request, provide details on such security measures. Travis-CI will also, on request, prove such system of evaluation to the Client.

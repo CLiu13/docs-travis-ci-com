@@ -6,8 +6,8 @@ layout: en
 
 This example has 2 build stages:
 
-* One job builds and pushes a Docker image
-* Two jobs that pull and test the image
+- One job builds and pushes a Docker image
+- Two jobs that pull and test the image
 
 Here's what the `.travis.yml` config could look like:
 
@@ -28,6 +28,7 @@ jobs:
       script: docker run --rm $DOCKER_USERNAME/travis-ci-build-stages-demo cat hello.txt
     - script: docker run --rm $DOCKER_USERNAME/travis-ci-build-stages-demo cat hello.txt
 ```
+
 {: data-file=".travis.yml"}
 
 This is how the build matrix might look:
@@ -36,6 +37,6 @@ This is how the build matrix might look:
 
 You can find the code for this example on our [demo repository](https://github.com/travis-ci/build-stages-demo):
 
-* [Branch define-steps](https://github.com/travis-ci/build-stages-demo/tree/share-docker-image/)
-* [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/share-docker-image/.travis.yml)
-* [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/231145680)
+- [Branch define-steps](https://github.com/travis-ci/build-stages-demo/tree/share-docker-image/)
+- [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/share-docker-image/.travis.yml)
+- [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/231145680)

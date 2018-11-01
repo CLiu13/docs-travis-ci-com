@@ -6,9 +6,6 @@ redirect_from:
   - /user/build-timeouts/
 ---
 
-
-
-
 ## My tests broke but were working yesterday
 
 A very common cause when a test is suddenly breaking without any major code
@@ -197,6 +194,7 @@ Your build is running on macOS Sierra (10.12) if the following `osx_image` value
 ```yaml
 osx_image: xcode8.1
 ```
+
 {: data-file=".travis.yml"}
 
 or
@@ -204,6 +202,7 @@ or
 ```yaml
 osx_image: xcode8.2
 ```
+
 {: data-file=".travis.yml"}
 
 or
@@ -211,6 +210,7 @@ or
 ```yaml
 osx_image: xcode8.3
 ```
+
 {: data-file=".travis.yml"}
 
 The following lines in your build log possibly indicate an occurrence of this issue:
@@ -317,7 +317,6 @@ import_certificate(
 
 You can also have more details in [this GitHub issue](https://github.com/travis-ci/travis-ci/issues/6791) starting at [this comment](https://github.com/travis-ci/travis-ci/issues/6791#issuecomment-261071904).
 
-
 ## Mac: Errors running CocoaPods
 
 CocoaPods usage can fail for a few reasons currently.
@@ -331,6 +330,7 @@ you're seeing this error, add this to your `.travis.yml`:
 before_install:
   - gem install cocoapods -v '0.32.1'
 ```
+
 {: data-file=".travis.yml"}
 
 ### CocoaPods can't be found
@@ -345,6 +345,7 @@ without any issues:
 ```yaml
 rvm: 1.9.3
 ```
+
 {: data-file=".travis.yml"}
 
 ### CocoaPods fails with a segmentation fault
@@ -357,6 +358,7 @@ issues. Add this to your `.travis.yml`:
 ```yaml
 rvm: 1.9.3
 ```
+
 {: data-file=".travis.yml"}
 
 ## System: Required language pack isn't installed
@@ -372,6 +374,7 @@ This can be done with the follow addition to your `.travis.yml`:
 before_install:
   - sudo apt-get update && sudo apt-get --reinstall install -qq language-pack-en language-pack-de
 ```
+
 {: data-file=".travis.yml"}
 
 The above addition will reinstall the en_US language pack, as well as the de_DE
@@ -387,6 +390,7 @@ addons:
       - language-pack-en
       - language-pack-de
 ```
+
 {: data-file=".travis.yml"}
 
 ## Linux: apt fails to install package with 404 error
@@ -397,6 +401,7 @@ This is often caused by old package database and can be fixed by adding the foll
 before_install:
   - sudo apt-get update
 ```
+
 {: data-file=".travis.yml"}
 
 ## Travis CI does not Preserve State Between Builds
@@ -421,6 +426,7 @@ To turn this off, set:
 git:
   submodules: false
 ```
+
 {: data-file=".travis.yml"}
 
 If your project requires specific options for your Git submodules which Travis CI
@@ -433,6 +439,7 @@ For example, to update nested submodules:
 before_install:
   - git submodule update --init --recursive
 ```
+
 {: data-file=".travis.yml"}
 
 ## Git cannot clone my Submodules
@@ -491,7 +498,6 @@ impact of network timeouts.
 Note that `travis_retry` does not work in the `deploy` step of the build, although it
 does work in the [other steps](/user/job-lifecycle/).
 
-
 ### Build times out because no output was received
 
 When a long running command or compile step regularly takes longer than 10 minutes without producing any output, you can adjust your build configuration to take that into consideration.
@@ -503,6 +509,7 @@ If you have a command that doesn't produce output for more than 10 minutes, you 
 ```yaml
     install: travis_wait mvn install
 ```
+
 {: data-file=".travis.yml"}
 
 spawns a process running `mvn install`.
@@ -515,6 +522,7 @@ Continuing the example above, to extend the wait time to 30 minutes:
 ```yaml
     install: travis_wait 30 mvn install
 ```
+
 {: data-file=".travis.yml"}
 
 We recommend careful use of `travis_wait`, as overusing it can extend your build time when there could be a deeper underlying issue. When in doubt, [file a ticket](https://github.com/travis-ci/travis-ci/issues/new) or [email us](mailto:support@travis-ci.com) first to see if something could be improved about this particular command first.
@@ -540,47 +548,49 @@ which Docker image you are using on Travis CI.
    - [OS X](https://docs.docker.com/docker-for-mac/)
    - [Ubuntu Linux](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 
-1. Choose a Docker image
-  * Select an image [on Docker Hub](https://hub.docker.com/u/travisci/) for the language
-    ("default" if no other name matches) using the table below:
+2. Choose a Docker image
 
-    | language        | Docker Hub image |
-    |:----------------|:-----------------| {% for language in site.data.trusty_language_mapping %}
-    | {{language[0]}} | {{language[1]}}  | {% endfor %}
+- Select an image [on Docker Hub](https://hub.docker.com/u/travisci/) for the language
+  ("default" if no other name matches) using the table below:
+
+  | language        | Docker Hub image |
+  |:----------------|:-----------------| {% for language in site.data.trusty_language_mapping %}
+  | {{language[0]}} | {{language[1]}}  | {% endfor %}
 
 1. Start a Docker container detached with `/sbin/init`:
-  * [ci-garnet](https://hub.docker.com/r/travisci/ci-garnet/) image on Trusty
-    ``` bash
-    docker run --name travis-debug -dit travisci/ci-garnet:packer-1490989530 /sbin/init
-    ```
+
+- [ci-garnet](https://hub.docker.com/r/travisci/ci-garnet/) image on Trusty
+  ```bash
+  docker run --name travis-debug -dit travisci/ci-garnet:packer-1490989530 /sbin/init
+  ```
 
 1. Open a login shell in the running container
 
-    ``` bash
-    docker exec -it travis-debug bash -l
-    ```
+   ```bash
+   docker exec -it travis-debug bash -l
+   ```
 
-1. Switch to the `travis` user:
+2. Switch to the `travis` user:
 
-    ``` bash
-    su - travis
-    ```
+   ```bash
+   su - travis
+   ```
 
-1. Clone your git repository into the home directory.
+3. Clone your git repository into the home directory.
 
-    ``` bash
-    git clone --depth=50 --branch=master https://github.com/travis-ci/travis-build.git
-    ```
+   ```bash
+   git clone --depth=50 --branch=master https://github.com/travis-ci/travis-build.git
+   ```
 
-1. (Optional) Check out the commit you want to test
+4. (Optional) Check out the commit you want to test
 
-    ``` bash
-    git checkout 6b14763
-    ```
+   ```bash
+   git checkout 6b14763
+   ```
 
-1. Manually install dependencies, if any.
+5. Manually install dependencies, if any.
 
-1. Manually run your Travis CI build command.
+6. Manually run your Travis CI build command.
 
 ## Running builds in debug mode
 
@@ -608,7 +618,7 @@ alternate <q>stateless</q> protocols such as HTTPS is best, but tunneling is
 also known to work, such as by using SFTP in the specific case of FTP, or a VPN
 connection for a wide variety of protocols, e.g.:
 
-``` yaml
+```yaml
 sudo: required
 
 addons:
@@ -619,8 +629,8 @@ addons:
 before_install:
 - sudo openvpn path/to/conf.ovpn &>>openvpn-client.log &
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ## I pushed a commit and can't find its corresponding build
 

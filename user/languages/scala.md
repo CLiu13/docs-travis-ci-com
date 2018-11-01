@@ -1,7 +1,6 @@
 ---
 title: Building a Scala project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | Scala                        | Default                                                                                                                                                                                                                 |
-|:-----------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Default `install`            | [sbt](#sbt-Dependency-Management), [Gradle](/user/languages/java/#gradle-dependency-management), [Maven](/user/languages/java/#maven-dependency-management), [Ant](/user/languages/java/#ant-dependency-management)     |
 | Default `script`             | [sbt](#sbt-Default-Script-Command), [Gradle](/user/languages/java/#gradle-default-script-command), [Maven](/user/languages/java/#maven-default-script-command), [Ant](/user/languages/java/#ant-default-script-command) |
 | [Matrix keys](#Build-Matrix) | `scala`,`jdk`, `env`                                                                                                                                                                                                    |
@@ -20,6 +19,7 @@ Minimal example:
 ```yaml
   language: scala
 ```
+
 </aside>
 
 {{ site.data.snippets.trusty_note_no_osx }}
@@ -48,6 +48,7 @@ scala:
    - 2.11.11
    - 2.12.2
 ```
+
 {: data-file=".travis.yml"}
 
 On Ubuntu Precise, to use Scala 2.12.X you need to enable Oracle JDK 8 by adding `jdk: oraclejdk8` to your `.travis.yml`.
@@ -90,6 +91,7 @@ script:
   - sbt -jvm-opts travis/jvmopts.compile ... compile
   - sbt -jvm-opts travis/jvmopts.test ... test
 ```
+
 {: data-file=".travis.yml"}
 
 You can also specify [extra
@@ -101,6 +103,7 @@ For example
 ```yaml
 sbt_args: -no-colors -J-Xss2m
 ```
+
 {: data-file=".travis.yml"}
 
 will generate

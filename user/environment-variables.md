@@ -1,12 +1,9 @@
 ---
 title: Environment Variables
 layout: en
-
 ---
 
 A common way to customize the build process is to define environment variables, which can be accessed from any stage in your build process.
-
-
 
 The best way to define an environment variable depends on what type of information it will contain, and when you need to change it:
 
@@ -35,6 +32,7 @@ env:
   - SH=bash
   - PACKAGE_VERSION="1.0.*"
 ```
+
 {: data-file=".travis.yml"}
 
 > If you define a variable with the same name in `.travis.yml` and in the Repository Settings, the one in `.travis.yml` takes precedence. If you define a variable in `.travis.yml` as both encrypted and unencrypted, the one defined later in the file takes precedence.
@@ -51,6 +49,7 @@ env:
   - FOO=foo BAR=bar
   - FOO=bar BAR=foo
 ```
+
 {: data-file=".travis.yml"}
 
 this configuration triggers **4 individual builds**:
@@ -73,6 +72,7 @@ env:
     - USE_NETWORK=true
     - USE_NETWORK=false
 ```
+
 {: data-file=".travis.yml"}
 
 triggers builds with the following `env` rows:
@@ -99,6 +99,7 @@ env:
     - USE_NETWORK=false
     - secure: <you can also put encrypted vars inside matrix>
 ```
+
 {: data-file=".travis.yml"}
 
 > Encrypted environment variables are not available to pull requests from forks due to the security risk of exposing such information to unknown code.
@@ -176,15 +177,16 @@ Additionally, Travis CI sets environment variables you can use in your build, e.
 to tag the build, or to run post-build deployments.
 
 - `TRAVIS_ALLOW_FAILURE`:
-  + set to `true` if the job is allowed to fail.
-  + set to `false` if the job is not allowed to fail.
+  - set to `true` if the job is allowed to fail.
+  - set to `false` if the job is not allowed to fail.
 - `TRAVIS_BRANCH`:
-  + for push builds, or builds not triggered by a pull request, this is the name of the branch.
-  + for builds triggered by a pull request this is the name of the branch targeted by the pull
-  request.
-  + for builds triggered by a tag, this is the same as the name of the tag (`TRAVIS_TAG`).
 
-      > Note that for tags, git does not store the branch from which a commit was tagged.
+  - for push builds, or builds not triggered by a pull request, this is the name of the branch.
+  - for builds triggered by a pull request this is the name of the branch targeted by the pull
+    request.
+  - for builds triggered by a tag, this is the same as the name of the tag (`TRAVIS_TAG`).
+
+    > Note that for tags, git does not store the branch from which a commit was tagged.
 
 - `TRAVIS_BUILD_DIR`: The absolute path to the directory where the repository
   being built has been copied on the worker.
@@ -206,18 +208,18 @@ to tag the build, or to run post-build deployments.
 - `TRAVIS_PULL_REQUEST`: The pull request number if the current job is a pull
   request, "false" if it's not a pull request.
 - `TRAVIS_PULL_REQUEST_BRANCH`:
-  + if the current job is a pull request, the name of the branch from which the PR originated.
-  + if the current job is a push build, this variable is empty (`""`).
+  - if the current job is a pull request, the name of the branch from which the PR originated.
+  - if the current job is a push build, this variable is empty (`""`).
 - `TRAVIS_PULL_REQUEST_SHA`:
-  + if the current job is a pull request, the commit SHA of the HEAD commit of the PR.
-  + if the current job is a push build, this variable is empty (`""`).
+  - if the current job is a pull request, the commit SHA of the HEAD commit of the PR.
+  - if the current job is a push build, this variable is empty (`""`).
 - `TRAVIS_PULL_REQUEST_SLUG`:
-  + if the current job is a pull request, the slug (in the form `owner_name/repo_name`) of the repository from which the PR originated.
-  + if the current job is a push build, this variable is empty (`""`).
+  - if the current job is a pull request, the slug (in the form `owner_name/repo_name`) of the repository from which the PR originated.
+  - if the current job is a push build, this variable is empty (`""`).
 - `TRAVIS_REPO_SLUG`: The slug (in form: `owner_name/repo_name`) of the repository currently being built.
 - `TRAVIS_SECURE_ENV_VARS`:
-  + set to `true` if there are any encrypted environment variables.
-  + set to `false` if no encrypted environment variables are available.
+  - set to `true` if there are any encrypted environment variables.
+  - set to `false` if no encrypted environment variables are available.
 - `TRAVIS_SUDO`: `true` or `false` based on whether `sudo` is enabled.
 - `TRAVIS_TEST_RESULT`: **0** if all commands in the `script` section (up to the point this environment variable is referenced) have exited with zero; **1** otherwise.
 - `TRAVIS_TAG`: If the current build is for a git tag, this variable is set to the tag's name.

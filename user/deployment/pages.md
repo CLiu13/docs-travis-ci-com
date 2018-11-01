@@ -1,7 +1,6 @@
 ---
 title: GitHub Pages Deployment
 layout: en
-
 ---
 
 > Deploying to GitHub Pages uses `git push --force` to overwrite the history on the *target* branch, so make sure you only deploy to a branch used for that specific purpose, such as `gh-pages`. It is *possible* to disable this "force push" behavior by setting `keep-history` option to `true`.
@@ -24,6 +23,7 @@ deploy:
   on:
     branch: master
 ```
+
 {: data-file=".travis.yml"}
 
 > Make sure you have `skip-cleanup` set to `true`, otherwise Travis CI will delete
@@ -43,20 +43,20 @@ or via [encrypted variables in
 
 ## Further configuration
 
-* `local-dir`: Directory to push to GitHub Pages, defaults to current directory.
+- `local-dir`: Directory to push to GitHub Pages, defaults to current directory.
   Can be specified as an absolute path or a relative path from the current directory.
-* `repo`: Repo slug, defaults to current repo
-* `target-branch`: Branch to (force, see: `keep-history`) push `local-dir`
+- `repo`: Repo slug, defaults to current repo
+- `target-branch`: Branch to (force, see: `keep-history`) push `local-dir`
   contents to, defaults to `gh-pages`
-* `keep-history`: Optional, create incremental commit instead of doing push
+- `keep-history`: Optional, create incremental commit instead of doing push
   force, defaults to `false`.
-* `fqdn`: Optional, sets a custom domain for your website, defaults to no custom domain support
-* `project-name`: Defaults to value of `fqdn` or repo slug, used for metadata
-* `email`: Optional, committer info, defaults to `deploy@travis-ci.org`
-* `name`: Optional, committer, defaults to `Deployment Bot`
-* `committer-from-gh`: Optional, defaults to `false`. Allows you to use the token's
+- `fqdn`: Optional, sets a custom domain for your website, defaults to no custom domain support
+- `project-name`: Defaults to value of `fqdn` or repo slug, used for metadata
+- `email`: Optional, committer info, defaults to `deploy@travis-ci.org`
+- `name`: Optional, committer, defaults to `Deployment Bot`
+- `committer-from-gh`: Optional, defaults to `false`. Allows you to use the token's
   owner name and email for commit. Overrides `email` and `name` options.
-* `allow-empty-commit`: Optional, defaults to `false`. Enabled if only
+- `allow-empty-commit`: Optional, defaults to `false`. Enabled if only
   `keep-history` is `true`.
-* `github-url`: Optional, the URL of the self-hosted GitHub enterprise, defaults to `github.com`
-* `verbose`: Optional, be verbose about internal steps, defaults to `false`.
+- `github-url`: Optional, the URL of the self-hosted GitHub enterprise, defaults to `github.com`
+- `verbose`: Optional, be verbose about internal steps, defaults to `false`.

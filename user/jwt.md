@@ -1,10 +1,10 @@
 ---
 title: JWT addon
 layout: en
-
 ---
 
 {: .warning}
+
 >  The JWT addon is deprecated and will be
 >  [discontinued on April 17, 2018](https://blog.travis-ci.com/2018-01-23-jwt-addon-is-deprecated).
 
@@ -41,6 +41,7 @@ addons:
   jwt:
      secure: <SAUCE_ACCESS_KEY ENCRYPTED>
 ```
+
 {: data-file=".travis.yml"}
 
 This can also support several services:
@@ -57,6 +58,7 @@ addons:
     - secure: <SAUCE_ACCESS_KEY ENCRYPTED>
     - secure: <THIRDPARTY_SHARED_SECRET ENCRYPTED>
 ```
+
 {: data-file=".travis.yml"}
 
 ### Use the Encrypted Key
@@ -168,4 +170,5 @@ addons:
   jwt:
     secure: <SAUCE_ACCESS_KEY ENCRYPTED>
 ```
+
 {: data-file=".travis.yml"}

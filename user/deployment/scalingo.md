@@ -1,18 +1,15 @@
 ---
 title: Scalingo deployment
 layout: en
-
 ---
-
-
 
 Travis CI can automatically deploy your application to
 [Scalingo](https://scalingo.com/) application after a successful build.
 
 Chose one of two ways to connect to your Scalingo account:
 
-* Using a [username and password](/user/deployment/scalingo/#connecting-using-a-username-and-password).
-* Using an [api key](/user/deployment/scalingo/#connecting-using-an-api-key).
+- Using a [username and password](/user/deployment/scalingo/#connecting-using-a-username-and-password).
+- Using an [api key](/user/deployment/scalingo/#connecting-using-an-api-key).
 
 <!-- I'm not 100% sure if you need to connect to scalingo manually using the cli
 tool the first time -->
@@ -29,6 +26,7 @@ deploy:
   password:
     secure: "YOUR ENCRYPTED PASSWORD"
 ```
+
 {: data-file=".travis.yml"}
 
 ## Connecting using an api key
@@ -42,15 +40,16 @@ deploy:
   api_key:
     secure: "YOUR ENCRYPTED PASSWORD"
 ```
+
 {: data-file=".travis.yml"}
 
 ## Optional settings
 
-* `remote`: Remote url or git remote name of your git repository. The default
+- `remote`: Remote url or git remote name of your git repository. The default
   remote name is "scalingo".
-* `branch`: Branch of your git repository to deploy. The default branch name is
+- `branch`: Branch of your git repository to deploy. The default branch name is
   "master".
-* `app`: Only necessary if your repository does not contain the appropriate
+- `app`: Only necessary if your repository does not contain the appropriate
   remote. Specifying the `app` will add a remote to your local repository: `git
   remote add <remote> git@scalingo.com:<app>.git`
 
@@ -68,4 +67,5 @@ after_deploy:
   - ./after_deploy_1.sh
   - ./after_deploy_2.sh
 ```
+
 {: data-file=".travis.yml"}

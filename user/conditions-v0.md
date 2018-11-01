@@ -35,18 +35,18 @@ The left hand side part can either be a known attribute or a function call.
 
 Known attributes are:
 
-* `type` (the current event type, known event types are: `push`, `pull_request`, `api`, `cron`)
-* `repo` (the current repository slug `owner_name/name`)
-* `branch` (the current branch name; for pull requests: the base branch name)
-* `tag` (the current tag name)
-* `sender` (the event sender's login name)
-* `fork` (`true` or `false` depending if the repository is a fork)
-* `head_repo` (for pull requests: the head repository slug `owner_name/name`)
-* `head_branch` (for pull requests: the head repository branch name)
+- `type` (the current event type, known event types are: `push`, `pull_request`, `api`, `cron`)
+- `repo` (the current repository slug `owner_name/name`)
+- `branch` (the current branch name; for pull requests: the base branch name)
+- `tag` (the current tag name)
+- `sender` (the event sender's login name)
+- `fork` (`true` or `false` depending if the repository is a fork)
+- `head_repo` (for pull requests: the head repository slug `owner_name/name`)
+- `head_branch` (for pull requests: the head repository branch name)
 
 Known functions are:
 
-* `env(FOO)` (the value of the environment variable `FOO`)
+- `env(FOO)` (the value of the environment variable `FOO`)
 
 The function `env` currently only supports environment variables that are given
 in your build configuration (e.g. on `env` or `env.global`), not environment
@@ -75,7 +75,6 @@ the above example, the Deploy stage would include:
     - RELEASE_VERSION=$(grep to get version number)
    script:
     - "$PRIOR_VERSION" = "$RELEASE_VERSION" && travis_terminate || echo "Deploying latest version ..."
-
 ```
 
 Since we want the build to deploy only when `PRIOR_VERSION` and `RELEASE_VERSION`
@@ -119,4 +118,3 @@ branch IS blank
 env(foo) IS present
 env(foo) IS blank
 ```
-

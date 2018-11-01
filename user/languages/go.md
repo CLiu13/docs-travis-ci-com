@@ -13,7 +13,7 @@ swiftypetags:
 <aside markdown="block" class="ataglance">
 
 | Go                                          | Default                                   |
-|:--------------------------------------------|:------------------------------------------|
+| :------------------------------------------ | :---------------------------------------- |
 | [Default `install`](#Dependency-Management) | `go get -t ./...`                         |
 | [Default `script`](#Default-Build-Script)   | `make` or `go test`                       |
 | [Matrix keys](#Build-Matrix)                | `go`, `env`                               |
@@ -30,6 +30,7 @@ Minimal example:
 Note that, in order to choose Go 1.10, you must use `go: "1.10"` (a string),
 not `go: 1.10` (a float).
 Using a float results in the use of Go 1.1.
+
 </aside>
 
 {{ site.data.snippets.trusty_note_no_osx }}
@@ -45,7 +46,6 @@ or patch level to use the latest for a given major or minor version, or use
 `master` to get the latest version from source. All go version management is
 handled by [gimme](https://github.com/travis-ci/gimme).
 
-
 ```yaml
 language: go
 
@@ -55,8 +55,8 @@ go:
   - "1.10.x"
   - master
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ## Go Import Path
 
@@ -68,30 +68,31 @@ are necessary (especially for [`internal` package imports](https://golang.org/cm
 ```yaml
 go_import_path: example.org/pkg/foo
 ```
+
 {: data-file=".travis.yml"}
 
 ## Dependency Management
 
 The default install step depends on the version of go:
 
-* if go version is greater than or equal to `1.2`
+- if go version is greater than or equal to `1.2`
 
   ```
   go get -t ./...
   ```
 
-* if go version is older than `1.2`
+- if go version is older than `1.2`
 
   ```
   go get ./...
   ```
 
-*  or if any of the following files are present, the default install step is `true`, so you need to specify the `install` step yourself:
+- or if any of the following files are present, the default install step is `true`, so you need to specify the `install` step yourself:
 
-    - `GNUMakefile`
-    - `Makefile`
-    - `BSDmakefile`
-    - `makefile`
+  - `GNUMakefile`
+  - `Makefile`
+  - `BSDmakefile`
+  - `makefile`
 
 ### godep support
 
@@ -149,6 +150,7 @@ before_install:
   - cp .netrc ~
   - chmod 600 .netrc
 ```
+
 {: data-file=".travis.yml"}
 
 You can leave out the second step if your .netrc already has access permissions
@@ -179,6 +181,7 @@ configuration](/user/customizing-the-build/) guide. For example, to omit the
 ```yaml
 script: go test ./...
 ```
+
 {: data-file=".travis.yml"}
 
 The arguments passed to the default `go test` command may be overridden by
@@ -187,6 +190,7 @@ specifying `gobuild_args:` at the top level of the config, e.g.:
 ```yaml
 gobuild_args: -x -ldflags "-X main.VersionString v1.2.3"
 ```
+
 {: data-file=".travis.yml"}
 
 which will result in the script step being:
@@ -200,6 +204,7 @@ To build by running Scons without arguments, use this:
 ```yaml
 script: scons
 ```
+
 {: data-file=".travis.yml"}
 
 ## Build Matrix
@@ -225,6 +230,7 @@ deploy:
   on:
     condition: $TRAVIS_GO_VERSION =~ ^1\.7\.[0-9]+$
 ```
+
 {: data-file=".travis.yml"}
 
 ## Examples

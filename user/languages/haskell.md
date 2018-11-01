@@ -1,7 +1,6 @@
 ---
 title: Building a Haskell Project
 layout: en
-
 ---
 
 ## What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | Haskell                                     | Default                                                       |
-|:--------------------------------------------|:--------------------------------------------------------------|
+| :------------------------------------------ | :------------------------------------------------------------ |
 | [Default `install`](#Dependency-Management) | `cabal install --only-dependencies --enable-tests`            |
 | [Default `script`](#Default-Build-Script)   | `cabal configure --enable-tests && cabal build && cabal test` |
 | [Matrix keys](#Build-Matrix)                | `env`, `ghc`                                                  |
@@ -21,6 +20,7 @@ Minimal example:
 ghc:
   - "7.8"
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -47,6 +47,7 @@ ghc:
   - "7.6"
   - "8.4.1"
 ```
+
 {: data-file=".travis.yml"}
 
 ## Default Build Script
@@ -85,6 +86,7 @@ env:
   - PACKAGEDIR="some-other-package"
 before_install: cd ${PACKAGEDIR}
 ```
+
 {: data-file=".travis.yml"}
 
 The build matrix is then constructed such that each package is compiled with each version of GHC.

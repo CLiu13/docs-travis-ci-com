@@ -1,7 +1,6 @@
 ---
 title: Building a Rust Project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | Rust                                        | Default                                       |
-|:--------------------------------------------|:----------------------------------------------|
+| :------------------------------------------ | :-------------------------------------------- |
 | [Default `install`](#Dependency-Management) | `cargo build --verbose`                       |
 | [Default `script`](#Default-Build-Script)   | `cargo build --verbose; cargo test --verbose` |
 | [Matrix keys](#Build-Matrix)                | `rust`, `env`                                 |
@@ -20,6 +19,7 @@ Minimal example:
 ```yaml
 language: rust
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -44,6 +44,7 @@ rust:
   - 1.0.0
   - 1.1.0
 ```
+
 {: data-file=".travis.yml"}
 
 Travis CI also supports all three Rust [release channels][channels]: `stable`,
@@ -65,6 +66,7 @@ matrix:
     - rust: nightly
   fast_finish: true
 ```
+
 {: data-file=".travis.yml"}
 
 This will runs your tests against all three channels, but any breakage in
@@ -84,8 +86,8 @@ compiler were upgraded:
 ```yaml
 cache: cargo
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ## Default Build Script
 
@@ -106,7 +108,8 @@ language: rust
 script:
   - cargo build --verbose --all
   - cargo test --verbose --all
-```  
+```
+
 {: data-file=".travis.yml"}
 
 ## Environment variables

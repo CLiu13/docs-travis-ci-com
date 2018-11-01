@@ -1,7 +1,6 @@
 ---
 title: Building a Crystal Project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -29,6 +28,7 @@ your `shard.yml`, your `.travis.yml` can simply be
 ```yaml
 language: crystal
 ```
+
 {: data-file=".travis.yml"}
 
 This will run `shards install` to install dependencies and then `crystal spec` to test your project.
@@ -46,4 +46,5 @@ crystal:
   - latest
   - nightly
 ```
+
 {: data-file=".travis.yml"}

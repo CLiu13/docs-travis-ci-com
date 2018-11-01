@@ -19,6 +19,7 @@ To use sudo-enabled Ubuntu Trusty, add the following to your
 dist: trusty
 sudo: required
 ```
+
 {: data-file=".travis.yml"}
 
 Or to route to sudo-less:
@@ -27,6 +28,7 @@ Or to route to sudo-less:
 dist: trusty
 sudo: false
 ```
+
 {: data-file=".travis.yml"}
 
 This is enabled for both public and private repositories.
@@ -84,6 +86,7 @@ private repositories.
 dist: trusty
 sudo: required
 ```
+
 {: data-file=".travis.yml"}
 
 Or, if you want to route to container-based:
@@ -92,6 +95,7 @@ Or, if you want to route to container-based:
 dist: trusty
 sudo: false
 ```
+
 {: data-file=".travis.yml"}
 
 ## Environment common to all Trusty images
@@ -206,6 +210,7 @@ by `gimme`.
     jdk: openjdk6
     ```
 - We install the latest Oracle JDK versions from Oracle:
+
   - Oracle JDK 8 (`oraclejdk8`). Default.
   - Oracle JDK 9 (`oraclejdk9`)
   - Oracle JDK 7 is not provided because it reached End of Life in April 2015.
@@ -227,6 +232,7 @@ Stock Apache Maven 3.5.x, configured to use [Central](http://search.maven.org/)
 and [Sonatype](https://oss.sonatype.org/) mirrors.
 
 ### Ant version
+
 Ant 1.9.3.
 
 ### Leiningen version
@@ -260,8 +266,8 @@ matrix:
     - php: 5.3
       dist: precise
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ### HHVM
 
@@ -281,6 +287,7 @@ php:
   - hhvm-3.18
   - hhvm-nightly
 ```
+
 {: data-file=".travis.yml"}
 
 ### Extensions
@@ -314,7 +321,6 @@ For PHP versions up to 5.6, the following extensions are available:
 
 Please note that these extensions are not enabled by default with the exception
 of xdebug.
-
 
 ## Other software
 
@@ -353,6 +359,7 @@ For example, to install version 50.0, add the following to your
 addons:
   firefox: "50.0"
 ```
+
 {: data-file=".travis.yml"}
 
 ### Headless Browser Testing Tools

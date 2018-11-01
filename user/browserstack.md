@@ -1,7 +1,6 @@
 ---
 title: Using BrowserStack with Travis CI
 layout: en
-
 ---
 
 Travis CI integrates with [BrowserStack](https://www.browserstack.com), a cross browser and real device
@@ -53,6 +52,7 @@ addons:
     access_key:
       secure: "The secure string output of `travis encrypt`"
 ```
+
 {: data-file=".travis.yml"}
 
 ### Plain Text Access Key
@@ -65,6 +65,7 @@ addons:
     username: "Your BrowserStack username"
     access_key: "Your BrowserStack access key"
 ```
+
 {: data-file=".travis.yml"}
 
 We **strongly** recommend storing your BrowserStack access keys in encrypted format, since other users that have access to your repository
@@ -117,6 +118,7 @@ addons:
     proxyUser: "User to use when accessing proxy server"
     proxyPass: "Password to use when accessing proxy server"
 ```
+
 {: data-file=".travis.yml"}
 
 ### More Options
@@ -137,6 +139,7 @@ addons:
     forcelocal: true
     only: dev.example.com,80,0,*.example.org,80,0
 ```
+
 {: data-file=".travis.yml"}
 
 The format for the **only** flag is, "Host pattern,Host Port,Flag for SSL True(1)/False(0)" and repeat.

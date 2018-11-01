@@ -1,7 +1,6 @@
 ---
 title: Setting Custom Host Names
 layout: en
-
 ---
 
 If your build requires custom hostnames, you can specify a single host or a
@@ -14,4 +13,5 @@ addons:
     - travis.dev
     - joshkalderimis.com
 ```
+
 {: data-file=".travis.yml"}

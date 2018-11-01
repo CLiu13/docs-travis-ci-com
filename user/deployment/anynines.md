@@ -1,7 +1,6 @@
 ---
 title: anynines Deployment
 layout: en
-
 ---
 
 You now have the amazing ability to deploy directly to [anynines](http://www.anynines.com/) after a successful build on Travis CI

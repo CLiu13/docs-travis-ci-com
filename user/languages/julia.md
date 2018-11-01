@@ -1,7 +1,6 @@
 ---
 title: Building a Julia Project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -30,13 +29,15 @@ julia:
   - 0.7
   - 0.6.4
 ```
+
 {: data-file=".travis.yml"}
 
 Acceptable formats are:
- - `nightly` will test against the latest [nightly build](https://julialang.org/downloads/nightlies.html)
-of Julia.
- - `X.Y` will test against the latest release for that minor version.
- - `X.Y.Z` will test against that exact version.
+
+- `nightly` will test against the latest [nightly build](https://julialang.org/downloads/nightlies.html)
+  of Julia.
+- `X.Y` will test against the latest release for that minor version.
+- `X.Y.Z` will test against that exact version.
 
 The oldest versions for which binaries are available is 0.3.1 for Linux,
 or 0.2.0 for [OS X](/user/multi-os/).
@@ -44,16 +45,19 @@ or 0.2.0 for [OS X](/user/multi-os/).
 ## Coverage
 
 Services such as [codecov.io](https://codecov.io) and [coveralls.io](https://coveralls.io) provide summaries and analytics of the coverage of the test suite. After enabling the respective services for the repositories, the `codecov` and `coveralls` options can be used, e.g.
+
 ```yaml
 codecov: true
 coveralls: true
 ```
+
 which will then upload the coverage statistics upon successful completion of the tets.
 
 ## Default Build and Test Script
 
 If your repository contains `JuliaProject.toml` or `Project.toml` file, and you are
 building on Julia v0.7 or later, the default build script will be:
+
 ```julia
 using Pkg
 Pkg.build()
@@ -61,6 +65,7 @@ Pkg.test()
 ```
 
 Otherwise it will use the older form:
+
 ```julia
 if VERSION >= v"0.7.0-DEV.5183"
     using Pkg
@@ -69,6 +74,7 @@ Pkg.clone(pwd())
 Pkg.build("$pkgname")
 Pkg.test("$pkgname", coverage=true)
 ```
+
 where the package name `$pkgname` is the repository name, with any trailing `.jl` removed.
 
 ## Dependency Management
@@ -87,6 +93,7 @@ to construct a build matrix.
 ## Environment Variable
 
 The version of Julia a job is using is available as:
+
 ```
 TRAVIS_JULIA_VERSION
 ```

@@ -1,7 +1,6 @@
 ---
 title: packagecloud Deployment
 layout: en
-
 ---
 
 Travis CI can automatically push your RPM, Deb, Deb source, or RubyGem package build
@@ -17,6 +16,7 @@ deploy:
   token: "YOUR TOKEN"
   dist: "YOUR DIST" # like 'ubuntu/precise', or 'centos/5', if pushing deb or rpms
 ```
+
 {: data-file=".travis.yml"}
 
 Take note that your repository name should not have a forward slash in it. For example if your repository appears as `username / repo` on packagecloud.io, you should only put `repo` in the `repository:` option and put `username` in the `username:` option.
@@ -51,6 +51,7 @@ deploy:
   on:
     branch: production
 ```
+
 {: data-file=".travis.yml"}
 
 Alternatively, you can also configure Travis CI to release from all branches:
@@ -63,6 +64,7 @@ deploy:
   on:
     all_branches: true
 ```
+
 {: data-file=".travis.yml"}
 
 By default, Travis CI will only release from the **master** branch.
@@ -82,6 +84,7 @@ deploy:
   token: ...
   skip_cleanup: true
 ```
+
 {: data-file=".travis.yml"}
 
 ### Specify package folder
@@ -96,6 +99,7 @@ deploy:
   token: ...
   local-dir: build
 ```
+
 {: data-file=".travis.yml"}
 
 Alternately, you may wish to specify the `package_glob` argument to restrict which files to scan. It defaults to `**/*` (recursively finding all package files) but this may pick up other artifacts you don't want to release. For example, if you only want to push gems in the top level directory:
@@ -107,6 +111,7 @@ deploy:
   token: ...
   package_glob: *.gem
 ```
+
 {: data-file=".travis.yml"}
 
 ### A note about Debian source packages
@@ -131,4 +136,5 @@ after_deploy:
   - ./after_deploy_1.sh
   - ./after_deploy_2.sh
 ```
+
 {: data-file=".travis.yml"}

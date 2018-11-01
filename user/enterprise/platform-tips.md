@@ -1,14 +1,11 @@
 ---
 title: Enterprise Platform Administration Tips
 layout: en_enterprise
-
 ---
 
 This page collects FAQs and day-to-day Enterprise Platform maintenance scripts
 and tools. Please connect to your Platform machine via SSH before getting
 started.
-
-
 
 ## Inspecting logs and running services
 
@@ -55,7 +52,7 @@ $ travis console
 >> stuck_jobs.each(&:reset!)
 ```
 
-## Clear Redis Archive Queue (for releases < 2.1.7)
+## Clear Redis Archive Queue (for releases &lt; 2.1.7)
 
 In releases of Enterprise before 2.1.7 jobs where enqueued in the archive queue
 for log aggregation. This feature however is only available for the hosted
@@ -98,6 +95,7 @@ To address this, remove the RabbitMQ cert from `/etc/travis/ssl/`:
 ```
 $ sudo rm -r /etc/travis/ssl/rabbitmq.cert
 ```
+
 After this, do a full reboot of the system and everything should start again properly.
 
 ## View Sidekiq queue statistics
@@ -180,7 +178,6 @@ Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 1
 ```
 
 Here, ***pick `1` and press return.***
-
 
 Then, ***fill in the aforementioned email address:***
 

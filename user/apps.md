@@ -1,7 +1,6 @@
 ---
 title: Apps, Clients and Tools
 layout: en
-
 ---
 
 There is a wide range of tools you can use to interact with Travis CI:
@@ -30,7 +29,6 @@ Our official web interface, written in [Ember.js](http://www.emberjs.com)
 
 - [travis-ci.com](https://travis-ci.com)
 - [source code](https://github.com/travis-ci/travis-web)
-
 
 ## Dashboards
 
@@ -92,7 +90,6 @@ By Ahmed El-Sayed
 
 - [source code](https://github.com/ahmedelsayed-93/ci-dashboard)
 
-
 ## Tools
 
 ### Travis Web Encrypter
@@ -131,7 +128,6 @@ iPad client for Travis CI, supports private projects<br>
 By NinjaConcept GmbH
 
 - [app store](https://itunes.apple.com/us/app/jarvis/id846922611)
-
 
 ### Project Monitor
 
@@ -411,7 +407,6 @@ By Skye Shaw
 
 - [website](https://github.com/sshaw/build-status)
 
-
 ### Vim Plugin
 
 ![vim](/images/apps/vim.jpg){:.app}
@@ -450,7 +445,6 @@ By Eduardo Antonio Lundgren Melo and Zeno Rocha Bueno Netto
 - [hoe-travis](https://github.com/drbrain/hoe-travis) by Eric Hodel
 - [Knapsack](https://github.com/ArturT/knapsack) by Artur Trzop
 
-
 ## JavaScript
 
 - [travis-ci](https://github.com/pwmckenna/node-travis-ci) by Patrick Williams
@@ -481,4 +475,5 @@ By Eduardo Antonio Lundgren Melo and Zeno Rocha Bueno Netto
 - [travis](https://github.com/ropenscilabs/travis) by Kirill Müller
 
 ## Go
+
 - [go-travis](https://github.com/shuheiktgw/go-travis) by Shuhei Kitagawa

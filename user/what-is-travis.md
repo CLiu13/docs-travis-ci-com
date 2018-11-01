@@ -1,7 +1,6 @@
 ---
 title: What is Travis CI
 layout: en
-
 ---
 
 What is Travis CI?

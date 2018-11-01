@@ -8,10 +8,6 @@ or another npm-like registry after a successful build. By default Travis CI
 publishes to npmjs.com, however if you have a `publishConfig.registry` key in your
 `package.json` then Travis CI publishes to that registry instead.
 
-
-
-
-
 A minimal `.travis.yml` configuration for publishing to [npmjs.com][npmjs] with npm version 2+ looks like:
 
 ```yaml
@@ -20,6 +16,7 @@ deploy:
   email: "YOUR_EMAIL_ADDRESS"
   api_key: "YOUR_AUTH_TOKEN"
 ```
+
 {: data-file=".travis.yml"}
 
 You can have the `travis` tool set up everything for you:
@@ -36,10 +33,10 @@ it can modify the `.travis.yml` for you.
 Your NPM Auth Token can be obtained by:
 
 1. Log in to your NPM account, and generate a new token at `https://www.npmjs.com/settings/USER/tokens`, where
-  `USER` is the name of the user account which is capable of publishing the npm package.
-1. Use the NPM CLI command [`npm adduser`](https://docs.npmjs.com/cli/adduser) to create a user, then open the `~/.npmrc` file:
-    1. For NPM v2+, use the `authToken` value.
-    1. For NPM ~1, use the `auth` value.
+   `USER` is the name of the user account which is capable of publishing the npm package.
+2. Use the NPM CLI command [`npm adduser`](https://docs.npmjs.com/cli/adduser) to create a user, then open the `~/.npmrc` file:
+   1. For NPM v2+, use the `authToken` value.
+   2. For NPM ~1, use the `auth` value.
 
 Always [encrypt](/user/encryption-keys/#usage) your auth token. Assuming you have the Travis CI command line client installed, you can do it like this:
 
@@ -59,6 +56,7 @@ deploy:
   on:
     tags: true
 ```
+
 {: data-file=".travis.yml"}
 
 If you tag a commit locally, remember to run `git push --tags` to ensure that
@@ -72,6 +70,7 @@ deploy:
   on:
     branch: production
 ```
+
 {: data-file=".travis.yml"}
 
 Alternatively, you can also configure Travis CI to release from all branches:
@@ -82,6 +81,7 @@ deploy:
   on:
     all_branches: true
 ```
+
 {: data-file=".travis.yml"}
 
 Builds triggered from Pull Requests will never trigger a release.
@@ -97,6 +97,7 @@ deploy:
   ...
   skip_cleanup: true
 ```
+
 {: data-file=".travis.yml"}
 
 ## Conditional releases
@@ -115,6 +116,7 @@ deploy:
   ...
   tag: next
 ```
+
 {: data-file=".travis.yml"}
 
 ## Note on `.gitignore`
@@ -143,6 +145,7 @@ after_deploy:
   - ./after_deploy_1.sh
   - ./after_deploy_2.sh
 ```
+
 {: data-file=".travis.yml"}
 
 ## Troubleshooting "npm ERR! You need a paid account to perform this action."

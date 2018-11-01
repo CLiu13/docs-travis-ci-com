@@ -1,7 +1,6 @@
 ---
 title: Bintray Deployment
 layout: en
-
 ---
 
 Travis CI can automatically deploy your build artifacts to [Bintray](https://bintray.com/).
@@ -17,6 +16,7 @@ deploy:
   passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
   skip_cleanup: true # to upload artifacts created during the build
 ```
+
 {: data-file=".travis.yml"}
 
 ### Encrypt your API key
@@ -33,8 +33,6 @@ Example:
 $ travis encrypt ab012cd345678901234e456fa7bc89def01a23b4 --add deploy.key
 ```
 
-
-
 ### Branch to deploy from
 
 By default, Travis CI will only deploy from your **master** branch.
@@ -46,6 +44,7 @@ deploy:
   ..
   on: production
 ```
+
 {: data-file=".travis.yml"}
 
 Alternatively, you can also configure it to deploy from all branches:
@@ -56,6 +55,7 @@ deploy:
   on:
     all_branches: true
 ```
+
 {: data-file=".travis.yml"}
 
 Builds triggered from Pull Requests will never trigger a deploy.
@@ -77,6 +77,7 @@ after_deploy:
   - ./after_deploy_1.sh
   - ./after_deploy_2.sh
 ```
+
 {: data-file=".travis.yml"}
 
 ### `dry_run` option
@@ -89,6 +90,7 @@ deploy:
   ..
   dry_run: true
 ```
+
 {: data-file=".travis.yml"}
 
 ### Descriptor file example
@@ -145,7 +147,6 @@ Bintray package information. The following information is mandatory on open sour
 - `subject` is the Bintray subject, which is either a user or an organization
 - `vcs_url` is the Bintray version control system url, such as a github repository url
 - `licenses` is the [Bintray licences](https://bintray.com/docs/api/#_licenses){: data-proofer-ignore=""}, which is a list with at least one item.
-
 
 #### Version Section
 

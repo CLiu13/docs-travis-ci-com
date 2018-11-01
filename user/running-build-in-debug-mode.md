@@ -1,10 +1,7 @@
 ---
 title: Running Build in Debug Mode
 layout: en
-
 ---
-
-
 
 If you are having trouble resolving complex build errors, or you suspect there are
 significant differences between your local development environment and
@@ -51,7 +48,6 @@ in the debug mode for public repositories.
 
 > Note that if you're still using [travis-ci.org](http://www.travis-ci.org) you need to use `https://api.travis-ci.org/job/${id}/debug` in the previous command.
 
-
 #### Legacy repositories
 
 Public repositories which have not been migrated to
@@ -70,7 +66,7 @@ $ curl -s -X POST \
 
 #### Finding the job ID
 
-The `${id}` is a job ID, not a build ID. For example, the ID `248927956` in the URL [`https://travis-ci.org/travis-ci/docs-travis-ci-com/builds/248927956`](https://travis-ci.org/travis-ci/docs-travis-ci-com/builds/248927956) is a build ID. To obtain the corresponding job ID, click the _View config_ button on that page, and the URL will change into [`https://travis-ci.org/travis-ci/docs-travis-ci-com/jobs/248927957/config`](https://travis-ci.org/travis-ci/docs-travis-ci-com/jobs/248927957/config), showing the job ID `248927957`. Alternatively, you can obtain job IDs corresponding to a build ID [via the API](https://docs.travis-ci.com/api/#builds).
+The `${id}` is a job ID, not a build ID. For example, the ID `248927956` in the URL [`https://travis-ci.org/travis-ci/docs-travis-ci-com/builds/248927956`](https://travis-ci.org/travis-ci/docs-travis-ci-com/builds/248927956) is a build ID. To obtain the corresponding job ID, click the *View config* button on that page, and the URL will change into [`https://travis-ci.org/travis-ci/docs-travis-ci-com/jobs/248927957/config`](https://travis-ci.org/travis-ci/docs-travis-ci-com/jobs/248927957/config), showing the job ID `248927957`. Alternatively, you can obtain job IDs corresponding to a build ID [via the API](https://docs.travis-ci.com/api/#builds).
 
 #### Echoing debug session's output to the logs
 

@@ -55,7 +55,7 @@ Mark all beta features with a specially formatted note. Both the `> BETA` and
 the `{: .beta}` are required.
 
 > BETA Awesome new feature that might not be enabled and is subject to change.
-{: .beta}
+> {: .beta}
 
 ### Alpha features
 
@@ -63,7 +63,7 @@ Mark all alpha features with a specially formatted note. Both the `> ALPHA` and
 the `{: alpha}` are required.
 
 > ALPHA Awesome new feature that might explode for extra fun.
-{: .alpha}
+> {: .alpha}
 
 ### GUI
 
@@ -90,7 +90,6 @@ You can link to headings, remember to remove special characters, for example:
 
 To link to "##Node.js Page" use `#nodejs-page`.
 
-
 ### Code Inline
 
 All function names, filenames, etc should be marked with `back-ticks`.
@@ -105,7 +104,6 @@ As we have no use for blockquotes we use `>` to indicate notes and warnings:
 
 ```markdown
 > Note this important info!
-
 ```
 
 ### Code blocks
@@ -123,9 +121,8 @@ You can also set the filename for a code block by adding a Kramdown attribute af
 ```markdown
 This code is in .travis.yml
 ```
+
 {: data-file=".travis.yml"}
-
-
 
 ### Common misspellings and words to avoid
 

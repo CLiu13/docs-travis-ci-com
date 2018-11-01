@@ -6,8 +6,8 @@ layout: en
 
 This example has 2 build stages:
 
-* Two jobs that run tests against Ruby 2.2 and 2.3 respectively
-* One job that deploys (releases) the gem to rubygems.org
+- Two jobs that run tests against Ruby 2.2 and 2.3 respectively
+- One job that deploys (releases) the gem to rubygems.org
 
 Here's what the `.travis.yml` config could look like:
 
@@ -29,6 +29,7 @@ jobs:
         api_key: $RUBYGEMS_API_KEY
         on: deploy-gem-release
 ```
+
 {: data-file=".travis.yml"}
 
 This is how the build matrix would look:
@@ -37,6 +38,6 @@ This is how the build matrix would look:
 
 You can find the code for this example on our [demo repository](https://github.com/travis-ci/build-stages-demo):
 
-* [Branch master](https://github.com/travis-ci/build-stages-demo/tree/deploy-gem-release)
-* [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/deploy-gem-release/.travis.yml)
-* [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230329221)
+- [Branch master](https://github.com/travis-ci/build-stages-demo/tree/deploy-gem-release)
+- [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/deploy-gem-release/.travis.yml)
+- [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/230329221)

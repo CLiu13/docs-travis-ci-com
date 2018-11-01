@@ -1,7 +1,6 @@
 ---
 title: Testing Your Project on Multiple Operating Systems
 layout: en
-
 ---
 
 If your code is used on multiple operating systems it probably should be tested on
@@ -14,6 +13,7 @@ os:
   - linux
   - osx
 ```
+
 {: data-file=".travis.yml"}
 
 The value of the `$TRAVIS_OS_NAME` variable is set to `linux` or `osx` according to the operating system a particular build is running on, so you can use it to conditionalize your build scripts.
@@ -62,6 +62,7 @@ matrix:
   allow_failures:
     - os: osx
 ```
+
 {: data-file=".travis.yml"}
 
 ## Example Multi OS Build Matrix
@@ -92,6 +93,7 @@ script:
   - cd src
   - make all
 ```
+
 {: data-file=".travis.yml"}
 
 There are many options available and using the `matrix.include` key is essential to include any specific entries. For example, this matrix would route builds to the [Trusty build environment](/user/reference/trusty/) and to an [OS X image using Xcode 7.2](/user/languages/objective-c#supported-xcode-versions):
@@ -105,6 +107,7 @@ matrix:
     - os: osx
       osx_image: xcode7.2
 ```
+
 {: data-file=".travis.yml"}
 
 ### Python example (unsupported languages)
@@ -134,6 +137,7 @@ install:
     - ./.travis/install.sh
 script: make test
 ```
+
 {: data-file=".travis.yml"}
 
 This custom install script (pseudo code only) uses the `$TRAVIS_OS_NAME` and `$TOXENV` variables to install (Python) prerequisites specific to OS X, Linux and each specific python version.

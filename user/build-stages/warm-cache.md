@@ -6,8 +6,8 @@ layout: en
 
 This example has 2 build stages:
 
-* One job that installs dependencies and warms up the cache for the given branch.
-* Three jobs that run tests, using the cache.
+- One job that installs dependencies and warms up the cache for the given branch.
+- Three jobs that run tests, using the cache.
 
 Here's what the `.travis.yml` config could look like:
 
@@ -29,6 +29,7 @@ jobs:
       script: bundle show
       rvm: 2.3
 ```
+
 {: data-file=".travis.yml"}
 
 This is how the build matrix might look:
@@ -37,6 +38,6 @@ This is how the build matrix might look:
 
 You can find the code for this example on our [demo repository](https://github.com/travis-ci/build-stages-demo):
 
-* [Branch master](https://github.com/travis-ci/build-stages-demo/tree/pre-caching-dependencies)
-* [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/pre-caching-dependencies/.travis.yml)
-* [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/224025125)
+- [Branch master](https://github.com/travis-ci/build-stages-demo/tree/pre-caching-dependencies)
+- [.travis.yml file](https://github.com/travis-ci/build-stages-demo/blob/pre-caching-dependencies/.travis.yml)
+- [Build on Travis CI](https://travis-ci.org/travis-ci/build-stages-demo/builds/224025125)

@@ -38,7 +38,7 @@ To keep the access rights up to date, we sync every user account approximately o
 Access rights to the Travis CI [billing page](https://billing.travis-ci.com) can be one of the following:
 
 - **Open (default)**: anyone with admin access to at least one repository belonging to the organization in GitHub has access to the billing information in Travis CI.
-- **Restricted**: access is limited to members of the organization having the _owner_ and/or _billing manager_ permissions in GitHub (see their [documentation about the _Permission levels for an organization_](https://help.github.com/articles/permission-levels-for-an-organization/)).
+- **Restricted**: access is limited to members of the organization having the *owner* and/or *billing manager* permissions in GitHub (see their [documentation about the *Permission levels for an organization*](https://help.github.com/articles/permission-levels-for-an-organization/)).
 
 You can change the access rights of an organization to **Restricted** (or back to **Open**) under the organization's tab on [our billing page](https://billing.travis-ci.com) as shown below:
 
@@ -70,14 +70,14 @@ settings on GitHub, and resync your Travis CI account:
 1. On [Travis CI .com](https://travis-ci.com) go to *Profile*, and toggle the
    repository to *OFF*.
 
-1. Follow the [instructions on
-GitHub](https://help.github.com/articles/making-a-private-repository-public/) on
-how to make a repository public.
+2. Follow the [instructions on
+   GitHub](https://help.github.com/articles/making-a-private-repository-public/) on
+   how to make a repository public.
 
-2. On [Travis CI .org](https://travis-ci.org) go to *Profile*, click *Sync
+3. On [Travis CI .org](https://travis-ci.org) go to *Profile*, click *Sync
    Account*, then toggle the repository to *ON*.
 
-5. If you're using the Travis CI [command line client](https://github.com/travis-ci/travis.rb#readme)
+4. If you're using the Travis CI [command line client](https://github.com/travis-ci/travis.rb#readme)
    reset the default endpoint to public:
 
    ```sh
@@ -93,14 +93,14 @@ settings on GitHub, and resync your Travis CI account:
 1. On [Travis CI .org](https://travis-ci.org) go to *Profile*, and toggle the
    repository to *OFF*.
 
-1. Follow the [instructions on
-GitHub](https://help.github.com/articles/making-a-public-repository-private/) on
-how to make a repository private.
+2. Follow the [instructions on
+   GitHub](https://help.github.com/articles/making-a-public-repository-private/) on
+   how to make a repository private.
 
-2. On [Travis CI .com](https://travis-ci.com) go to *Profile*, click *Sync
+3. On [Travis CI .com](https://travis-ci.com) go to *Profile*, click *Sync
    Account*, then toggle the repository to *ON*.
 
-5. If you're using the Travis CI [command line client](https://github.com/travis-ci/travis.rb#readme)
+4. If you're using the Travis CI [command line client](https://github.com/travis-ci/travis.rb#readme)
    reset the default endpoint to private:
 
    ```sh

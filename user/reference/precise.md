@@ -12,8 +12,6 @@ redirect_from:
 This guide explain what packages, tools and settings are available in the Travis
 CI environment (often referred to as "CI environment").
 
-
-
 ## Overview
 
 Travis CI runs builds in isolated virtual machines that offer a vanilla build
@@ -24,7 +22,6 @@ state and making sure that your tests run in an environment built from scratch.
 
 Builds have access to a variety of services for data storage and messaging, and
 can install anything that's required for them to run.
-
 
 ## Networking
 
@@ -107,6 +104,7 @@ For example, to install version 17.0, add the following to your
 addons:
   firefox: "17.0"
 ```
+
 {: data-file=".travis.yml"}
 
 Please note that the addon only works in 64-bit Linux environments.
@@ -270,8 +268,6 @@ Test::Pod::Coverage
 
 ## PHP VM images
 
-
-
 ### PHP versions
 
 PHP runtimes are built using [php-build](https://github.com/CHH/php-build).
@@ -283,7 +279,6 @@ Is supported.
 ### Core extensions
 
 See the [default configure options](https://github.com/travis-ci/travis-cookbooks/blob/precise-stable/ci_environment/phpbuild/templates/default/default_configure_options.erb) to get an overview of the core extensions enabled.
-
 
 ### Extensions
 
@@ -354,7 +349,6 @@ Xdebug
 
 If you want to learn all the details of how we build and provision multiple PHP installations, see our [php, phpenv and php-build Chef cookbooks](https://github.com/travis-ci/travis-cookbooks/tree/precise-stable/ci_environment).
 
-
 ## Python VM images
 
 ### Python versions
@@ -387,6 +381,7 @@ The Ruby images contain recent versions of:
 > Ruby 1.8.6 and 1.9.1 are no longer available Travis CI.
 
 Pre-compiled versions are downloaded on demand from:
+
 - [rubies.travis-ci.org](http://rubies.travis-ci.org).
 - [binaries.rubini.us](http://rubies.travis-ci.org/rubinius).
 - [rvm.io/binaries/](https://rvm.io/binaries/).

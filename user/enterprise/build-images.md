@@ -1,13 +1,10 @@
 ---
 title: Customizing Travis CI Enterprise Build Images
 layout: en_enterprise
-
 ---
 
 With Travis CI Enterprise, you can configure your build images to suit your
 development process and improve the build environment and performance.
-
-
 
 ## Customizing build images
 
@@ -45,11 +42,11 @@ In the Ubuntu Precise environment we're shipping a separate Docker image for eac
 
 The process is to:
 
--   start a Docker container based on one of the default build images
-    `travis:[language]`,
--   run your customizations inside that container, and
--   commit the container to a Docker image with the original
-    `travis:language name (tag)`.
+- start a Docker container based on one of the default build images
+  `travis:[language]`,
+- run your customizations inside that container, and
+- commit the container to a Docker image with the original
+  `travis:language name (tag)`.
 
 For example, in order to install a particular Ruby version which is not
 available on the default `travis:ruby` image, and make it persistent,
@@ -82,7 +79,6 @@ export TRAVIS_WORKER_DOCKER_BINDS='/var/run/docker.sock:/var/run/docker.sock'
 ```
 
 With this option we tell `travis-worker` to make the host's Docker socket available inside the build containers. Please restart travis-worker after you have saved the configuration file.
-
 
 #### Restart travis-worker
 

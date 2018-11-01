@@ -1,7 +1,6 @@
 ---
 title: Build Addons
 layout: en
-
 ---
 
 This page is deprecated. The integrations previously listed here have been

@@ -1,7 +1,6 @@
 ---
 title: Using SourceClear with Travis CI
 layout: en
-
 ---
 
 [SourceClear](https://www.sourceclear.com) is security for open-source code.
@@ -37,6 +36,7 @@ In order to scan using SourceClear, add the following to your `.travis.yml` file
 addons:
     srcclr: true
 ```
+
 {: data-file=".travis.yml"}
 
 If you want verbose output during the scan, you can add the `debug` key:
@@ -46,6 +46,7 @@ addons:
     srcclr:
         debug: true
 ```
+
 {: data-file=".travis.yml"}
 
 Commit these changes to trigger a build for your repository, and SourceClear will perform a scan, displaying results to your SourceClear environment.

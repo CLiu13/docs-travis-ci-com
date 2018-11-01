@@ -1,14 +1,11 @@
 ---
 title: Building a Nix Project
 layout: en
-
 ---
 
 ### What This Guide Covers
 
 This guide covers build environment and configuration topics specific to Nix projects. Please make sure to read our [Tutorial](/user/tutorial/) and [general build configuration](/user/customizing-the-build/) guides first.
-
-
 
 ### Community-Supported Warning
 
@@ -24,6 +21,7 @@ To install the Nix store and set up a basic single-user profile, set the `langua
 ```yaml
 language: nix
 ```
+
 {: data-file=".travis.yml"}
 
 The default channel for `nixpkgs` will be `nixpkgs-unstable`.
@@ -46,14 +44,14 @@ The following command line tools are available in the Nix environment:
 
 ## Default Nix Version
 
-This installs Nix 2.0.4 using [https://nixos.org/releases/nix/nix-2.0.4/install](https://nixos.org/releases/nix/nix-2.0.4/install). You may specify a different version of Nix installer with the `nix:` key in your `.travis.yml`:
+This installs Nix 2.0.4 using <https://nixos.org/releases/nix/nix-2.0.4/install>. You may specify a different version of Nix installer with the `nix:` key in your `.travis.yml`:
 
 ```yaml
 language: nix
 nix: 2.0.4
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 > Note: This option supports all Nix releases, starting with version 1.11.16.
 
@@ -65,6 +63,7 @@ The default build script is `nix-build` which builds everything in the `default.
 language: nix
 script: nix-build -A tarball release.nix
 ```
+
 {: data-file=".travis.yml"}
 
 The above configuration will attempt to build the attribute "tarball" from the Nix expression in release.nix.

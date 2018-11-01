@@ -48,6 +48,7 @@ xcode_project: MyNewProject.xcodeproj # path to your xcodeproj folder
 xcode_scheme: MyNewProjectTests
 xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
 ```
+
 {: data-file=".travis.yml"}
 
 You can also specify an SDK using the `xcode_sdk` variable. This needs to be on
@@ -101,6 +102,7 @@ in your Travis CI build, you can use the `xcode_destination` key in your .travis
 ```
 xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 ```
+
 {: data-file=".travis.yml"}
 
 A device destination is a comma-separated list of key-value pairs. When you're testing
@@ -146,6 +148,7 @@ setting in the *.travis.yml*:
 ```yaml
 podfile: path/to/Podfile
 ```
+
 {: data-file=".travis.yml"}
 
 Also, `pod install` is not run if the Pods directory is vendored and there have
@@ -164,6 +167,7 @@ you can override the `install` command.
 ```yaml
 install: make get-deps
 ```
+
 {: data-file=".travis.yml"}
 
 ## Build Matrix

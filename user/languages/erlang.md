@@ -1,7 +1,6 @@
 ---
 title: Building a Erlang project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | Erlang            | Default                                       |
-|:------------------|:----------------------------------------------|
+| :---------------- | :-------------------------------------------- |
 | Typical `install` | `rebar get-deps`                              |
 | Typical `script`  | `rebar compile && rebar skip_deps=true eunit` |
 | Matrix keys       | `env`, `otp_release`                          |
@@ -23,6 +22,7 @@ otp_release:
   - 19.0
   - 18.2.1
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -49,6 +49,7 @@ otp_release:
   - 17.5
   - R16B03
 ```
+
 {: data-file=".travis.yml"}
 
 Get a complete list of the pre-compiled versions available on the VM by adding `kerl list installations` to the `before_script:` section of your `.travis.yml`. Note that this list does *not* include releases which are downloaded on demand, such as 18.1.

@@ -1,12 +1,9 @@
 ---
 title: PyPI deployment
 layout: en
-
 ---
 
 Travis CI can automatically release your Python package to [PyPI](https://pypi.python.org/) after a successful build.
-
-
 
 For a minimal configuration, add the following to your `.travis.yml`:
 
@@ -16,6 +13,7 @@ deploy:
   user: "Your username"
   password: "Your password"
 ```
+
 {: data-file=".travis.yml"}
 
 However, this would expose your PyPI password to the world. We recommend you
@@ -34,6 +32,7 @@ deploy:
   password:
     secure: "Your encrypted password"
 ```
+
 {: data-file=".travis.yml"}
 
 ## Deploying tags
@@ -50,6 +49,7 @@ deploy:
   on:
     tags: true
 ```
+
 {: data-file=".travis.yml"}
 
 If you tag a commit locally, remember to run `git push --tags` to ensure that your tags are uploaded to GitHub.
@@ -66,6 +66,7 @@ deploy:
   on:
     branch: production
 ```
+
 {: data-file=".travis.yml"}
 
 Alternatively, you can also configure Travis CI to release from all branches:
@@ -78,6 +79,7 @@ deploy:
   on:
     all_branches: true
 ```
+
 {: data-file=".travis.yml"}
 
 By default, Travis CI will only release from the **master** branch.
@@ -95,6 +97,7 @@ deploy:
       password: ...
       server: https://mypackageindex.com/index
 ```
+
 {: data-file=".travis.yml"}
 
 ## Uploading different distributions

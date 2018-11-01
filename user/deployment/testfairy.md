@@ -1,7 +1,6 @@
 ---
 title: TestFairy deployment
 layout: en
-
 ---
 
 Travis CI can automatically deploy your Android and iOS Apps to [TestFairy](https://www.testfairy.com/).
@@ -14,6 +13,7 @@ deploy:
   api-key: "TESTFAIRY API KEY"
   app-file: Path to the app file (APK/IPA)
 ```
+
 {: data-file=".travis.yml"}
 
 You can find your API key on [TestFairy settings page](https://app.testfairy.com/settings/).
@@ -37,6 +37,7 @@ deploy:
   storepass: keystore-pass
   alias: entity-alias
 ```
+
 {: data-file=".travis.yml"}
 
 Always [encrypt](/user/encrypting-files/) your keystore file.
@@ -55,6 +56,7 @@ deploy:
   alias: entity-alias
   symbols-file: Path to the symbols file
 ```
+
 {: data-file=".travis.yml"}
 
 ## Invite testers automatically
@@ -72,6 +74,7 @@ deploy:
   notify: false
   testers-groups: qa-stuff,friends
 ```
+
 {: data-file=".travis.yml"}
 
 ## More Options
@@ -108,4 +111,5 @@ deploy:
   metrics: cpu,memory,network,phone-signal,logcat,gps,battery
   advanced-options: shake,anonymous
 ```
+
 {: data-file=".travis.yml"}

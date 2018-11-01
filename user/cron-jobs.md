@@ -1,10 +1,7 @@
 ---
 title: Cron Jobs
 layout: en
-
 ---
-
-
 
 {{ site.data.snippets.cron_jobs }}
 

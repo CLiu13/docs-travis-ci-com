@@ -8,8 +8,6 @@ redirect_from:
 
 This guide covers setting up the most popular databases and other services in the Travis CI environment.
 
-
-
 All services use default settings, with the exception of some added users and relaxed security settings.
 
 ## Starting Services
@@ -21,6 +19,7 @@ to build scripts. Start services by adding them to the `services:` section of yo
 ```yaml
 services: mongodb
 ```
+
 {: data-file=".travis.yml"}
 
 > If you install a service in the `addons:` section, such as MariaDB, you do not need to add it to the `services:` section as well.
@@ -33,6 +32,7 @@ services:
   - rabbitmq
   - memcached
 ```
+
 {: data-file=".travis.yml"}
 
 > Note that this feature only works for services we provision in our [CI environment](/user/reference/precise/). If you download Apache Jackrabbit
@@ -46,6 +46,7 @@ Start MySQL in your `.travis.yml`:
 services:
   - mysql
 ```
+
 {: data-file=".travis.yml"}
 
 MySQL binds to `127.0.0.1` and a socket defined in `~travis/.my.cnf` and
@@ -57,9 +58,8 @@ and a blank password.
 
 Current versions of MySQL are
 
-
 |                 | Ubuntu Precise | Ubuntu Trusty |
-|:----------------|:---------------|:--------------|
+| :-------------- | :------------- | :------------ |
 | Sudo-enabled    | 5.5.x          | 5.6.x         |
 | Container-based | -              | 5.6.x         |
 
@@ -76,6 +76,7 @@ test:
   username: travis
   encoding: utf8
 ```
+
 {: data-file="config/database.yml"}
 
 You might have to create the `myapp_test` database first, for example in
@@ -85,6 +86,7 @@ the `before_install` step in `.travis.yml`:
 before_install:
   - mysql -e 'CREATE DATABASE myapp_test;'
 ```
+
 {: data-file=".travis.yml"}
 
 ### Note on `test` database
@@ -101,8 +103,8 @@ The `test` database may be created if needed, for example in the
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ### MySQL 5.7
 
@@ -117,6 +119,7 @@ addons:
       - mysql-server
       - mysql-client
 ```
+
 {: data-file=".travis.yml"}
 
 You'll also need to reset the root password to something other than `new_password`:
@@ -127,6 +130,7 @@ before_install:
   - sudo mysql_upgrade -u root -pnew_password
   - sudo service mysql restart
 ```
+
 {: data-file=".travis.yml"}
 
 ## PostgreSQL
@@ -137,6 +141,7 @@ Start PostgreSQL in your `.travis.yml`:
 services:
   - postgresql
 ```
+
 {: data-file=".travis.yml"}
 
 ### Using PostgreSQL in your Builds
@@ -149,6 +154,7 @@ Create a database for your application by adding a line to your .travis.yml:
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 ```
+
 {: data-file=".travis.yml"}
 
 For a Rails application, you can now use the following `database.yml` configuration to access the database locally:
@@ -158,6 +164,7 @@ test:
   adapter: postgresql
   database: travis_ci_test
 ```
+
 {: data-file="database.yml"}
 
 If your local test setup uses different credentials or settings to access the local test database, we recommend putting these settings in a `database.yml.travis` in your repository and copying that over as part of your build:
@@ -166,6 +173,7 @@ If your local test setup uses different credentials or settings to access the lo
 before_script:
   - cp config/database.yml.travis config/database.yml
 ```
+
 {: data-file=".travis.yml"}
 
 ### Using a different PostgreSQL Version
@@ -179,13 +187,14 @@ also available. To use a version other than the default, specify only the
 addons:
   postgresql: "9.4"
 ```
+
 {: data-file=".travis.yml"}
 
 Many PostgreSQL versions have been preinstalled in our build environments, and
 others may be added and activated at build time by using a combination of the
 `postgresql` and `apt` addons along with a global env var override for `PGPORT`:
 
-``` yaml
+```yaml
 addons:
   postgresql: "10"
   apt:
@@ -196,6 +205,7 @@ env:
   global:
   - PGPORT=5433
 ```
+
 {: data-file=".travis.yml"}
 
 ### Using PostGIS
@@ -211,6 +221,7 @@ addons:
 before_script:
   - psql -U postgres -c "create extension postgis"
 ```
+
 {: data-file=".travis.yml"}
 
 ### PostgreSQL and Locales
@@ -230,6 +241,7 @@ before_install:
   - sudo /etc/init.d/postgresql stop
   - sudo /etc/init.d/postgresql start 9.3
 ```
+
 {: data-file=".travis.yml"}
 
 ### Using `pg_config`
@@ -260,6 +272,7 @@ To use MariaDB, specify the "major.minor" version you want to use in your `.trav
 addons:
   mariadb: '10.0'
 ```
+
 {: data-file=".travis.yml"}
 
 The version number is exported as the `TRAVIS_MARIADB_VERSION` environment variable.
@@ -289,6 +302,7 @@ test:
   database: ":memory:"
   timeout: 500
 ```
+
 {: data-file="config/database.yml"}
 
 Or if you're not using a `config/database.yml`, connect to the database manually:
@@ -306,6 +320,7 @@ Start MongoDB in your `.travis.yml`:
 services:
   - mongodb
 ```
+
 {: data-file=".travis.yml"}
 
 MongoDB binds to 127.0.0.1 and requires no authentication or database creation up front. If you add an `admin` user authentication is enabled, since `mongod` is started with the `--auth` argument.
@@ -318,6 +333,7 @@ To create users for your database, add a `before_script` section to your `.travi
 before_script:
   - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 ```
+
 {: data-file=".travis.yml"}
 
 ### MongoDB does not immediately accept connections
@@ -334,6 +350,7 @@ before_script:
   - sleep 15
   - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 ```
+
 {: data-file=".travis.yml"}
 
 ## CouchDB
@@ -344,6 +361,7 @@ Start CouchDB in your `.travis.yml`:
 services:
   - couchdb
 ```
+
 {: data-file=".travis.yml"}
 
 CouchDB binds to 127.0.0.1, uses default configuration and does not require authentication (in CouchDB terms it runs in admin party).
@@ -354,6 +372,7 @@ Before using CouchDB you need to create the database as part of your build proce
 before_script:
   - curl -X PUT localhost:5984/myapp_test
 ```
+
 {: data-file=".travis.yml"}
 
 ## RabbitMQ
@@ -366,6 +385,7 @@ Start RabbitMQ in your `.travis.yml`:
 services:
   - rabbitmq
 ```
+
 {: data-file=".travis.yml"}
 
 RabbitMQ uses the default configuration:
@@ -384,6 +404,7 @@ Start Riak in your `.travis.yml`:
 services:
   - riak
 ```
+
 {: data-file=".travis.yml"}
 
 Riak uses the default configuration apart from the storage backend, which is LevelDB.
@@ -398,6 +419,7 @@ Start Memcached service in your `.travis.yml`:
 services:
   - memcached
 ```
+
 {: data-file=".travis.yml"}
 
 Memcached uses the default configuration and binds to localhost.
@@ -410,6 +432,7 @@ Start Redis in your `.travis.yml`:
 services:
   - redis-server
 ```
+
 {: data-file=".travis.yml"}
 
 Redis uses the default configuration and is available on localhost.
@@ -425,6 +448,7 @@ sudo: required
 services:
   - cassandra
 ```
+
 {: data-file=".travis.yml"}
 
 Cassandra is provided by [Datastax Community Edition](http://www.datastax.com/products/community) and uses the default configuration. It is available on 127.0.0.1.
@@ -438,8 +462,8 @@ before_install:
   - sudo rm -rf /var/lib/cassandra/*
   - wget http://www.us.apache.org/dist/cassandra/1.2.18/apache-cassandra-1.2.18-bin.tar.gz && tar -xvzf apache-cassandra-1.2.18-bin.tar.gz && sudo sh apache-cassandra-1.2.18/bin/cassandra
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ## Neo4j
 
@@ -449,6 +473,7 @@ Start Neo4j in your `.travis.yml`:
 services:
   - neo4j
 ```
+
 {: data-file=".travis.yml"}
 
 Neo4j Server uses default configuration and binds to localhost on port 7474.
@@ -463,6 +488,7 @@ Start ElasticSearch in your `.travis.yml`:
 services:
   - elasticsearch
 ```
+
 {: data-file=".travis.yml"}
 
 ElasticSearch takes few seconds to start, to make sure it is available when the build script runs add a small delay to your build script:
@@ -471,6 +497,7 @@ ElasticSearch takes few seconds to start, to make sure it is available when the 
 before_script:
   - sleep 10
 ```
+
 {: data-file=".travis.yml"}
 
 ElasticSearch uses the default configuration and is available on 127.0.0.1.
@@ -483,6 +510,7 @@ You can overwrite the installed ElasticSearch with the version you need (e.g., 2
 before_install:
   - curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.0/elasticsearch-2.3.0.deb && sudo dpkg -i --force-confnew elasticsearch-2.3.0.deb && sudo service elasticsearch restart
 ```
+
 {: data-file=".travis.yml"}
 
 We advise verifying the validity of the download URL [on ElasticSearch's website](https://www.elastic.co/downloads/elasticsearch).
@@ -504,6 +532,7 @@ install:
 script:
   - wget -q --waitretry=1 --retry-connrefused -T 10 -O - http://127.0.0.1:9200
 ```
+
 {: data-file=".travis.yml"}
 
 ### Truncated Output in the Build Log
@@ -527,6 +556,7 @@ To use RethinkDB with Travis CI, list it as an addon in the `.travis.yml` config
 addons:
   rethinkdb: '2.3.4'
 ```
+
 {: data-file=".travis.yml"}
 
 If you specify a partial version number, the addon will install and run the latest version that matches. For example, `'2.3'` will match the latest RethinkDB version in the `2.3.x` line.
@@ -559,6 +589,7 @@ env:
   - DB=mysql
   - DB=postgres
 ```
+
 {: data-file=".travis.yml"}
 
 Then you can use those values in a `before_install` (or `before_script`) step to
@@ -572,6 +603,7 @@ before_script:
   - sh -c "if [ '$DB' = 'postgres' ]; then psql -c 'CREATE DATABASE tests_tmp;' -U postgres; fi"
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE IF NOT EXISTS tests_tmp; CREATE DATABASE IF NOT EXISTS tests;'; fi"
 ```
+
 {: data-file=".travis.yml"}
 
 > Travis CI does not have any special support for these variables, it just
@@ -600,6 +632,7 @@ postgres:
   database: myapp_test
   username: postgres
 ```
+
 {: data-file="test/database.yml"}
 
 Then, in your test suite, read that data into a configurations hash:

@@ -1,7 +1,6 @@
 ---
 title: Minimal and Generic images
 layout: en
-
 ---
 
 ## What This Guide Covers
@@ -13,7 +12,7 @@ Travis CI supports many popular programming languages, but can never hope to sup
 <aside markdown="block" class="ataglance">
 
 | Ruby              | Default                                                           |
-|:------------------|:------------------------------------------------------------------|
+| :---------------- | :---------------------------------------------------------------- |
 | Default `install` | N/A                                                               |
 | Default `script`  | N/A                                                               |
 | Matrix keys       | N/A                                                               |
@@ -24,12 +23,13 @@ Examples:
 ```yaml
 language: minimal
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ```yaml
 language: generic
 ```
+
 {: data-file=".travis.yml"}
 
 </aside>
@@ -42,29 +42,28 @@ As neither `minimal` or `generic` are tailored to one particular language, there
 
 The `minimal` image contains:
 
-* [version control tools](/user/reference/trusty/#version-control)
-* [essential build tools such as gcc and make](/user/reference/trusty/#compilers--build-toolchain)
-* [network tools such as curl and essential](/user/reference/trusty/#networking-tools)
-* [Docker](/user/reference/trusty/#docker)
-* [python](/user/reference/trusty/#python-images)
+- [version control tools](/user/reference/trusty/#version-control)
+- [essential build tools such as gcc and make](/user/reference/trusty/#compilers--build-toolchain)
+- [network tools such as curl and essential](/user/reference/trusty/#networking-tools)
+- [Docker](/user/reference/trusty/#docker)
+- [python](/user/reference/trusty/#python-images)
 
 ## Generic
 
 The `generic` image contains everything from `minimal`, and also the usual databases, services and language runtimes:
 
-* [version control tools](/user/reference/trusty/#version-control)
-* [essential build tools such as gcc and make](/user/reference/trusty/#compilers--build-toolchain)
-* [network tools such as curl and essential](/user/reference/trusty/#networking-tools)
-* [Docker](/user/reference/trusty/#docker)
-* [databases and services](/user/reference/trusty/#databases-and-services)
-* [go](/user/reference/trusty/#go-images)
-* [jvm](/user/reference/trusty/#jvm-clojure-groovy-java-scala-images)
-* [node_js](/user/reference/trusty/#javascript-and-nodejs-images)
-* [php](/user/reference/trusty/#php-images)
-* [ruby](/user/reference/trusty/#ruby-images)
+- [version control tools](/user/reference/trusty/#version-control)
+- [essential build tools such as gcc and make](/user/reference/trusty/#compilers--build-toolchain)
+- [network tools such as curl and essential](/user/reference/trusty/#networking-tools)
+- [Docker](/user/reference/trusty/#docker)
+- [databases and services](/user/reference/trusty/#databases-and-services)
+- [go](/user/reference/trusty/#go-images)
+- [jvm](/user/reference/trusty/#jvm-clojure-groovy-java-scala-images)
+- [node_js](/user/reference/trusty/#javascript-and-nodejs-images)
+- [php](/user/reference/trusty/#php-images)
+- [ruby](/user/reference/trusty/#ruby-images)
 
 For specific details of what is on the image consult the [build update](/user/build-environment-updates/2017-12-12/#2017-12-12).
-
 
 ## Aliases
 

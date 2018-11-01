@@ -8,7 +8,6 @@ redirect_from:
   - /user/repository-providers/
 ---
 
-
 ## Build Timeouts
 
 It is very common for test suites or build scripts to hang.
@@ -31,7 +30,6 @@ Some common reasons why builds might hang:
 The [Build Lifecycle documentation](/user/job-lifecycle) now has it's own page.
 {: #Build-Lifecycle}
 
-
 ## Limiting Concurrent Jobs
 
 {{ site.data.snippets.concurrent_jobs }}
@@ -53,16 +51,15 @@ If you are only interested in building the most recent commit on each branch you
 
 The *Auto Cancellation Setting* is in the Settings tab of each repository, and you can enable it separately for:
 
-* *Auto cancel branch builds* - which build your branch and appear in the *Build History* tab of your repository.
+- *Auto cancel branch builds* - which build your branch and appear in the *Build History* tab of your repository.
 
-* *Auto cancel pull request builds* - which build the future merge result of your feature branch against its target and appear in the *Pull Requests* tab of your repository.
+- *Auto cancel pull request builds* - which build the future merge result of your feature branch against its target and appear in the *Pull Requests* tab of your repository.
 
 ![Auto cancellation setting](/images/autocancellation.png "Auto cancellation setting")
 
 For example, in the following screenshot, we pushed commit `ca31c2b` to the branch `MdA-fix-notice` while builds #226 and #227 were queued. With the auto cancellation feature on, the builds #226 and #227 were automatically cancelled:
 
 ![Auto cancellation example](/images/autocancellation-example.png "Auto cancellation example")
-
 
 ## Git Clone Depth
 
@@ -76,6 +73,7 @@ You can set the [clone depth](http://git-scm.com/docs/git-clone) in `.travis.yml
 git:
   depth: 3
 ```
+
 {: data-file=".travis.yml"}
 
 You can also remove the `--depth` flag entirely with:
@@ -84,6 +82,7 @@ You can also remove the `--depth` flag entirely with:
 git:
   depth: false
 ```
+
 {: data-file=".travis.yml"}
 
 ## Git Clone Quiet
@@ -96,6 +95,7 @@ You can enable the [quiet flag](https://git-scm.com/docs/git-clone#git-clone---q
 git:
   quiet: true
 ```
+
 {: data-file=".travis.yml"}
 
 ## Git Submodules
@@ -106,10 +106,10 @@ Travis CI clones git submodules by default, to avoid this set:
 git:
   submodules: false
 ```
+
 {: data-file=".travis.yml"}
 
 ## Git LFS
-
 
 ### Authentication
 
@@ -124,7 +124,6 @@ before_install:
 This authentication is required when connecting to private repositories, and prevents rate-limiting when connecting to open source repositories.
 
 Deploy keys are not currently supported by LFS, so you should use a GitHub OAuth token to authenticate as in the example above.
-
 
 ### Linux
 
@@ -152,17 +151,20 @@ GitHub rate-limits the Git-LFS requests during the git clone process. If you run
 git:
   lfs_skip_smudge: true
 ```
+
 {: data-file=".travis.yml"}
 
-
 ## Git Sparse Checkout
+
 Travis CI supports `git`'s [sparse checkout](https://git-scm.com/docs/git-read-tree#_sparse_checkout)
 capability.
 To clone your repository sparsely, add:
+
 ```yaml
 git:
   sparse_checkout: skip-worktree-map-file
 ```
+
 where `skip-worktree-map-file` is a path to the existing file in the current repository with data you'd like to put into `$GIT_DIR/info/sparse-checkout` file of [format described in Git documentation](https://git-scm.com/docs/git-read-tree#_sparse_checkout).
 
 ## Building Specific Branches
@@ -188,13 +190,14 @@ branches:
   - master
   - stable
 ```
+
 {: data-file=".travis.yml"}
 
 > Note that safelisting also prevents tagged commits from being built. If you consistently tag your builds in the format `v1.3` you can safelist them all with [regular expressions](#Using-regular-expressions), for example `/^v\d+\.\d+(\.\d+)?(-\S*)?$/`.
 
 If you use both a safelist and a blocklist, the safelist takes precedence. By default, the `gh-pages` branch is not built unless you add it to the safelist.
 
-To build _all_ branches:
+To build *all* branches:
 
 ```yaml
 branches:
@@ -202,6 +205,7 @@ branches:
   - gh-pages
   - /.*/
 ```
+
 {: data-file=".travis.yml"}
 
 > Note that for historical reasons `.travis.yml` needs to be present *on all active branches* of your project.
@@ -216,6 +220,7 @@ branches:
   - master
   - /^deploy-.*$/
 ```
+
 {: data-file=".travis.yml"}
 
 Any name surrounded with `/` in the list of branches is treated as a regular expression and can contain any quantifiers, anchors or character classes supported by [Ruby regular expressions](http://www.ruby-doc.org/core-1.9.3/Regexp.html).
@@ -230,19 +235,24 @@ to skip building this commit via a command in the commit message.
 
 The command should be one of the following forms:
 
-    [<KEYWORD> skip]
+```
+[<KEYWORD> skip]
+```
 
 or
 
-    [skip <KEYWORD>]
+```
+[skip <KEYWORD>]
+```
 
 where `<KEYWORD>` is either `ci`, `travis`, `travis ci`, `travis-ci`, or `travisci`.
 For example,
 
-    [skip travis] Update README
+```
+[skip travis] Update README
+```
 
 Note that in case multiple commits are pushed together, the skip command is effective only if present in the commit message of the HEAD commit.
-
 
 ## Build matrix
 
@@ -258,6 +268,7 @@ matrix:
     gemfile: gemfiles/Gemfile.rails-2.3.x
     env: ISOLATED=true
 ```
+
 {: data-file=".travis.yml"}
 
 > All build matrixes are currently limited to a maximum of **200 jobs** for both private and public repositories. If you are on an open-source plan, please remember that Travis CI provides this service free of charge to the community. So please only specify the matrix you *actually need*.
@@ -309,6 +320,7 @@ gemfile:
 - gemfiles/rails31.gemfile
 - gemfiles/rails32.gemfile
 ```
+
 {: data-file=".travis.yml"}
 
 This results in a 3×3×4 build matrix. To exclude all jobs which have `rvm` value `2.0.0` *and*
@@ -320,6 +332,7 @@ matrix:
   - rvm: 2.0.0
     gemfile: Gemfile
 ```
+
 {: data-file=".travis.yml"}
 
 Which is equivalent to:
@@ -337,12 +350,13 @@ matrix:
     gemfile: Gemfile
     env: DB=mysql
 ```
+
 {: data-file=".travis.yml"}
 
 #### Excluding jobs with `env` value
 
 When excluding jobs with `env` values, the value must match
-_exactly_.
+*exactly*.
 
 For example,
 
@@ -398,6 +412,7 @@ matrix:
     gemfile: gemfiles/Gemfile.rails-3.2.x
     env: ISOLATED=false
 ```
+
 {: data-file=".travis.yml"}
 
 This adds a particular job to the build matrix which has already been populated.
@@ -419,6 +434,7 @@ matrix:
     env: TEST_SUITE=suite_pypy
 script: ./test.py $TEST_SUITE
 ```
+
 {: data-file=".travis.yml"}
 
 creates a build matrix with 3 jobs, which runs test suite for each version
@@ -447,6 +463,7 @@ matrix:
       env: EXTRA_TESTS=true
 script: env $EXTRA_TESTS ./test.py $TEST_SUITE
 ```
+
 {: data-file=".travis.yml"}
 
 ### Rows that are Allowed to Fail
@@ -464,11 +481,12 @@ matrix:
   allow_failures:
   - rvm: 1.9.3
 ```
+
 {: data-file=".travis.yml"}
 
 #### Matching Jobs with `allow_failures`
 
-When matching jobs against the definitions given in `allow_failures`, _all_
+When matching jobs against the definitions given in `allow_failures`, *all*
 conditions in `allow_failures` must be met exactly, and
 all the keys in `allow_failures` element must exist in the
 top level of the build matrix (i.e., not in `matrix.include`).
@@ -494,6 +512,7 @@ matrix:
   allow_failures:
     - env: SECRET_VAR1=SECRET1 SECRET_VAR2=SECRET2
 ```
+
 {: data-file=".travis.yml"}
 
 Here, no job is allowed to fail because no job has the `env` value
@@ -515,6 +534,7 @@ matrix:
   - php: 7.0
     env: KEY=VALUE
 ```
+
 {: data-file=".travis.yml"}
 
 Without the top-level `env`, no job will be allowed to fail.
@@ -529,6 +549,7 @@ To mark the build as finished as soon as possible, add `fast_finish: true` to th
 matrix:
   fast_finish: true
 ```
+
 {: data-file=".travis.yml"}
 
 Now, the build result will be determined as soon as all the required jobs finish, based on these results, while the rest of the `allow_failures` jobs continue to run.
@@ -549,6 +570,7 @@ addons:
   - travis.test
   - joshkalderimis.com
 ```
+
 {: data-file=".travis.yml"}
 
 ## What repository providers or version control systems can I use?

@@ -1,7 +1,6 @@
 ---
 title: Building an R Project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -26,6 +25,7 @@ simply be
 ```yaml
 language: r
 ```
+
 {: data-file=".travis.yml"}
 
 Using the package cache to store R package dependencies can significantly speed
@@ -35,6 +35,7 @@ up build times and is recommended for most builds.
 language: r
 cache: packages
 ```
+
 {: data-file=".travis.yml"}
 
 If you do *not* see
@@ -73,6 +74,7 @@ r:
   - release
   - devel
 ```
+
 {: data-file=".travis.yml"}
 
 As new minor versions are released, aliases will float and point to the most
@@ -106,6 +108,7 @@ language: r
 before_install:
   - tlmgr install index
 ```
+
 {: data-file=".travis.yml"}
 
 The best way to figure out what packages you may need is to look at the
@@ -125,6 +128,7 @@ desired version.
 language: r
 pandoc_version: 1.19.2.1
 ```
+
 {: data-file=".travis.yml"}
 
 If you don't need Pandoc, tell Travis CI not to install it using `pandoc: false`.
@@ -142,6 +146,7 @@ addons:
     packages:
       - libxml2-dev
 ```
+
 {: data-file=".travis.yml"}
 
 Note that the APT package needs to be white-listed for this to work
@@ -155,6 +160,7 @@ the `apt_packages` field:
 apt_packages:
   - libxml2-dev
 ```
+
 {: data-file=".travis.yml"}
 
 ### Package check options
@@ -182,6 +188,7 @@ Bioconductor version they want to test against in their `.travis.yml`.
 language: r
 r: bioc-devel
 ```
+
 {: data-file=".travis.yml"}
 
 Or if you want to test against the release branch
@@ -190,6 +197,7 @@ Or if you want to test against the release branch
 language: r
 r: bioc-release
 ```
+
 {: data-file=".travis.yml"}
 
 Travis CI will use the proper R version for that version of Bioconductor and
@@ -205,6 +213,7 @@ install:
   - R -e "0" --args --bootstrap-packrat
   - R -e "packrat::restore(restart = FALSE)"
 ```
+
 {: data-file=".travis.yml"}
 
 You can minimise build times by caching your packrat packages with:
@@ -216,6 +225,7 @@ cache:
     - $TRAVIS_BUILD_DIR/packrat/lib
   packages: true
 ```
+
 {: data-file=".travis.yml"}
 
 ### Miscellaneous
@@ -232,6 +242,7 @@ repos:
   CRAN: https://cloud.r-project.org
   ropensci: http://packages.ropensci.org
 ```
+
 {: data-file=".travis.yml"}
 
 - `disable_homebrew`: if `true` this removes the preinstalled homebrew
@@ -250,7 +261,7 @@ defaults](/user/environment-variables/#default-environment-variables).
 - `NOT_CRAN=true`
 - `R_PROFILE=~/.Rprofile.site`
 - `TRAVIS_R_VERSION_STRING` set to the *string* provided *to* `r:`, i.e. `release`, `oldrel` or `devel`.
-   Useful, for example, to deploy only from `release` via `on: condition: "$TRAVIS_R_VERSION_STRING = release"`.
+    Useful, for example, to deploy only from `release` via `on: condition: "$TRAVIS_R_VERSION_STRING = release"`.
 
 ### Additional Dependency Fields
 
@@ -302,6 +313,7 @@ script:
 - R CMD build .
 - R CMD check *tar.gz
 ```
+
 {: data-file=".travis.yml"}
 
 If you'd like to see the full details, see
@@ -317,6 +329,7 @@ these two lines are sufficient.
 language: r
 cache: packages
 ```
+
 {: data-file=".travis.yml"}
 
 ### Package in a subdirectory
@@ -329,6 +342,7 @@ language: r
 before_install:
   - cd subdirectory
 ```
+
 {: data-file=".travis.yml"}
 
 ### Remote package
@@ -338,6 +352,7 @@ If your package depends on another repository you can use `r_github_packages` in
 ```yaml
 r_github_packages: user/repo
 ```
+
 {: data-file=".travis.yml"}
 
 An alternative is to add the following line to your `DESCRIPTION` file:
@@ -346,11 +361,11 @@ An alternative is to add the following line to your `DESCRIPTION` file:
 Imports: pkg-name-of-repo
 Remotes: user/repo
 ```
+
 {: data-file=".travis.yml"}
 
 Remember that `Remotes:` specifies the *source* of a development package, so the package still needs to be listed in `Imports:`, `Suggests:` `Depends:` or `LinkingTo:`.
 In the rare case where *repo* and *package* name differ, `Remotes:` expects the *repository* name and `Imports:` expects the *package* name (as per the `DESCRIPTION` of that imported package).
-
 
 ### Remote package in a subdirectory
 
@@ -359,6 +374,7 @@ If your package depends on another repository which holds the package in a subdi
 ```yaml
 r_github_packages: user/repo/folder
 ```
+
 {: data-file=".travis.yml"}
 
 An alternative is to add the following line to your `DESCRIPTION` file:
@@ -366,6 +382,7 @@ An alternative is to add the following line to your `DESCRIPTION` file:
 ```yaml
 Remotes: user/repo/folder
 ```
+
 {: data-file=".travis.yml"}
 
 ## Converting from r-travis

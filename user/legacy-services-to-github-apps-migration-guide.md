@@ -9,7 +9,7 @@ The following guide shows you how to migrate your private repository to the Trav
 
 ## How to migrate a private repository to GitHub Apps
 
-Go to your profile page on travis-ci.com: [https://travis-ci.com/profile](https://travis-ci.com/profile).
+Go to your profile page on travis-ci.com: <https://travis-ci.com/profile>.
 
 ![travis-ci.com profile page with legacy GitHub Services integration](/images/legacy-services-repo.png)
 

@@ -1,7 +1,6 @@
 ---
 title: Trusty Build Containers for Enterprise
 layout: en_enterprise
-
 ---
 
 ## System Setup
@@ -12,7 +11,7 @@ layout: en_enterprise
 
 We recommend using AWS's `c4.2xlarge` as the instance type with at least 40gb of disk space. Port 22 must be open for SSH during installation and operation.
 
-In addition, _Precise build containers and Trusty build containers must be on different instances_. To run both Precise and Trusty builds, at least two worker instances are required.
+In addition, *Precise build containers and Trusty build containers must be on different instances*. To run both Precise and Trusty builds, at least two worker instances are required.
 
 ## Installation with Travis CI Enterprise 2.2+
 
@@ -26,12 +25,11 @@ sudo bash /tmp/installer.sh \
 --travis_enterprise_security_token="[RabbitMQ Password/Enterprise Security Token]"
 ```
 
-This installer uses Docker's `aufs` storage driver. If you have any questions or concerns, please [get in touch with us](mailto: enterprise@travis-ci.com?subject=Precise%20Workers) to discuss alternatives.
-
+This installer uses Docker's `aufs` storage driver. If you have any questions or concerns, please [get in touch with us](<mailto: enterprise@travis-ci.com?subject=Precise%20Workers>) to discuss alternatives.
 
 ## Installation with Travis CI Enterprise 2.1.9+
 
-The Travis CI Enterprise 2.1 series has the [Precise [Legacy]](/user/enterprise/precise) as it's default worker. However, starting with version 2.1.9+, it is possible to use Trusty build environments, assuming the feature flags are set. Otherwise, the installation process is very similar to the Enterprise 2.2 series.
+The Travis CI Enterprise 2.1 series has the [Precise \[Legacy\]](/user/enterprise/precise) as it's default worker. However, starting with version 2.1.9+, it is possible to use Trusty build environments, assuming the feature flags are set. Otherwise, the installation process is very similar to the Enterprise 2.2 series.
 
 ### Enabling the Trusty Beta Feature Flag
 
@@ -53,7 +51,7 @@ sudo bash /tmp/installer.sh \
 --travis_enterprise_security_token="[RabbitMQ Password/Enterprise Security Token]"
 ```
 
-This installer uses Docker's `aufs` storage driver. If you have any questions or concerns, please [get in touch with us](mailto: enterprise@travis-ci.com?subject=Precise%20Workers) to discuss alternatives.
+This installer uses Docker's `aufs` storage driver. If you have any questions or concerns, please [get in touch with us](<mailto: enterprise@travis-ci.com?subject=Precise%20Workers>) to discuss alternatives.
 
 ### Running builds on Trusty on Travis CI Enterprise 2.1.9+
 

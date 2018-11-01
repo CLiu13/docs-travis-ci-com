@@ -1,7 +1,6 @@
 ---
 title: AWS OpsWorks Deployment
 layout: en
-
 ---
 
 Travis CI can automatically deploy your [AWS OpsWorks](https://aws.amazon.com/en/opsworks/) application after a successful build.
@@ -16,6 +15,7 @@ deploy:
   app-id: APP-ID
   region: REGION # (default: us-east-1)
 ```
+
 {: data-file=".travis.yml"}
 
 `region` isn't required but it defaults to `us-east-1`. If your application is located in a different region you will get an error like "OpsWorks service error: Unable to find app with ID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx".
@@ -46,6 +46,7 @@ deploy:
   app-id: APP-ID
   migrate: true
 ```
+
 {: data-file=".travis.yml"}
 
 ### Branch to deploy from
@@ -62,6 +63,7 @@ deploy:
   app-id: APP-ID
   on: production
 ```
+
 {: data-file=".travis.yml"}
 
 Alternatively, you can also configure it to deploy from all branches:
@@ -75,6 +77,7 @@ deploy:
   on:
     all_branches: true
 ```
+
 {: data-file=".travis.yml"}
 
 Builds triggered from Pull Requests will never trigger a deploy.
@@ -93,6 +96,7 @@ deploy:
   app-id: APP-ID
   skip_cleanup: true
 ```
+
 {: data-file=".travis.yml"}
 
 ### Waiting for Deployments
@@ -109,6 +113,7 @@ deploy:
   app-id: APP-ID
   wait-until-deployed: true
 ```
+
 {: data-file=".travis.yml"}
 
 Travis CI will wait up to 10 minutes for the deploy to complete, and log
@@ -127,6 +132,7 @@ deploy:
   wait-until-deployed: true
   update-app-on-success: true
 ```
+
 {: data-file=".travis.yml"}
 
 Travis CI will wait until the deployment returns successful and only then update the revision in App Settings.
@@ -148,4 +154,5 @@ after_deploy:
   - ./after_deploy_1.sh
   - ./after_deploy_2.sh
 ```
+
 {: data-file=".travis.yml"}

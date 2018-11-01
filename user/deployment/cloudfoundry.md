@@ -1,7 +1,6 @@
 ---
 title: CloudFoundry Deployment
 layout: en
-
 ---
 
 You now have the amazing ability to deploy directly to [CloudFoundry](https://run.pivotal.io/) after a successful build on Travis CI.
@@ -27,6 +26,7 @@ So you want to write your own `.travis.yml`, fine.  Here is the minimum required
    organization: myawesomeorganization
    space: staging
 ```
+
 {: data-file=".travis.yml"}
 
 ***Make sure that you encrypt your password before pushing your updated .travis.yml to GitHub.***

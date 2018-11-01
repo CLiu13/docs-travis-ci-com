@@ -5,6 +5,7 @@ no_toc: true
 redirect_from:
   - /legal/terms-conditions/
 ---
+
 of
 
 Travis CI GmbH, Rigaer Straße 8, 10247 Berlin, registered with the commercial register of the local court in Charlottenburg (Berlin) under HRB 140133 B (hereinafter “Travis CI”),
@@ -34,10 +35,11 @@ as of 05/2018
 3. An Account may only be used by one single person. The Customer is entitled to create separate Accounts for his employees.
 4. The person opening the Account represents that he/she has the legal authority to bind the legal entity he/she acts for to this Agreement and may in knowledge of this Agreement provide the GitHub Sign-Ins to Travis CI.
 5. In connection with the registration the customer is obliged to
-  - make precise and correct allegations and to correct the data if changes accrue;
-  - keep Account data confidential at all times and to do everything to avoid any third party getting hold of the data. In this respect ‘third party’ also includes all employees of the Customer that are not designated to use the Travis CI Software;
-  - immediately inform Travis CI in case of loss, theft or other disclosure of the Account data to a third party or in a suspicion of misuse of the Account data and to immediately change the password;
-  - allow the use of the Account data only designated administrators to be specified in the registration procedure.
+
+- make precise and correct allegations and to correct the data if changes accrue;
+- keep Account data confidential at all times and to do everything to avoid any third party getting hold of the data. In this respect ‘third party’ also includes all employees of the Customer that are not designated to use the Travis CI Software;
+- immediately inform Travis CI in case of loss, theft or other disclosure of the Account data to a third party or in a suspicion of misuse of the Account data and to immediately change the password;
+- allow the use of the Account data only designated administrators to be specified in the registration procedure.
 
 ### Obligations of the customer
 
@@ -83,17 +85,19 @@ For any services offered by Travis CI free of charge (**“Free Services”**), 
 ### Limitation of Liability
 
 1. Travis CI’s liability for damages caused by or related to the exercise of rights and obligations under this Agreement shall be excluded. The limitation of liability shall not cover
-  - damage from injury to life, body or health caused by Travis CI;
-  - damages caused by Travis CI that are are a result of wilful intent or gross negligence;
-  - damage caused by Travis CI as a result of slight negligence in the event of Travis CI’s breach of an essential contractual obligation which is indispensable for the duly execution of the contract and thereby jeopardizes the achievement of the contract purpose and such damage is typically foreseeable at the time of the infringement;
-  - Travis CI’s liability in the event of the assumption of a warranty if an obligation infringement covered thereby triggers Travis CI’s liability.
+
+- damage from injury to life, body or health caused by Travis CI;
+- damages caused by Travis CI that are are a result of wilful intent or gross negligence;
+- damage caused by Travis CI as a result of slight negligence in the event of Travis CI’s breach of an essential contractual obligation which is indispensable for the duly execution of the contract and thereby jeopardizes the achievement of the contract purpose and such damage is typically foreseeable at the time of the infringement;
+- Travis CI’s liability in the event of the assumption of a warranty if an obligation infringement covered thereby triggers Travis CI’s liability.
+
 2. If the liability of Travis CI is excluded or restricted, this also applies to the personal liability of its employees, representatives, and agents.
 3. Liability under the Product Liability Act (Produkthaftungsgesetz) shall remain unaffected.
 4. Travis CI will not be liable hereunder by reasons of any failure to timely perform its services due to an event beyond its reasonable control, including acts of God.
 
 ### Data protection, References and Confidentiality
 
-1. Travis CI stores, processes and uses Customer data in accordance with the applicable (data protection) law(s). For further information please refer to Travis CI privacy policy under [https://docs.travis-ci.com/legal/privacy-policy/](https://docs.travis-ci.com/legal/privacy-policy/). In the event Travis CI processes personal data controlled by Customer the data processing agreement under [https://docs.travis-ci.com/legal/data-processing-agreement](https://docs.travis-ci.com/legal/data-processing-agreement) applies.
+1. Travis CI stores, processes and uses Customer data in accordance with the applicable (data protection) law(s). For further information please refer to Travis CI privacy policy under <https://docs.travis-ci.com/legal/privacy-policy/>. In the event Travis CI processes personal data controlled by Customer the data processing agreement under <https://docs.travis-ci.com/legal/data-processing-agreement> applies.
 2. Travis CI may identify Customer as a customer of Travis CI and display Customer's name and logo solely for such purpose on its customer lists, its website, and its marketing and promotional materials provided that Customer may request that Travis CI cease such use at any time upon written notice to Travis CI.
 
 ### Term and Termination
@@ -101,6 +105,7 @@ For any services offered by Travis CI free of charge (**“Free Services”**), 
 1. The Agreement runs for an indefinite time and will remain in effect until terminated by one of Parties in accordance with this section 12.
 2. The Parties may terminate this Agreement for any or no reason at their convenience with a 30 day notice to the end of each month. Termination may be issued in writing or by using the provided account closing mechanism, if provided by Travis CI.
 3. In addition, each party’s right to terminate this Agreement for a good cause remains unaffected. A good cause for termination of the Agreement by Travis CI shall include, but is not limited to, the following:
+
 - a serious breach of the obligations arising from this Agreement by the Customer;
 - a default in payment of the Customer with an amount that equals at least the compensation of two month;
 - a serious breach of contract leading to the loss of mutual trust or renders the continuation of this Agreement in consideration of the purpose of the Agreement unreasonable;
@@ -110,6 +115,7 @@ For any services offered by Travis CI free of charge (**“Free Services”**), 
 - a major change in the working of GitHub that makes it unreasonable for Travis CI to adapt the Travis CI Software accordingly;
 - a major change in the co-operation of GitHub and Travis CI that makes the further offering of Travis CI unreasonable for Travis CI;
 - an application for the initiation of insolvency proceedings concerning the Customer, as well as the refusal to open insolvency proceedings for lack of assets, or the issue of a declaration in lieu of an oath, or any similar proceedings.
+
 4. In case of the termination of the Agreement, any rights of use granted to Customer for the Travis CI Software shall expire immediately and Customer shall cease to use the Travis CI Software.
 
 ### Disputes, Applicable Law, Notices

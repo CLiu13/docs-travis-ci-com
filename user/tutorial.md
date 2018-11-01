@@ -14,8 +14,8 @@ instead.
 
 To start using Travis CI, make sure you have:
 
- * A [GitHub](https://github.com/) account.
- * Owner permissions for a project [hosted on GitHub](https://help.github.com/categories/importing-your-projects-to-github/).
+- A [GitHub](https://github.com/) account.
+- Owner permissions for a project [hosted on GitHub](https://help.github.com/categories/importing-your-projects-to-github/).
 
 ## To get started with Travis CI
 
@@ -36,6 +36,7 @@ To start using Travis CI, make sure you have:
     - 2.2
     - jruby
    ```
+
    {: data-file=".travis.yml"}
 
    The defaults for Ruby projects are `bundle install` to [install dependencies](/user/job-lifecycle/#customizing-the-installation-phase),
@@ -47,7 +48,6 @@ To start using Travis CI, make sure you have:
 
 6. Check the build status page to see if your build [passes or fails](/user/job-lifecycle/#breaking-the-build), according to the return status of the build command by visiting the [Travis CI](https://travis-ci.com/auth) and selecting your repository.
 
-
 ## Selecting a different programming language
 
 Use one of these common languages:
@@ -55,26 +55,31 @@ Use one of these common languages:
 ```yaml
 language: ruby
 ```
+
 {: data-file=".travis.yml"}
 
 ```yaml
 language: java
 ```
+
 {: data-file=".travis.yml"}
 
 ```yaml
 language: node_js
 ```
+
 {: data-file=".travis.yml"}
 
 ```yaml
 language: python
 ```
+
 {: data-file=".travis.yml"}
 
 ```yaml
 language: php
 ```
+
 {: data-file=".travis.yml"}
 
 Or pick one from the [full list](/user/languages/).
@@ -86,21 +91,23 @@ is to set the `language`. If you do this your build runs on the default
 infrastructure (with a few exceptions), which is Container Based Ubuntu 14.04.
 You can explicitly select the default infrastructure by adding `sudo: false` to your `.travis.yml`.
 
-* If you need a more customizable environment running in a virtual machine, use the Sudo
-Enabled infrastructure:
+- If you need a more customizable environment running in a virtual machine, use the Sudo
+  Enabled infrastructure:
 
   ```yaml
   sudo: enabled
   ```
-  {: data-file=".travis.yml"}
 
-* If you have tests that need to run on macOS, or your project uses Swift or
-Objective-C, use our OS X environment:
+    {: data-file=".travis.yml"}
+
+- If you have tests that need to run on macOS, or your project uses Swift or
+  Objective-C, use our OS X environment:
 
   ```yaml
   os: osx
   ```
-  {: data-file=".travis.yml"}
+
+    {: data-file=".travis.yml"}
 
   > You do *not* necessarily need to use OS X if you develop on a Mac.
   > OS X is required only if you need Swift, Objective-C or other
@@ -110,18 +117,18 @@ Objective-C, use our OS X environment:
 
 Travis CI isn't just for running tests, there are many others things you can do with your code:
 
-* deploy to [GitHub pages](/user/deployment/pages/)
-* run apps on [Heroku](/user/deployment/heroku/)
-* upload [RubyGems](/user/deployment/rubygems/)
-* send [notifications](/user/notifications/)
+- deploy to [GitHub pages](/user/deployment/pages/)
+- run apps on [Heroku](/user/deployment/heroku/)
+- upload [RubyGems](/user/deployment/rubygems/)
+- send [notifications](/user/notifications/)
 
 ## Further Reading
 
 Read more about
 
-* [customizing your build](/user/customizing-the-build)
-* [security best practices](/user/best-practices-security/)
-* [build stages](/user/build-stages/)
-* [build matrixes](/user/customizing-the-build/#build-matrix)
-* [installing dependencies](/user/installing-dependencies)
-* [setting up databases](/user/database-setup/)
+- [customizing your build](/user/customizing-the-build)
+- [security best practices](/user/best-practices-security/)
+- [build stages](/user/build-stages/)
+- [build matrixes](/user/customizing-the-build/#build-matrix)
+- [installing dependencies](/user/installing-dependencies)
+- [setting up databases](/user/database-setup/)

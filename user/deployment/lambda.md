@@ -1,7 +1,6 @@
 ---
 title: Lambda Deployment
 layout: en
-
 ---
 
 Travis CI supports uploading to [AWS Lambda](https://aws.amazon.com/lambda/).
@@ -17,6 +16,7 @@ deploy:
   runtime: "nodejs4.3"
   handler_name: "handler"
 ```
+
 {: data-file=".travis.yml"}
 
 AWS credentials can be passed in via the `access_key_id` and `secret_access_key` parameters.

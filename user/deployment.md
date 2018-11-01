@@ -4,8 +4,6 @@ layout: en
 swiftypetags: 'skip_cleanup'
 ---
 
-
-
 ## Supported Providers
 
 Continuous Deployment to the following providers is supported:
@@ -25,6 +23,7 @@ working directory and deleting all changes made during the build ( `git stash
 deploy:
   skip_cleanup: true
 ```
+
 {: data-file=".travis.yml"}
 
 ## Deploying to Multiple Providers
@@ -42,6 +41,7 @@ deploy:
   - provider: heroku
     api_key: "YOUR HEROKU API KEY"
 ```
+
 {: data-file=".travis.yml"}
 
 ## Conditional Releases with `on:`
@@ -59,36 +59,37 @@ deploy:
     branch: release
     condition: $MY_ENV = super_awesome
 ```
+
 {: data-file=".travis.yml"}
 
 When *all* conditions specified in the `on:` section are met, your build will deploy.
 
 Use the following options to configure conditional deployment:
 
-* `repo`: in the form `owner_name/repo_name`. Deploy only when the build occurs on a particular repository. For example
+- `repo`: in the form `owner_name/repo_name`. Deploy only when the build occurs on a particular repository. For example
 
-   ```yaml
-   on:
-     repo: travis-ci/dpl
-   ```
+  ```yaml
+  on:
+    repo: travis-ci/dpl
+  ```
 
-* `branch`: name of the branch.
+- `branch`: name of the branch.
    If omitted, this defaults to the `app`-specific branch, or `master`. If the branch name is not known ahead of time, you can specify
-   `all_branches: true` *instead of* `branch: ` and use other conditions to control your deployment.
+   `all_branches: true` *instead of* `branch:` and use other conditions to control your deployment.
 
-* `jdk`, `node`, `perl`, `php`, `python`, `ruby`, `scala`, `go`: for    language runtimes that support multiple versions,
+- `jdk`, `node`, `perl`, `php`, `python`, `ruby`, `scala`, `go`: for    language runtimes that support multiple versions,
    you can limit the deployment to happen only on the job that matches a specific version.
 
-* `condition`: deploy when *a single* bash condition evaluates to `true`. This must be a string value, and is equivalent to `if [[ <condition> ]]; then <deploy>; fi`. For example, `$CC = gcc`.
+- `condition`: deploy when *a single* bash condition evaluates to `true`. This must be a string value, and is equivalent to `if [[ <condition> ]]; then <deploy>; fi`. For example, `$CC = gcc`.
 
-* `tags` can be `true`, `false` or any other string:
+- `tags` can be `true`, `false` or any other string:
 
-    * `tags: true`: deployment is triggered if and only if `$TRAVIS_TAG` is set.
-       Depending on your workflow, you may set `$TRAVIS_TAG` explicitly, even if this is
-       a non-tag build when it was initiated. This causes the `branch` condition to be ignored.
-    * `tags: false`: deployment is triggered if and only if `$TRAVIS_TAG` is empty.
-       This also causes the `branch` condition to be ignored.
-    * When `tags` is not set, or set to any other value, `$TRAVIS_TAG` is ignored, and the `branch` condition is considered, if it is set.
+  - `tags: true`: deployment is triggered if and only if `$TRAVIS_TAG` is set.
+     Depending on your workflow, you may set `$TRAVIS_TAG` explicitly, even if this is
+     a non-tag build when it was initiated. This causes the `branch` condition to be ignored.
+  - `tags: false`: deployment is triggered if and only if `$TRAVIS_TAG` is empty.
+     This also causes the `branch` condition to be ignored.
+  - When `tags` is not set, or set to any other value, `$TRAVIS_TAG` is ignored, and the `branch` condition is considered, if it is set.
 
 ### Examples of Conditional Deployment
 
@@ -103,6 +104,7 @@ deploy:
     branch: staging
     node: '0.11' # this should be quoted; otherwise, 0.10 would not work
 ```
+
 {: data-file=".travis.yml"}
 
 The next example deploys using a custom script `deploy.sh`, only for builds on the branches `staging` and `production`.
@@ -115,6 +117,7 @@ deploy:
     all_branches: true
     condition: $TRAVIS_BRANCH =~ ^staging|production$
 ```
+
 {: data-file=".travis.yml"}
 
 The next example deploys to S3 only when `$CC` is set to `gcc`.
@@ -129,6 +132,7 @@ deploy:
   on:
     condition: "$CC = gcc"
 ```
+
 {: data-file=".travis.yml"}
 
 This example deploys to GitHub Releases when a tag is set and the Ruby version is 2.0.0.
@@ -143,6 +147,7 @@ deploy:
     tags: true
     rvm: 2.0.0
 ```
+
 {: data-file=".travis.yml"}
 
 ### Adding a deployment provider
@@ -156,6 +161,7 @@ deploy:
   provider: awesome-experimental-provider
   edge: true
 ```
+
 {: data-file=".travis.yml"}
 
 ## Pull Requests

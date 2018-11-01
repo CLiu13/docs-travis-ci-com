@@ -11,8 +11,6 @@ redirect_from:
 This guide explains what packages, tools and settings are available in the
 Travis OS X CI environment (often referred to as the “CI environment”).
 
-
-
 ## Overview
 
 Travis CI runs builds in virtual machines that are snapshotted before each build
@@ -35,6 +33,7 @@ To use our OS X build infrastructure, add the following to your `.travis.yml`:
 ```yaml
 os: osx
 ```
+
 {: data-file=".travis.yml"}
 
 ## OS X Version
@@ -87,7 +86,6 @@ The JDK available in the OS X environment is tied to the Xcode version selected 
   </tr>
 {% endfor %}
 </table>
-
 
 ## Compilers and Build toolchain
 

@@ -1,7 +1,6 @@
 ---
 title: Building a Haxe Project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -31,6 +30,7 @@ haxe:
   - stable      # the latest stable release defined in https://haxe.org/download/list/
   - development # the latest build of the development branch in http://build.haxe.org/
 ```
+
 {: data-file=".travis.yml"}
 
 ## Default Haxe Version
@@ -48,6 +48,7 @@ for example:
 language: haxe
 neko: "2.0.0"
 ```
+
 {: data-file=".travis.yml"}
 
 However, unlike `haxe:`, you can provide only one value (not an array) to `neko:`.
@@ -62,6 +63,7 @@ language: haxe
 hxml:
   - build.hxml
 ```
+
 {: data-file=".travis.yml"}
 
 In the *install* phase, the worker will run `yes | haxelib install $hxml` for

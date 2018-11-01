@@ -1,10 +1,7 @@
 ---
 title: Customizing Enterprise Worker Configuration
 layout: en_enterprise
-
 ---
-
-
 
 ## Credentials for Connecting to the Platform
 
@@ -70,7 +67,6 @@ please update the following setting:
 export TRAVIS_WORKER_POOL_SIZE="2"
 ```
 
-
 To change the number of CPUs a job is allowed to use, please change the
 following setting:
 
@@ -86,7 +82,6 @@ example use all CPU cores.
 export TRAVIS_WORKER_DOCKER_CPUS=0
 ```
 
-
 ## Changing the Worker Hostname
 
 Each Worker should have a unique hostname, making it easier to determine
@@ -96,7 +91,6 @@ Worker is running on.
 ```sh
 export TRAVIS_WORKER_HOSTNAME=""
 ```
-
 
 ## Disable SSL Verification Messages
 
@@ -139,8 +133,7 @@ export TRAVIS_WORKER_DOCKER_MEMORY=0
 ## Setting Maximum Log Length
 
 The Worker comes configured with `defaultMaxLogLength = 4500000` which
-is 4.5MB. The setting is measured in bytes, so to get 40MB you need
-40000000.
+is 4.5MB. The setting is measured in bytes, so to get 40MB you need 40000000.
 
 ```sh
 export TRAVIS_WORKER_MAX_LOG_LENGTH=40000000
@@ -151,7 +144,7 @@ export TRAVIS_WORKER_MAX_LOG_LENGTH=40000000
 You can use [Docker bind mounts](https://docs.docker.com/storage/bind-mounts/)
 when the worker launches the container of a job. This lets you share files or directories
 across all jobs ran by a worker. Multiple binds can be provided
-as _space separated_ strings.
+as *space separated* strings.
 
 For example, the setting below shows how to share the `/tmp` directory in read/write mode,
 as well as the `/var/log` directory in read-only mode (`:r` is the default):

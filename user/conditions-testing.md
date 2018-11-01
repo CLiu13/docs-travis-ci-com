@@ -33,7 +33,6 @@ tree.
 ```
 $ travis-conditions parse "branch = foo"
 [:eq, [:var, :branch], [:val, "foo"]]
-
 ```
 
 ### eval

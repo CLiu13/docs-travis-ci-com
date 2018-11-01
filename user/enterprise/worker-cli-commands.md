@@ -1,10 +1,7 @@
 ---
 title: Enterprise Worker Start & Debug Containers
 layout: en_enterprise
-
 ---
-
-
 
 ## Stopping and Starting the Worker
 
@@ -52,7 +49,7 @@ wait until some or all jobs are being worked off successfully, you can
 issue a `SIGINT` instead. This together with a `sleep` ensures that
 either at least some or all active jobs can finish (depending on how
 long your queue is). After `sleep` finished the worker has to be
-shutdown via `sudo stop travis-worker`.\
+shutdown via `sudo stop travis-worker`.\\
 
 ## Example Worker Stop and Start
 
@@ -117,7 +114,7 @@ docker -H tcp://0.0.0.0:4243 kill $id
 docker -H tcp://0.0.0.0:4243 rm $id
 ```
 
-_(If travis-worker runs on Ubuntu 16.04, `-H tcp://0.0.0.0:4243` is not necessary anymore)_
+*(If travis-worker runs on Ubuntu 16.04, `-H tcp://0.0.0.0:4243` is not necessary anymore)*
 
 ## Contact Enterprise Support
 

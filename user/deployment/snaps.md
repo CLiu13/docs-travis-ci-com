@@ -17,6 +17,7 @@ deploy:
   channel: edge
   skip_cleanup: true
 ```
+
 {: data-file=".travis.yml"}
 
 To upload snaps from Travis CI, export a Snap Store login token. You can do this with the snapcraft command-line tool, once you have [enabled snap support](https://docs.snapcraft.io/core/install) on your system.
@@ -31,7 +32,7 @@ Login tokens can specify how, when, and where they can be used, thus minimising 
 snapcraft export-login --snaps my-snap-name --channels edge -
 ```
 
-_Note: The final `-` requests the login be exported to stdout instead of a file. It is required._
+*Note: The final `-` requests the login be exported to stdout instead of a file. It is required.*
 
 The token will be printed out. Copy and put it into the Travis CI environment variable `$SNAP_TOKEN`:
 
@@ -39,7 +40,7 @@ The token will be printed out. Copy and put it into the Travis CI environment va
 travis env set SNAP_TOKEN "<token>"
 ```
 
-_Note: The `edge` channel is intended for the bleeding edge: your every commit to master will be built and uploaded._
+*Note: The `edge` channel is intended for the bleeding edge: your every commit to master will be built and uploaded.*
 
 Your community of early-adopters and testers can install your app in any of the [supported Linux distributions](https://docs.snapcraft.io/core/install) with:
 

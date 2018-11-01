@@ -1,7 +1,6 @@
 ---
 title: Building a Python Project
 layout: en
-
 ---
 
 ### What This Guide Covers
@@ -9,7 +8,7 @@ layout: en
 <aside markdown="block" class="ataglance">
 
 | Python                                      | Default                                   |
-|:--------------------------------------------|:------------------------------------------|
+| :------------------------------------------ | :---------------------------------------- |
 | [Default `install`](#Dependency-Management) | `pip install -r requirements.txt`         |
 | [Default `script`](#Default-Build-Script)   | N/A                                       |
 | [Matrix keys](#Build-Matrix)                | `python`, `env`                           |
@@ -24,7 +23,9 @@ Minimal example:
   script:
     - pytest
 ```
+
 {: data-file=".travis.yml"}
+
 </aside>
 
 {{ site.data.snippets.trusty_note_no_osx }}
@@ -60,8 +61,8 @@ install:
 script:
   - pytest
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ### Travis CI Uses Isolated virtualenvs
 
@@ -82,8 +83,8 @@ python:
 virtualenv:
   system_site_packages: true
 ```
-{: data-file=".travis.yml"}
 
+{: data-file=".travis.yml"}
 
 ### PyPy Support
 
@@ -108,6 +109,7 @@ install:
 # command to run tests
 script: pytest
 ```
+
 {: data-file=".travis.yml"}
 
 ### Nightly build support
@@ -123,6 +125,7 @@ You can specify these in your builds with `3.5-dev`, `3.6-dev`,
 `3.7-dev` or `3.8-dev`.
 
 {: .warning}
+
 > Recent Python branches [require OpenSSL 1.0.2+](https://github.com/travis-ci/travis-ci/issues/9069).
 > As this library is not available for Trusty,  `3.7`, `3.7-dev`, `3.8-dev`, and `nightly`
 > do not work (or use outdated archive).
@@ -138,6 +141,7 @@ For example, if your project uses pytest:
 # command to run tests
 script: pytest
 ```
+
 {: data-file=".travis.yml"}
 
 if it uses `make test` instead:
@@ -145,10 +149,11 @@ if it uses `make test` instead:
 ```yaml
 script: make test
 ```
+
 {: data-file=".travis.yml"}
 
 If you do not provide a `script` key in a Python project, Travis CI prints a
-message (_"Please override the script: key in your .travis.yml to run tests."_)
+message (*"Please override the script: key in your .travis.yml to run tests."*)
 and fails the build.
 
 ## Using Tox as the Build Script
@@ -157,8 +162,9 @@ Due to the way Travis is designed, interaction with [tox](https://tox.readthedoc
 As described [above](/user/languages/python/#travis-ci-uses-isolated-virtualenvs), Travis already runs tests inside an isolated virtualenv whenever `language: python` is specified, so please bear that in mind whenever creating more environments with tox. If you would prefer to run tox outside the Travis-created virtualenv, it might be a better idea to use `language: generic` instead of `language: python`.
 
 If you're using tox to test your code against multiple versions of python, you have two options:
-  * use `language: generic` and manually install the python versions you're interested in before running tox (without the manual installation, tox will only have access to the default Ubuntu python versions - 2.7.6 and 3.4.3 for Trusty)
-  * use `language: python` and a build matrix that uses a different version of python for each branch (you can specify the python version by using the `python` key). This will ensure the versions you're interested in are installed and parallelizes your workload.
+
+- use `language: generic` and manually install the python versions you're interested in before running tox (without the manual installation, tox will only have access to the default Ubuntu python versions - 2.7.6 and 3.4.3 for Trusty)
+- use `language: python` and a build matrix that uses a different version of python for each branch (you can specify the python version by using the `python` key). This will ensure the versions you're interested in are installed and parallelizes your workload.
 
 A good example of a `travis.yml` that runs tox using a Travis build matrix is [twisted/klein](https://github.com/twisted/klein/blob/master/.travis.yml).
 
@@ -175,6 +181,7 @@ You can manually override this default `install` phase, for example:
 ```yaml
 install: pip install --user -r requirements.txt
 ```
+
 {: data-file=".travis.yml"}
 
 Please note that the `--user` option is mandatory if you are not using `language: python`, since no virtualenv will be created in that case.
@@ -197,6 +204,7 @@ env:
   - DJANGO_VERSION=1.10.8
   - DJANGO_VERSION=1.11.5
 ```
+
 {: data-file=".travis.yml"}
 
 and then use ENV variable values in your dependencies installation scripts, test
@@ -208,6 +216,7 @@ install:
   - pip install -q Django==$DJANGO_VERSION
   - python setup.py -q install
 ```
+
 {: data-file=".travis.yml"}
 
 The same technique is often used to test projects against multiple databases and so on.
